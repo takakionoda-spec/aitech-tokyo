@@ -1,0 +1,499 @@
+/* Google Fonts must be imported BEFORE Tailwind to satisfy the CSS spec
+   that @import statements precede all other rules. Inter (display + UI) +
+   Geist Mono (numerics, source-name tags) + Noto Sans JP (Japanese). No serifs. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Noto+Sans+JP:wght@200;300;400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+/* =============================================================================
+   AITECH TOKYO — Cyber-Tech Design System
+   -----------------------------------------------------------------------------
+   A dark, glass-morphic, neon-mesh aesthetic. CELINE-style ultra-wide-tracked
+   sans-serif logo on top, aurora mesh-gradient background, glass cards with
+   subtle neon glow on hover.
+
+   IMPORTANT: this file is opinionated for AITECH TOKYO. The tokens (paper, ink,
+   ink-100..900) are kept but RECOLORED to a dark palette so existing components
+   inherit the new look without per-class rewrites. Components that want explicit
+   neon accents read the new `--color-neon-*` tokens or the `.glass` /
+   `.glow-aurora` / `.logo-celine` utility classes.
+   ========================================================================== */
+@theme {
+  /* ---- Surface — solid jet-black, no blue/purple tint --------------------
+     Pure neutral so text-white reads with maximum contrast and no chroma
+     shift. The PageAura system is retired in favour of this minimal base. */
+  --color-paper: #0a0a0a;       /* neutral-950 equivalent — primary surface */
+  --color-paper-soft: #141414;  /* slightly lifted card / panel fill */
+  --color-void: #000000;        /* absolute black */
+
+  /* ---- Ink scale — pure NEUTRAL grayscale (no blue/purple tint) ----------
+     Maps 1:1 to Tailwind's `neutral` palette so `text-ink-700` looks
+     identical to `text-neutral-300`. Higher number = brighter on dark base,
+     which preserves the semantic of `text-ink-600` as "comfortable body
+     text" across light (ARTEMIS) and dark (AITECH) themes. */
+  --color-ink: #ffffff;            /* pure white — primary text */
+  --color-ink-900: #f5f5f5;        /* neutral-100 — heading-primary */
+  --color-ink-800: #e5e5e5;        /* neutral-200 — heading-secondary */
+  --color-ink-700: #d4d4d4;        /* neutral-300 — prominent body */
+  --color-ink-600: #a3a3a3;        /* neutral-400 — default body */
+  --color-ink-500: #737373;        /* neutral-500 — metadata */
+  --color-ink-400: #525252;        /* neutral-600 — tertiary / dim byline */
+  --color-ink-300: #404040;        /* neutral-700 — subtle separator */
+  --color-ink-200: #262626;        /* neutral-800 — hairline border */
+  --color-ink-100: #171717;        /* neutral-900 — nearly invisible */
+  --color-ink-50:  #0a0a0a;        /* neutral-950 — dimmest, near bg */
+  --color-silver: #d4d4d4;
+  --color-accent: #00e5ff;
+
+  /* ---- Neon palette — the aurora mesh & accent system ------------------- */
+  --color-neon-acid:    #6dff4b;   /* 蛍光グリーン */
+  --color-neon-cyan:    #00e5ff;   /* ネオンブルー */
+  --color-neon-magenta: #ff2da1;   /* ヴィヴィッドピンク */
+  --color-neon-amber:   #f7ff00;   /* サイバーイエロー */
+  --color-neon-violet:  #b066ff;   /* mesh bridge tone */
+
+  /* ---- Type families — NO SERIFS ANYWHERE -------------------------------- */
+  --font-display: "Inter", "Helvetica Neue", Helvetica, "Noto Sans JP", system-ui, sans-serif;
+  --font-serif:   "Inter", "Helvetica Neue", "Noto Sans JP", sans-serif; /* legacy alias — also sans */
+  --font-sans:    "Inter", "Helvetica Neue", Helvetica, Arial, "Noto Sans JP", system-ui, sans-serif;
+  --font-mincho:  "Noto Sans JP", "Inter", system-ui, sans-serif; /* legacy alias — also sans */
+  --font-mono:    "JetBrains Mono", "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* ---- Tracking ---------------------------------------------------------- */
+  --tracking-widest: 0.22em;
+  --tracking-ultra:  0.42em;     /* CELINE-grade */
+  --tracking-celine: 0.55em;     /* used for the masthead logo only */
+
+  /* ---- Container max-width ---------------------------------------------- */
+  --breakpoint-2xl: 1440px;
+}
+
+/* =============================================================================
+   Base — body, color-scheme, font smoothing
+   ========================================================================== */
+:root {
+  --color-line: rgba(255, 255, 255, 0.08);
+  color-scheme: dark;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  background: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+  /* The aurora mesh sits as a fixed pseudo-element below all content. Body
+     stays a plain dark plate so scrolling stays GPU-cheap. */
+  position: relative;
+  min-height: 100vh;
+}
+
+body[data-lang="ja"] {
+  font-family: "Noto Sans JP", "Inter", system-ui, sans-serif;
+}
+
+::selection {
+  background-color: var(--color-neon-magenta);
+  color: #0a0b12;
+}
+
+/* =============================================================================
+   PER-PAGE AURA — Mesh-Gradient backdrop, owned by <PageAura tone="..." />
+   -----------------------------------------------------------------------------
+   The common shouting four-color mesh was replaced by per-page palettes
+   composed in components/PageAura.tsx. Each page mounts one <PageAura> with
+   a specific tone (blue / magenta / green / amber / void), and the page
+   reads as a coherent moodboard.
+
+   globals.css contributes:
+     1. A monochrome `body::after` noise layer (kept — universal grain)
+     2. The shared `.page-aura` CSS class for the fixed full-viewport mesh
+     3. The animation keyframes — slower than before, applied only to the
+        PageAura class (so reduced-motion users only have to silence ONE
+        animation source)
+     4. z-index hierarchy so the mesh sits beneath header / main / footer
+   ========================================================================== */
+
+/* PageAura is RETIRED in the minimal black/white pass. The component is
+   kept for forward-compat (so existing `<PageAura tone="...">` JSX still
+   compiles), but the class renders nothing — `display: none`. Remove this
+   line if you want to bring per-page colour back. */
+.page-aura {
+  display: none;
+}
+
+/* Monochrome film-grain — kept at very low opacity so the void doesn't
+   read as a flat Photoshop fill. Pure neutral, no chroma. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+}
+
+@keyframes aurora-drift {
+  0%   { transform: translate3d(0, 0, 0)    scale(1)    rotate(0deg); }
+  30%  { transform: translate3d(2%, -1.5%, 0) scale(1.05) rotate(3deg); }
+  60%  { transform: translate3d(-1%, 2%, 0)  scale(1.03) rotate(-2deg); }
+  100% { transform: translate3d(1.5%, 1%, 0) scale(1.06) rotate(4deg); }
+}
+
+/* Above-mesh stacking */
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================================================================
+   CELINE-style masthead logo
+   -----------------------------------------------------------------------------
+   The signature move: hairline weight + ultra-wide tracking + small uppercase.
+   Apply to the wordmark in Header.tsx. Pairs with .logo-celine--xl for the
+   "feature" rendering.
+   ========================================================================== */
+.logo-celine {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: var(--tracking-celine);
+  text-transform: uppercase;
+  /* Trim the extra right-side gap that wide tracking creates so the logo
+     visually centers. */
+  padding-left: var(--tracking-celine);
+  color: var(--color-ink);
+  font-feature-settings: "ss01" on, "cv01" on;
+  -webkit-font-smoothing: antialiased;
+}
+
+.logo-celine--xl {
+  font-weight: 200;
+  letter-spacing: var(--tracking-celine);
+}
+
+/* =============================================================================
+   Typographic primitives (kept names for back-compat with existing components)
+   All re-pointed to sans + the new dark palette.
+   ========================================================================== */
+.font-display {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.font-display-ja {
+  font-family: "Noto Sans JP", var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-ink-700);     /* bright gray — easy to read */
+}
+
+.byline {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-600);     /* visible mid-light gray */
+}
+
+.editorial-rule {
+  height: 1px;
+  background: var(--color-line);
+  width: 100%;
+}
+
+/* Subtle silver gradient rule — re-colored to a dim neon-cyan fade. */
+.silver-rule {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 229, 255, 0.45) 30%,
+    rgba(255, 45, 161, 0.45) 70%,
+    transparent
+  );
+}
+
+/* Editorial body — used on /articles/[slug] pages.
+   Color is PURE WHITE (var(--color-ink) ≈ #f5f6fb) so paragraphs are
+   immediately readable. Previously this was incorrectly set to a low ink
+   number that, after the scale was flipped, resolved to a near-black
+   color — making the entire article body invisible on the detail page. */
+.prose-editorial {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--color-ink);
+  max-width: 68ch;
+  margin-inline: auto;
+}
+
+.prose-editorial p {
+  margin: 1.4em 0;
+  color: var(--color-ink);
+}
+
+/* No drop-caps in minimal mode — they read as a serif tic. */
+.prose-editorial p:first-of-type::first-letter {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: inherit;
+  padding: 0;
+  color: inherit;
+  float: none;
+}
+
+.prose-editorial h2 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.005em;
+  margin: 2.2em 0 0.6em;
+  line-height: 1.25;
+  color: var(--color-ink);
+}
+
+.prose-editorial blockquote {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  margin: 2em 0;
+  padding: 1rem 0 1rem 1.25rem;
+  border-left: 1px solid var(--color-neon-cyan);
+  color: var(--color-ink);
+  background: transparent;
+}
+
+/* =============================================================================
+   GLASS MORPHISM — utility classes for cards, panels, sidebars
+   ========================================================================== */
+.glass {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+}
+
+.glass-strong {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.085),
+      rgba(255, 255, 255, 0.025)
+    );
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+}
+
+.glass-flat {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.008)
+  );
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* =============================================================================
+   NEON GLOW — drop-shadows in the aurora palette
+   ========================================================================== */
+.glow-aurora {
+  box-shadow:
+    0 8px 32px -10px rgba(0, 229, 255, 0.20),
+    0 4px 24px -10px rgba(255, 45, 161, 0.18);
+  transition: box-shadow 360ms ease, transform 360ms ease,
+              border-color 360ms ease;
+}
+
+.glow-aurora:hover {
+  box-shadow:
+    0 18px 50px -10px rgba(0, 229, 255, 0.45),
+    0 10px 40px -10px rgba(255, 45, 161, 0.40),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.30),
+              0 8px 28px -8px rgba(0, 229, 255, 0.45);
+}
+
+.glow-magenta {
+  box-shadow: 0 0 0 1px rgba(255, 45, 161, 0.30),
+              0 8px 28px -8px rgba(255, 45, 161, 0.45);
+}
+
+/* =============================================================================
+   PILL — category & verdict chips
+   ========================================================================== */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-ink-100);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.pill--neon-cyan    { color: var(--color-neon-cyan);
+                      background: rgba(0, 229, 255, 0.10);
+                      border-color: rgba(0, 229, 255, 0.25); }
+.pill--neon-magenta { color: var(--color-neon-magenta);
+                      background: rgba(255, 45, 161, 0.10);
+                      border-color: rgba(255, 45, 161, 0.25); }
+.pill--neon-acid    { color: var(--color-neon-acid);
+                      background: rgba(109, 255, 75, 0.10);
+                      border-color: rgba(109, 255, 75, 0.30); }
+.pill--neon-amber   { color: var(--color-neon-amber);
+                      background: rgba(247, 255, 0, 0.10);
+                      border-color: rgba(247, 255, 0, 0.30); }
+
+/* =============================================================================
+   BUTTONS — neon-outline primary CTA
+   ========================================================================== */
+.btn-neon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  backdrop-filter: blur(14px);
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.btn-neon:hover {
+  border-color: var(--color-neon-cyan);
+  color: var(--color-neon-cyan);
+  box-shadow: 0 0 0 4px rgba(0, 229, 255, 0.08),
+              0 12px 30px -10px rgba(0, 229, 255, 0.45);
+}
+
+.btn-neon--magenta:hover {
+  border-color: var(--color-neon-magenta);
+  color: var(--color-neon-magenta);
+  box-shadow: 0 0 0 4px rgba(255, 45, 161, 0.08),
+              0 12px 30px -10px rgba(255, 45, 161, 0.45);
+}
+
+/* =============================================================================
+   Links — keep the editorial-link API but neon-ify the underline
+   ========================================================================== */
+.editorial-link {
+  position: relative;
+  display: inline-block;
+  transition: color 200ms ease;
+}
+
+.editorial-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-neon-cyan), var(--color-neon-magenta));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms ease;
+}
+
+.editorial-link:hover {
+  color: var(--color-ink-50);
+}
+.editorial-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* =============================================================================
+   Focus rings — neon-cyan instead of black
+   ========================================================================== */
+:focus-visible {
+  outline: 1px solid var(--color-neon-cyan);
+  outline-offset: 3px;
+}
+
+/* =============================================================================
+   Scrollbar — slim, dim, neon thumb on hover
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.35);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =============================================================================
+   Section spacing utilities — unchanged
+   ========================================================================== */
+.mt-section { margin-top: clamp(3rem, 8vw, 6rem); }
+.pb-section { padding-bottom: clamp(3rem, 8vw, 6rem); }
+.py-section { padding-block: clamp(3rem, 8vw, 6rem); }
+.my-section { margin-block: clamp(3rem, 8vw, 6rem); }
+
+/* =============================================================================
+   Reduce motion — kill the aurora drift for users who prefer it that way
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .page-aura { animation: none; }
+  .glow-aurora { transition: none; }
+}
