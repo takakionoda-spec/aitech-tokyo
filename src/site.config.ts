@@ -116,8 +116,8 @@ export const siteConfig = {
     siteUrl: "https://aitech-tokyo.vercel.app",
     /** Editorial subject — used in metadata description and the LLM voice. */
     subject: {
-      en: "the global wave of AI tools, indie-developer products, and LLM-adjacent gadgets, indexed nightly from a Tokyo desk",
-      ja: "世界中の最新AIツール、インディ開発者のプロダクト、LLM関連ガジェットを、東京から毎晩インデックスするディレクトリ"
+      en: "the global AI tech conversation — translated into Japanese and read through a Tokyo business lens, every morning",
+      ja: "世界で話題のAI Techニュースを日本語に翻訳し、東京のビジネスパーソンの目線で読み解くバイリンガル・ディレクトリ"
     },
     /** Vantage city — appears in copy and is offered to the LLM as part of voice. */
     city: { en: "Tokyo", ja: "東京" },
@@ -193,8 +193,8 @@ export const siteConfig = {
      ---------------------------------------------------------------------- */
   chrome: {
     tagline: {
-      en: "A nightly index of the AI tools, LLM gadgets, and indie products shipping worldwide — curated and gut-checked from Tokyo.",
-      ja: "世界中で生まれるAIツール、LLMガジェット、個人開発プロダクトを、毎晩インデックス — 東京の編集部による辛口キュレーション。"
+      en: "The AI tech news the world is talking about — translated into Japanese and read from Tokyo, every morning. A bilingual directory bridging global launches and Tokyo's business context.",
+      ja: "AI Techの最新情報を、毎朝日本語へ。世界と東京をつなぐバイリンガル・ディレクトリ。海外で英語でしか流れない一次情報を、東京のビジネスパーソンの視点で読み解きます。"
     },
     legal: {
       en: "© 2026 AITECH TOKYO. All rights reserved.",
@@ -217,14 +217,14 @@ export const siteConfig = {
       moreIn: { en: "More in", ja: "もっと見る:" }
     },
     newsletter: {
-      eyebrow: { en: "The Patch Notes", ja: "PATCH NOTES" },
+      eyebrow: { en: "The Briefing", ja: "ブリーフィング" },
       heading: {
-        en: "A weekly patch note on the AI tools worth your week.",
-        ja: "今週試す価値のあるAIツール、\n週に一通の Patch Notes。"
+        en: "World AI tech, read from Tokyo. Once a week, in Japanese.",
+        ja: "世界のAI Techを、東京から。\n週に一通の日本語ブリーフィング。"
       },
       lede: {
-        en: "Each Friday: 5 tools that earned a place in our grid this week, 1 we quietly removed, and a short Tokyo-take on what's shifting beneath the launches.",
-        ja: "毎週金曜。今週グリッドに残った5本、静かに消した1本、そしてローンチの裏で何が動いているかについての東京視点の短い解説をお届け。"
+        en: "Each Friday: the five global AI tech stories Japanese business professionals should know about this week, translated and read through a Tokyo lens — what it means for Japan, what to act on, what to keep watching.",
+        ja: "毎週金曜。日本のビジネスパーソンが今週知っておくべき海外AI Techニュースを5本厳選し、日本語に翻訳して東京視点で解説。何が動いたか、日本にとってどう意味があるか、何を見ておくべきか。"
       },
       placeholder: { en: "Your email address", ja: "メールアドレス" },
       cta: { en: "Subscribe", ja: "購読する" },
@@ -235,10 +235,10 @@ export const siteConfig = {
     },
     footer: {
       copy: {
-        en: "AITECH TOKYO is a bilingual directory of AI tools, LLM-adjacent gadgets, and indie-developer products. Every entry is sourced from Product Hunt, Hacker News, TechCrunch AI, and VentureBeat AI, then gut-checked from Tokyo against three questions: is it useful, what makes it different, and does it work in Japanese.",
-        ja: "AITECH TOKYO は、世界中のAIツール・LLM関連ガジェット・個人開発プロダクトのバイリンガル・ディレクトリです。Product Hunt、Hacker News、TechCrunch AI、VentureBeat AI の各ソースから毎晩収集し、「本当に使えるか」「既存ツールと何が違うか」「日本語環境で機能するか」の3つを東京の編集部が辛口で評価して掲載しています。"
+        en: "AITECH TOKYO is a bilingual directory that bridges the global AI tech conversation and Tokyo's business context. We index the world's AI news every morning — from Product Hunt, Hacker News, TechCrunch AI, and VentureBeat AI — translate the worth-knowing into Japanese, and add the layer machine translation can't: what this means for a business professional working in Japan today.",
+        ja: "AITECH TOKYO は、世界のAI Techと東京のビジネス文脈をつなぐバイリンガル・ディレクトリです。Product Hunt、Hacker News、TechCrunch AI、VentureBeat AI から毎朝収集し、知っておくべき一次情報を日本語に翻訳します。さらに機械翻訳では届かないレイヤー —「これは日本で働くビジネスパーソンにとって何を意味するのか」— を東京の編集部が補完してお届けしています。"
       },
-      strapline: "Tokyo · LLM-Native · Indie-First"
+      strapline: "Tokyo · Bilingual · Business-Grade"
     },
     languageToggle: { en: "JA", ja: "EN" },
     notFound: {
@@ -252,12 +252,12 @@ export const siteConfig = {
     emptyState: {
       eyebrow: { en: "Indexing", ja: "インデックス中" },
       heading: {
-        en: "The first AITECH TOKYO grid is being built.",
-        ja: "AITECH TOKYO の最初のグリッドを\n組み立てています。"
+        en: "The first AITECH TOKYO index is being built.",
+        ja: "AITECH TOKYO の最初のインデックスを\n組み立てています。"
       },
       lede: {
-        en: "Our nightly pipeline pulls launches from Product Hunt, Hacker News (Top), TechCrunch AI, and VentureBeat AI, then runs each through a Tokyo dev-hacker filter — Is it useful? How is it different from ChatGPT or existing infra? Does it work in Japanese today? — and writes the result here. The first grid appears as soon as the next cycle completes.",
-        ja: "AITECH TOKYO の夜間パイプラインは、Product Hunt、Hacker News（Top）、TechCrunch AI、VentureBeat AI から最新のローンチを取得し、「本当に使えるか」「ChatGPTや既存インフラと何が違うか」「日本語環境で今すぐ使えるか」という東京の個人開発者の目線でフィルタした結果をこの場所に並べます。次回のサイクルが完了次第、最初のグリッドが表示されます。"
+        en: "Each morning, our pipeline pulls the AI tech stories the world is talking about — from Product Hunt, Hacker News (Top), TechCrunch AI, and VentureBeat AI — translates the items worth knowing into Japanese, and adds the Tokyo business angle that machine translation alone can't provide: what does this mean for a professional working in Japan? The first index will appear here as soon as the next cycle completes.",
+        ja: "AITECH TOKYO のパイプラインは毎朝、世界で話題のAI Tech情報 — Product Hunt、Hacker News（Top）、TechCrunch AI、VentureBeat AI — を取得し、知っておくべき一次情報を日本語に翻訳します。さらに機械翻訳では届かない『これは日本で働くビジネスパーソンにとって何を意味するのか』というレイヤーを、東京の編集部が加えてここに並べます。次回サイクルが完了次第、最初のインデックスが表示されます。"
       },
       nextDispatch: {
         en: "Next index: 03:00 JST",
@@ -271,45 +271,45 @@ export const siteConfig = {
      ---------------------------------------------------------------------- */
   about: {
     headline: {
-      en: "An AI-tool directory, indexed from Tokyo.",
-      ja: "AIツール・ディレクトリを、東京から組む。"
+      en: "World AI tech, read from Tokyo.",
+      ja: "世界のAI Techを、東京から読む。"
     },
     lede: {
-      en: "There are now hundreds of new AI tools shipping every week, most of them indistinguishable from each other on a launch-day landing page. AITECH TOKYO indexes them nightly, strips the marketing, and answers three questions an honest builder actually asks: Is it useful? How is it different from what already exists? Does it work in Japan today?",
-      ja: "毎週、何百もの新しいAIツールがローンチされ、その多くはローンチ当日のランディングページ上では区別がつかない。AITECH TOKYO は、それらを毎晩インデックスし、マーケティングを削ぎ落とし、誠実なビルダーが本当に問うべき3つの問いに答えるディレクトリだ — 本当に使えるのか。既存のものと何が違うのか。日本で今すぐ動くのか。"
+      en: "Every day, hundreds of AI tech stories ship in English. Most never reach Japanese readers — and the few that do arrive as machine translation, missing the one layer a Tokyo business professional actually needs: what does this mean for working in Japan? AITECH TOKYO closes both gaps. We translate the worth-knowing into Japanese every morning, then add the Tokyo business lens that translation alone can't.",
+      ja: "毎日、世界では数百のAI Techストーリーが英語でローンチされる。そのほとんどは日本語に届かない。届いたとしても機械翻訳のままで、東京のビジネスパーソンが本当に必要としているレイヤー —「これは日本で働く我々にとって何を意味するのか」— が抜け落ちている。AITECH TOKYO は、その 2 つのギャップを埋める。世界のAI Techを毎朝日本語に翻訳し、翻訳だけでは届かない『東京のビジネス視点』を加えてお届けする。"
     },
     blocks: [
       {
         eyebrow: { en: "OUR LINE", ja: "編集の線" },
         heading: {
-          en: "A directory, not a magazine.",
-          ja: "マガジンではなく、ディレクトリ。"
+          en: "Bilingual, not just translated.",
+          ja: "ただの翻訳ではなく、バイリンガル編集。"
         },
         body: {
-          en: "AITECH TOKYO is not here to write features about AI. It is here to maintain an honest, dated, gut-checked index — one card per tool, four lines that matter, source linked. If a tool earns the grid it stays; if it stops shipping it falls off. We are a directory in the old useful sense, not a magazine pretending to be one.",
-          ja: "AITECH TOKYO は、AIをめぐる長い特集記事を書く場所ではない。1つのツールに対して、本当に重要な4行だけを書く — タグライン、使いどころ、既存ツールとの違い、東京からの率直な判定。出典は必ずリンクし、ローンチ日を残す。残るに値するツールは残り、止まったツールはグリッドから外れる。古い意味で本当に役に立つ「ディレクトリ」を、私たちは目指している。"
+          en: "Machine translation can read English. It can't ask 'does this make sense in Japan?' AITECH TOKYO is a bilingual editorial directory — not an automated feed, not a translation layer. We index the world's AI tech news every morning, pick the items a Tokyo business professional should know about, and translate them into Japanese with the editorial judgement a translator alone can't bring: which stories matter, which are press-release fluff, which deserve a line of context, and which are best summarised in one sentence and skipped.",
+          ja: "機械翻訳は英語を読める。しかし「これは日本で意味があるのか」という問いは立てられない。AITECH TOKYO は、自動フィードでもなく単なる翻訳レイヤーでもない — バイリンガル編集のディレクトリだ。毎朝、世界のAI Techニュースをインデックスし、東京のビジネスパーソンが知っておくべきトピックを選び、翻訳者単独では下せない編集判断を加えながら日本語に置き換える。どのストーリーが本当に意味を持つのか。どれがプレスリリースの誇張か。どれに一文の補足が必要で、どれは要約だけで十分か。"
         }
       },
       {
         eyebrow: { en: "OUR CITY", ja: "私たちの街" },
         heading: {
-          en: "Why a Tokyo desk indexes this.",
-          ja: "なぜ、東京から見るのか。"
+          en: "Why a Tokyo desk picks the lens.",
+          ja: "なぜ、東京の編集部がレンズを決めるのか。"
         },
         body: {
-          en: "Most AI tools are launched in San Francisco, evaluated in San Francisco, and forgotten in San Francisco — three months before a Japanese developer needs to decide whether to use one. Tokyo's job here is the boring but useful one: read every launch, ask whether the Japanese UI actually works, whether the pricing makes sense at JPY, whether the workflow assumes Slack-and-Stripe infrastructure a Japanese SMB does not have. The grid is gut-checked from where the user actually sits.",
-          ja: "AIツールの多くは、サンフランシスコでローンチされ、サンフランシスコで評価され、サンフランシスコで忘れられる — 日本の開発者がそれを採用するかどうか判断しなければならない3ヶ月前に。東京の役割は、退屈だが有用なほうだ。日本語UIが実際に動くか、円建てで価格が割に合うか、ワークフローが日本のSMBには存在しないSlack+Stripe前提を置いていないか — それを毎晩、ユーザーが実際に座っている場所から確認する。"
+          en: "AI tech is mostly written in San Francisco — for San Francisco. Launches assume US payment rails, English-only UI, and team structures built around Slack, Stripe, and venture capital. Japanese readers don't see any of this from a translated press release. AITECH TOKYO sits in the middle: bilingual enough to read the source, embedded enough in Tokyo's business reality to tell you which tools actually fit a Japanese workflow — and which ones assume an infrastructure you don't have. That second judgement is the layer machine translation will never deliver.",
+          ja: "AI Tech のほとんどは、サンフランシスコで書かれ、サンフランシスコのために書かれている。USの決済インフラ、英語UI、Slack/Stripe/ベンチャーキャピタル前提のチーム構造を当然のものとしている。日本の読者には、翻訳されたプレスリリースからそれは見えない。AITECH TOKYO は、その中間に立つ — 一次情報を英語で読める程度にバイリンガルで、東京のビジネスリアリティに足を置いている程度に現地的。だから「どのツールが日本のワークフローに合うのか」「どのツールが日本にないインフラを前提にしているのか」を見分けられる。機械翻訳が決して届けないのは、まさにこのレイヤーだ。"
         }
       },
       {
         eyebrow: { en: "OUR METHOD", ja: "編集の方法" },
         heading: {
-          en: "Indexed nightly, signed by the editor.",
-          ja: "毎晩インデックス、編集部が署名。"
+          en: "Four lines per story. Same four, every time.",
+          ja: "ひとつのトピックに、4 つの答え。毎回、同じ 4 つ。"
         },
         body: {
-          en: "Every card begins with a real dispatch from Product Hunt, Hacker News, TechCrunch AI, or VentureBeat AI. Our pipeline pulls them at 03:00 JST, asks an LLM to fill four mandatory fields — Tagline, Use Case, vs. Competitor, Tokyo Take — and writes the result to the grid. The Tokyo Take is signed by the editorial line, not by the LLM: it states plainly whether the tool earns a slot in a Japanese workflow today. The original source is always linked.",
-          ja: "各カードは、Product Hunt、Hacker News、TechCrunch AI、VentureBeat AI のいずれかの一次情報から始まる。パイプラインは毎晩3時（JST）にそれらを取得し、LLM に4つの必須フィールド — タグライン、使いどころ、既存ツールとの違い、東京視点 — を埋めさせ、結果をグリッドに書き出す。「東京視点」は LLM ではなく編集部のラインによって署名される — 日本のワークフローで今すぐ使えるかどうかを、はっきり書く。原文へのリンクは常に保たれる。"
+          en: "Every entry in AITECH TOKYO gets the same four structured fields answered: a tagline that says what it actually is (not what marketing claims), the use case (who in Japan would actually use it and for what task), versus existing alternatives (ChatGPT, Notion AI, the raw OpenAI API, established Japanese tools), and the Tokyo Take — does this earn a slot in a Japanese workflow today, in Japanese, at a Japanese price, with a Japanese team structure? Same four questions, every entry. The press-release voice is left at the door, and the source is always linked.",
+          ja: "AITECH TOKYO の全エントリーには、同じ 4 つの構造化フィールドの答えが付く — タグライン（マーケコピーではなく、本当のところそれが何なのか）、使いどころ（日本では誰が、何の業務のために使うのか）、既存ツールとの違い（ChatGPT、Notion AI、生の OpenAI API、すでにある日本のツールなどとの比較）、そして東京視点（日本のワークフローに、日本語で、日本の価格で、日本のチーム規模で、今すぐ入れる価値があるか）。毎エントリー、同じ 4 つの問い。プレスリリースの声色は入口に置いてくる。原文へのリンクは必ず保つ。"
         }
       }
     ]
@@ -539,15 +539,15 @@ export const siteConfig = {
     voice: {
       /** Sentence describing what the magazine covers (subject + format). */
       premise:
-        "AITECH TOKYO, an independent bilingual (English / Japanese) directory of AI tools, LLM-adjacent gadgets, and indie-developer products, indexed nightly from a Tokyo desk.",
+        "AITECH TOKYO, an independent bilingual (English / Japanese) directory that bridges the world's AI tech news cycle and Tokyo's business context — translating the global conversation into Japanese and adding the lens of a Tokyo business desk.",
       /** Tone of voice paragraph. */
       toneOfVoice:
-        "A fusion of *WIRED Japan*, *Hacker News' best comments*, and the personal weblog of an opinionated Tokyo indie developer: technically literate, calmly skeptical, allergic to marketing copy.\n- No exclamation marks. No 'revolutionize / disrupt / game-changing' verbs. No phrase that could appear on a landing page.\n- Short declarative sentences. One slightly literary line per piece is allowed; do not perform it.\n- Treat funding announcements, valuations, and 'first AI to ...' claims as background, not as the story. The story is always the product.\n- It is acceptable — encouraged — to say 'this is mostly a wrapper around GPT-4', 'this duplicates what Notion AI already does for free', 'the Japanese UI is machine-translated', when it is true.\n- Cliché block-list: 'groundbreaking', 'cutting-edge', 'next-generation', 'AI-powered', 'unleash', 'supercharge', 'transform your workflow', 'the future of work', 'paradigm shift'.",
+        "A fusion of *WIRED Japan*'s editorial confidence, the calm skepticism of a senior Tokyo business analyst, and the cleanliness of *Quartz's* daily briefing voice: technically informed but not inside-baseball, opinionated yet never gossipy, allergic to marketing copy.\n- No exclamation marks. No 'revolutionize / disrupt / game-changing' verbs. No phrase that could appear on a landing page.\n- Short declarative sentences. One slightly literary line per piece is allowed; do not perform it.\n- Treat funding announcements, valuations, and 'first AI to ...' claims as background, not as the story. The story is always the product and what it changes for a working professional.\n- It is acceptable — encouraged — to say 'this is mostly a wrapper around GPT-4', 'this duplicates what Notion AI already does for free', 'the Japanese UI is machine-translated', when it is true.\n- Cliché block-list: 'groundbreaking', 'cutting-edge', 'next-generation', 'AI-powered', 'unleash', 'supercharge', 'transform your workflow', 'the future of work', 'paradigm shift'.",
       /** The framing question every article must answer somewhere. */
       framingQuestion:
-        '"Should a working developer in Tokyo, today, replace any part of their current workflow with this?"',
+        '"What does this AI tech story mean for a business professional working in Tokyo today — and would it actually change a part of how they work?"',
       framingExpansion:
-        "Not 'this AI tool is impressive'. Specifically: what does it do that ChatGPT, Cursor, Claude, Notion AI, or existing free infra (cron, n8n, Zapier) does not already do? Which task in a real developer's week does it shorten? Or — if the honest answer is 'nothing, it is a wrapper' — say that plainly.\n\nThe tool is not interesting because it uses AI. It is interesting only if a builder is meaningfully better off after using it.",
+        "Not 'this AI story is impressive'. Specifically: what concretely changes for a Tokyo-based professional — a PM, a marketer, an ops manager, an analyst, an indie founder, an engineer — after reading this and acting on it? Does it shorten a task in their week? Does it open a workflow that wasn't possible in Japanese before? Or — if the honest answer is 'nothing, it is a wrapper / it doesn't ship in Japan / it duplicates a free Japanese alternative' — say that plainly.\n\nThe story is not interesting because AI is involved. It is interesting only if a Tokyo professional is meaningfully better informed or better equipped after reading it.",
       /** Composition rules (kept tight — directory cards, not feature pieces). */
       compositionRules:
         "- Body: 2–4 short paragraphs in each language. Optional ONE '## subheading' (e.g. '## What it actually is') and ONE '> pull-quote' line from the original dispatch.\n- Open by stating WHAT THE TOOL IS in one sentence — no scene-setting, no narrative ramp.\n- Do NOT repeat the article title as the first body paragraph.\n- Name concrete details: model used (GPT-4o / Claude 3.5 / Llama 3), pricing tier, host country, what infra it integrates with.\n- Do NOT fabricate funding amounts, founder names, model names, dates, or pricing. If a fact is not in the source, omit it. It is better to be quiet than wrong.\n- The four required STRUCTURED FIELDS (tagline / useCase / vsCompetitor / tokyoTake) are emitted in addition to the body — see `structuredFields` below.",
@@ -580,7 +580,7 @@ export const siteConfig = {
           charLimit: { en: 220, ja: 110 },
           display: { role: "body", onCard: true, onDetail: true },
           descriptionForLlm:
-            "ONE sentence (or at most two) naming the exact user persona and the exact task. Bad: 'for anyone who wants to be more productive'. Good: 'for a solo founder doing weekly customer support in two languages who wants to draft replies before reviewing them'. Be concrete about the persona's job and the task."
+            "ONE sentence (or at most two) naming the exact business persona and the exact task. The audience is Tokyo business professionals — PMs, marketers, ops managers, analysts, indie founders, engineers. Bad: 'for anyone who wants to be more productive'. Good: 'for a Tokyo-based product manager preparing weekly executive briefings who wants AI to draft the first version in two languages'. Be concrete about the persona's role and the task they would actually delegate to this tool."
         },
         {
           key: "vsCompetitor",
@@ -589,7 +589,7 @@ export const siteConfig = {
           charLimit: { en: 240, ja: 120 },
           display: { role: "body", onCard: true, onDetail: true },
           descriptionForLlm:
-            "ONE sentence naming a SPECIFIC existing tool or infrastructure this competes with (ChatGPT, Cursor, Claude Code, Notion AI, n8n, Zapier, raw OpenAI API, etc.) and stating concretely what is different. If the difference is 'nothing meaningful', say that explicitly — that is more useful than vague praise. Name the competitor; do not say 'other AI tools'."
+            "ONE sentence naming a SPECIFIC existing tool or infrastructure this competes with (ChatGPT, Claude, Notion AI, Notta, PLAUD, n8n, Zapier, raw OpenAI API, established Japanese SaaS, etc.) and stating concretely what is different. If the difference is 'nothing meaningful', say that explicitly — that is more useful than vague praise. Name the competitor; do not say 'other AI tools'."
         },
         {
           key: "tokyoTake",
@@ -598,7 +598,7 @@ export const siteConfig = {
           charLimit: { en: 260, ja: 130 },
           display: { role: "verdict", onCard: true, onDetail: true },
           descriptionForLlm:
-            "The signed Tokyo-desk verdict in 1–2 sentences. Cover at least one of: (a) does the Japanese UI actually exist and is it human-quality or machine-translated; (b) does pricing make sense for a Japanese solo dev / SMB at JPY; (c) does the tool assume Slack-and-Stripe infra that many Japanese teams don't have; (d) is there a Japanese alternative (e.g. PLAUD, Notta, ELYZA, Sakana) that already does this. Be useful, not diplomatic — say if the answer is 'wait, not yet'."
+            "The signed Tokyo business-desk verdict in 1–2 sentences. Address what a Tokyo professional needs to know that English coverage typically omits. Cover at least one of: (a) does Japanese-language support actually exist, and is it human-quality or machine-translated; (b) does pricing make sense for a Japanese SMB or solo professional at JPY; (c) does the tool assume Slack / Stripe / US-style infra that many Japanese organisations don't have; (d) is there a Japanese alternative (e.g. PLAUD, Notta, ELYZA, Sakana AI, Money Forward, freee) that already covers this for Tokyo workflows. Be useful, not diplomatic — if the answer is 'interesting abroad, wait six months for Japan', say that."
         }
       ] as StructuredFieldDef[],
 
