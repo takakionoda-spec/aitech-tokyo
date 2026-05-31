@@ -1,5 +1,579 @@
 [
   {
+    "slug": "data-exfiltration-risk-in-llm-integrated-google-sheets",
+    "category": "workflow",
+    "issue": "Vol. 01",
+    "publishedAt": "2026-05-31T20:35:38.000Z",
+    "readingMinutes": 4,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
+    },
+    "title": {
+      "en": "Data Exfiltration Risk in LLM-Integrated Google Sheets",
+      "ja": "LLM連携Google Sheetsにおけるデータ流出リスク"
+    },
+    "dek": {
+      "en": "A security analysis reveals that even innocuous prompts can lead to sensitive data exfiltration when LLMs are integrated with Google Sheets, highlighting a critical enterprise vulnerability.",
+      "ja": "LLMとGoogle Sheetsの連携において、無害に見えるプロンプトでも機密データが流出するリスクが指摘され、企業の脆弱性が浮上。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo",
+      "ja": "東京"
+    },
+    "tags": [
+      {
+        "en": "security",
+        "ja": "セキュリティ"
+      },
+      {
+        "en": "data privacy",
+        "ja": "データプライバシー"
+      },
+      {
+        "en": "google workspace",
+        "ja": "Google Workspace"
+      },
+      {
+        "en": "enterprise AI",
+        "ja": "企業AI"
+      }
+    ],
+    "body": {
+      "en": [
+        "A recent security analysis highlights a critical data exfiltration risk when integrating Large Language Models (LLMs) with Google Sheets. Even seemingly harmless prompts can enable an LLM to access and potentially leak sensitive data from spreadsheets it has been granted access to, bypassing typical user expectations of data isolation.",
+        "This vulnerability underscores that connecting LLMs to established productivity tools creates new attack vectors. The issue is not just malicious prompts, but the inherent capabilities of LLMs when given broad permissions to data sources. Organizations must reconsider their data governance strategies for AI integrations.",
+        "> \"GPT for Google Sheets data exfiltration\"",
+        "The incident serves as a reminder that the convenience of AI augmentation in everyday applications comes with a non-trivial security overhead. It requires a deeper understanding of how LLMs interact with data at a programmatic level, beyond the conversational interface."
+      ],
+      "ja": [
+        "Google SheetsとLLMを連携させる際に、機密データが外部に流出するリスクが指摘されました。一見無害なプロンプトであっても、LLMに付与されたアクセス権限を通じて、スプレッドシート内のデータを意図せず漏洩させる可能性があるとのことです。",
+        "この脆弱性は、LLMを既存の生産性ツールに接続することが新たな攻撃経路を生み出すことを示唆しています。問題は悪意のあるプロンプトだけでなく、広範なデータソースへのアクセス権限を与えられたLLMの持つ本来的な能力にあります。企業はAI連携におけるデータガバナンス戦略を見直す必要があります。",
+        "> 「Google SheetsにおけるGPTデータ流出」",
+        "日常業務にAIを組み込む利便性は、無視できないセキュリティコストを伴うという認識が求められます。これは、LLMが会話インターフェースの背後でデータとどのようにプログラム的に相互作用するかについて、より深い理解を必要とします。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "Japanese companies, especially larger ones, often adopt new technologies with significant caution, particularly regarding security. This vulnerability report will likely reinforce that conservative stance. Given the widespread use of Google Workspace within Japanese enterprises, the identified risk is directly relevant to countless organizations here.",
+        "Japan's stringent data privacy regulations mean this issue could complicate compliance with local laws, as well as international standards like GDPR or PIPL, should sensitive data inadvertently leave its intended environment. Internal IT departments (情シス) are expected to tighten their policies regarding LLM integration and data access permissions, potentially slowing down wider AI adoption.",
+        "While domestic alternatives like freee or Money Forward offer specialized financial data management, the general office productivity suite often defaults to global players. This incident might prompt a re-evaluation or a push for more secure, localized AI integration solutions, though robust options are still emerging. For a Tokyo professional, this means anticipating stricter internal guidelines and potentially reduced individual autonomy in using AI tools that connect directly to corporate data sources."
+      ],
+      "ja": [
+        "日本企業、特に大企業は、新しい技術導入に際してセキュリティへの懸念から慎重な姿勢を取りがちです。今回の脆弱性報告は、その保守的なスタンスをさらに強固にするでしょう。Google Workspaceの利用が広範に及ぶ日本企業にとって、このリスクは直接的な影響を及ぼします。",
+        "日本のデータプライバシー規制は厳しく、この問題は、機密データが意図せず外部に流出した場合、国内法規だけでなく、GDPRやPIPLといった国際的なコンプライアンスを複雑にする可能性があります。情シス部門は、LLM連携とデータアクセス権限に関する社内ポリシーを一層厳格化すると予想され、広範なAI導入のペースが鈍化するかもしれません。",
+        "freeeやMoney Forwardのような国内SaaSも増えていますが、汎用的なオフィス生産性ツールは依然としてグローバルベンダーが主流です。今回の件は、よりセキュアで日本市場に特化したAI連携ソリューションへの需要を高める可能性がありますが、現状ではまだ堅牢な選択肢が少ないのも事実です。東京のビジネスパーソンにとっては、今後、社内でのAI活用に関するガイドラインがより厳しくなり、企業データに直接接続するAIツールの個人的な利用が制限される可能性を示唆しています。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "LLM-integrated Google Sheets risk data leak.",
+        "ja": "Google SheetsとLLM連携、データ漏洩の危険性。"
+      },
+      "useCase": {
+        "en": "For any Tokyo professional using LLMs with internal data in Google Sheets, this highlights the critical need for strict data governance and security protocols to prevent inadvertent exfiltration.",
+        "ja": "Google SheetsでLLMを社内データに利用する東京のプロフェッショナルは、意図しないデータ流出を防ぐため、厳格なデータガバナンスとセキュリティプロトコルが不可欠であることを認識すべきです。"
+      },
+      "vsCompetitor": {
+        "en": "Unlike using LLMs in sandboxed environments, direct integration with tools like Google Sheets introduces an attack surface that even careful prompt engineering might not fully mitigate, necessitating robust platform-level controls.",
+        "ja": "サンドボックス化された環境でLLMを利用する場合とは異なり、Google Sheetsのようなツールとの直接連携は、プロンプトエンジニアリングだけでは対処しきれない攻撃経路を生み出し、プラットフォームレベルでの強固な制御が求められます。"
+      },
+      "tokyoTake": {
+        "en": "Japanese firms, particularly those handling sensitive customer data, must assess their Google Workspace security policies. The default trust in cloud productivity tools combined with LLM access could create unforeseen compliance risks.",
+        "ja": "日本の企業、特に機密性の高い顧客データを扱う組織は、Google Workspaceのセキュリティポリシーを見直す必要があります。クラウド生産性ツールへの信頼とLLMアクセスが組み合わさることで、予期せぬコンプライアンスリスクが生じ得ます。"
+      }
+    },
+    "source": {
+      "name": "Hacker News Top",
+      "url": "https://www.promptarmor.com/resources/gpt-for-google-sheets-data-exfiltration"
+    },
+    "sourceGuid": "https://news.ycombinator.com/item?id=48349487",
+    "status": "published"
+  },
+  {
+    "slug": "ai-uncovers-data-center-secrecy-a-new-era-for-environmental-accountability",
+    "category": "workflow",
+    "issue": "Vol. 01",
+    "publishedAt": "2026-05-31T21:05:14.000Z",
+    "readingMinutes": 5,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
+    },
+    "title": {
+      "en": "AI Uncovers Data Center Secrecy: A New Era for Environmental Accountability",
+      "ja": "AIが暴くデータセンターの不透明性：環境アカウンタビリティの新時代"
+    },
+    "dek": {
+      "en": "A new AI platform aims to shed light on the hidden environmental and social impacts of rapidly expanding AI data centers, prompting calls for greater transparency.",
+      "ja": "急速に拡大するAIデータセンターの隠れた環境・社会影響を明らかにする新AIプラットフォームが登場。より高い透明性への要求が高まる。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo, May 31, 2026",
+      "ja": "東京、2026年5月31日"
+    },
+    "tags": [
+      {
+        "en": "ESG",
+        "ja": "ESG"
+      },
+      {
+        "en": "Infrastructure",
+        "ja": "インフラ"
+      },
+      {
+        "en": "Transparency",
+        "ja": "透明性"
+      }
+    ],
+    "body": {
+      "en": [
+        "A new AI-driven investigative platform is emerging to expose the environmental and social impacts of data centers. It aggregates and analyzes disparate public records, from utility consumption data to local zoning permits, to create a comprehensive risk profile for these large-scale facilities.",
+        "This platform addresses the growing opacity around infrastructure projects that house the compute power for modern AI. By leveraging advanced data analytics and large language models (LLMs), it can identify patterns and anomalies often missed by human investigation, revealing potential ecological strain or community disruption.",
+        "The emergence of such tools highlights a broader demand for accountability in the AI era. As global AI adoption accelerates, the physical footprint of its supporting infrastructure—particularly its energy and water demands—is under increasing scrutiny.",
+        "> \"The opacity surrounding data center operations is no longer sustainable.\""
+      ],
+      "ja": [
+        "データセンターが環境や社会に与える影響を明らかにするAIプラットフォームが登場した。このツールは、電力消費データから地方の区画許可まで、散在する公開記録を集約・分析し、大規模施設のリスクプロファイルを包括的に提示する。",
+        "現代AIの演算能力を支えるインフラプロジェクトの不透明性に対処するもので、高度なデータ分析とLLM（大規模言語モデル）を活用し、人間の調査では見過ごされがちなパターンや異常を特定する。これにより、潜在的な生態系への負荷や地域社会への影響が浮き彫りになる。",
+        "この種のツールの出現は、AI時代における説明責任への広範な要求を浮き彫りにする。グローバルなAI導入が加速するにつれて、その基盤となるインフラ、特にエネルギーと水の使用量に対する物理的フットプリントへの監視はますます厳しくなっている。",
+        "> 「データセンター運営を取り巻く不透明性は、もはや持続可能ではない。」"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "For Tokyo-based professionals, this development underscores a critical, often overlooked aspect of AI adoption: its physical and environmental cost. While Japan boasts high energy efficiency standards for data centers, the sheer scale of future AI demand necessitates rigorous transparency. Japanese firms involved in AI development or deployment, especially those with global supply chains, must proactively assess and disclose the environmental footprint of their computational infrastructure.",
+        "The increasing scrutiny on data center operations, even if primarily focused on Western markets initially, will inevitably influence global standards and investor expectations. Companies like SoftBank, which operates large data centers, or those utilizing cloud infrastructure extensively, should anticipate growing demands for detailed ESG reporting specific to AI compute. This is not merely a compliance issue but a brand and talent retention challenge.",
+        "Furthermore, as humanity contemplates expanding its digital and physical presence beyond Earth, the lessons learned from managing terrestrial infrastructure — particularly the need for transparency and sustainable resource management — will become paramount. Ensuring accountability for off-world data centers, whether on the Moon or Mars, will be a foundational challenge for future extraterrestrial development."
+      ],
+      "ja": [
+        "東京のビジネスプロフェッショナルにとって、この動向はAI導入における見過ごされがちな側面、すなわちその物理的・環境的コストを浮き彫りにする。日本はデータセンターのエネルギー効率において高い水準を誇るが、将来的なAI需要の規模を考慮すると、厳格な透明性が不可欠となる。AI開発や導入に関わる日本企業、特にグローバルなサプライチェーンを持つ企業は、計算インフラの環境負荷を積極的に評価し、開示する必要がある。",
+        "データセンター運営への監視強化は、たとえ当初は欧米市場が中心であっても、必然的にグローバルな基準や投資家の期待に影響を与えるだろう。大規模なデータセンターを運営するソフトバンクや、クラウドインフラを多用する企業は、AIコンピューティングに特化した詳細なESG報告への要求が高まることを予期すべきだ。これは単なるコンプライアンス問題ではなく、ブランド価値や人材確保にも関わる課題である。",
+        "さらに、人類が地球外へのデジタルおよび物理的プレゼンス拡大を検討する中で、地球上のインフラ管理、特に透明性と持続可能な資源管理の必要性から得られた教訓は極めて重要になる。月や火星でのデータセンター運営において説明責任を確保することは、将来の地球外開発における根本的な課題となるだろう。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "AI platform for uncovering hidden data center impacts.",
+        "ja": "データセンターの隠れた影響を暴くAIプラットフォーム。"
+      },
+      "useCase": {
+        "en": "For environmental advocates or legal teams in Tokyo investigating the local impact of large infrastructure, this AI provides a consolidated view of potential risks and non-compliance.",
+        "ja": "大規模インフラの地域影響を調査する東京の環境活動家や法務チーム向けに、AIが潜在的リスクと不遵守の統合的視点を提供する。"
+      },
+      "vsCompetitor": {
+        "en": "Unlike manual investigative journalism or traditional legal research, this platform uses AI to rapidly cross-reference vast datasets, making hidden patterns visible.",
+        "ja": "従来の手動調査や法務リサーチと異なり、AIが膨大なデータセットを高速で相互参照し、隠れたパターンを可視化する。"
+      },
+      "tokyoTake": {
+        "en": "Tokyo's dense urban environment and strict regulatory landscape mean data center expansion faces unique challenges. This tool highlights the need for transparency, especially as AI adoption drives further infrastructure demand. Japanese firms must consider their supply chain's environmental footprint.",
+        "ja": "東京の密集した都市環境と厳格な規制は、データセンター拡張に特有の課題を突きつける。本ツールは透明性の必要性を浮き彫りにし、AI普及によるインフラ需要増大がサプライチェーンの環境負荷に与える影響を、日本企業も考慮する必要がある。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/05/31/erin-brockovich-takes-aim-at-data-center-secrecy/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3128084",
+    "status": "published"
+  },
+  {
+    "slug": "meta-introduces-subscriptions-across-core-platforms-hints-at-ai-integration",
+    "category": "workflow",
+    "issue": "Vol. 01",
+    "publishedAt": "2026-05-31T17:02:23.000Z",
+    "readingMinutes": 4,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101010"
+    },
+    "title": {
+      "en": "Meta Introduces Subscriptions Across Core Platforms, Hints at AI Integration",
+      "ja": "Metaが主要プラットフォームでサブスク開始、AI機能統合を示唆"
+    },
+    "dek": {
+      "en": "Meta is rolling out subscription options for Instagram, Facebook, and WhatsApp, signaling a long-term strategy that includes future AI-driven features as a premium offering.",
+      "ja": "MetaがInstagram、Facebook、WhatsAppでサブスクリプションを導入。将来的なAI機能の統合をプレミアムサービスとして視野に入れている。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo, May 2026",
+      "ja": "東京, 2026年5月"
+    },
+    "tags": [
+      {
+        "en": "Social Media",
+        "ja": "ソーシャルメディア"
+      },
+      {
+        "en": "Monetization",
+        "ja": "収益化"
+      },
+      {
+        "en": "Subscription",
+        "ja": "サブスクリプション"
+      },
+      {
+        "en": "AI Strategy",
+        "ja": "AI戦略"
+      }
+    ],
+    "body": {
+      "en": [
+        "Meta has begun offering subscription tiers across its primary social platforms: Instagram, Facebook, and WhatsApp. This move signifies a shift towards direct monetization beyond advertising, aiming to diversify revenue streams from its vast user base.",
+        "While the initial subscription benefits focus on ad-free experiences or enhanced customer support, Meta has indicated that future AI capabilities will be integrated into these paid offerings. This positions AI not merely as a free utility but as a premium feature designed to enhance user engagement or provide new functionalities for subscribers.",
+        "The strategy reflects a broader trend among major tech companies to leverage AI as a value-add for subscription services. For Meta, it represents an attempt to redefine the utility of its platforms, moving beyond mere social connection to offer more sophisticated tools, potentially impacting how businesses and individuals manage their online presence.",
+        "> \"more to come, including AI plans\""
+      ],
+      "ja": [
+        "Metaは、Instagram、Facebook、WhatsAppといった主要ソーシャルプラットフォームでサブスクリプションプランの提供を開始した。これは広告収入に依存しない直接的な収益化への転換を示唆しており、広大なユーザーベースからの収益源多様化を狙っている。",
+        "現時点でのサブスクリプション特典は、広告非表示や強化されたカスタマーサポートが中心だが、Metaは将来的にAI機能をこれらの有料プランに統合する意向を示している。これにより、AIは単なる無料ツールではなく、ユーザーエンゲージメントを高めたり、新たな機能を提供するためのプレミアム機能として位置づけられる。",
+        "この戦略は、大手テクノロジー企業がAIをサブスクリプションサービスの付加価値として活用する広範なトレンドを反映している。Metaにとっては、プラットフォームの有用性を再定義し、単なるソーシャルコネクションを超えて、より高度なツールを提供することで、企業や個人のオンラインプレゼンス管理に影響を与える可能性を秘めている。",
+        "> 「将来的なAI機能の統合も視野に入れている」"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "For a business professional in Tokyo, Meta's subscription push with AI integration presents a nuanced picture. While Instagram remains a strong platform for lifestyle marketing and e-commerce in Japan, Facebook's general user penetration is less dominant compared to local alternatives like LINE. The immediate impact of these subscriptions on a Tokyo-based marketer or small business owner will depend heavily on the specific AI features rolled out.",
+        "If the AI tools offer genuinely unique capabilities—say, advanced content generation tailored for Japanese cultural nuances, or sophisticated audience targeting that outperforms existing ad tools—they might justify the cost. However, if they are generic wrappers around common LLMs, or offer features already available through cheaper Japanese SaaS solutions or even free AI tools, adoption will be slow. Japanese businesses tend to be pragmatic about new expenses, especially for tools that don't offer a clear ROI or superior localization.",
+        "The challenge for Meta in Japan will be to demonstrate how these premium AI features specifically enhance local workflows. Will they help draft compelling Japanese ad copy, analyze local market trends with greater accuracy, or facilitate cross-cultural communication more effectively? Without strong localization and a clear value proposition for the Japanese market, these subscription-based AI offerings may struggle to gain significant traction among Tokyo professionals who already navigate a diverse ecosystem of local and global digital tools."
+      ],
+      "ja": [
+        "東京のビジネスプロフェッショナルにとって、MetaのAI統合型サブスクリプション戦略は複雑な意味合いを持つ。日本ではInstagramがライフスタイルマーケティングやEコマースで強い影響力を持つ一方、Facebookの一般的なユーザー浸透率はLINEなどの国内サービスに比べて低い。このサブスクリプションが東京のマーケターや中小企業オーナーに与える直接的な影響は、提供されるAI機能の具体性にかかっている。",
+        "もしAIツールが、日本の文化的ニュアンスに合わせた高度なコンテンツ生成や、既存の広告ツールを上回る洗練されたオーディエンスターゲティングなど、真にユニークな機能を提供するのであれば、そのコストは正当化されるだろう。しかし、それが汎用的なLLMのラッパーに過ぎなかったり、より安価な日本のSaaSソリューションや無料のAIツールで既に利用できる機能と重複するものであれば、導入は進まない。日本の企業は新しい費用に対して実用性を重視する傾向があり、明確なROIや優れたローカライゼーションがないツールへの投資には慎重だ。",
+        "Metaが日本で直面する課題は、これらのプレミアムAI機能がどのようにして現地のワークフローを具体的に強化できるかを実証することだろう。魅力的な日本語広告コピーの作成、日本市場トレンドのより正確な分析、あるいは異文化間コミュニケーションの効率化に役立つのか。強力なローカライゼーションと日本市場向けの明確な価値提案がなければ、これらのサブスクリプション型AIサービスは、国内外の多様なデジタルツールを使いこなす東京のプロフェッショナルの間で大きな支持を得るのに苦戦するかもしれない。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "Meta monetizes social apps; AI features are a future premium.",
+        "ja": "Meta、SNS課金化。AI機能は将来のプレミアム。"
+      },
+      "useCase": {
+        "en": "For social media marketers and content creators who rely on Meta platforms, potentially offering enhanced tools for audience engagement or content optimization, assuming the AI features are robust and well-localized.",
+        "ja": "Metaプラットフォームを利用するソーシャルメディアマーケターやコンテンツクリエイター向け。AI機能が堅牢で現地化されていれば、エンゲージメントやコンテンツ最適化ツールを強化する可能性がある。"
+      },
+      "vsCompetitor": {
+        "en": "This competes less with specific AI tools and more with the free versions of Meta's own platforms, positioning future AI capabilities as a differentiator for paid tiers against the current ad-supported model.",
+        "ja": "特定のAIツールというより、Meta自身の無料プラットフォームと競合。将来のAI機能を、現在の広告ベースモデルに対する有料プランの差別化要因として位置づけている。"
+      },
+      "tokyoTake": {
+        "en": "While Instagram is strong in Japan, the overall impact hinges on whether future AI features offer genuinely localized value beyond generic LLM wrappers, or if they simply duplicate what existing Japanese SaaS or free tools already provide effectively.",
+        "ja": "日本ではInstagramは強いが、全体的な影響は、将来のAI機能が汎用LLMのラッパーを超え、真にローカライズされた価値を提供するか、既存の日本SaaSや無料ツールを単に重複させるかにかかっている。"
+      }
+    },
+    "source": {
+      "name": "Hacker News Top",
+      "url": "https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/"
+    },
+    "sourceGuid": "https://news.ycombinator.com/item?id=48347354",
+    "status": "published"
+  },
+  {
+    "slug": "navigating-the-ai-psychosis-debate-implications-for-professional-trust",
+    "category": "llm-tools",
+    "issue": "Vol. 01",
+    "publishedAt": "2026-05-31T15:30:00.000Z",
+    "readingMinutes": 4,
+    "feature": false,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
+    },
+    "title": {
+      "en": "Navigating the 'AI Psychosis' Debate: Implications for Professional Trust",
+      "ja": "「AIサイコシス」論争：プロフェッショナルの信頼性への影響を読み解く"
+    },
+    "dek": {
+      "en": "The emerging discussion around AI psychosis challenges the reliability of advanced models, urging a re-evaluation of human oversight in critical workflows.",
+      "ja": "「AIサイコシス」を巡る議論は、高度なモデルの信頼性に疑問を投げかけ、重要なワークフローにおける人間の監視の再評価を促す。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo, May 31, 2026",
+      "ja": "東京, 2026年5月31日"
+    },
+    "tags": [
+      {
+        "en": "AI Reliability",
+        "ja": "AIの信頼性"
+      },
+      {
+        "en": "LLM Behavior",
+        "ja": "LLMの挙動"
+      },
+      {
+        "en": "Human Oversight",
+        "ja": "人間の監視"
+      },
+      {
+        "en": "Workflow Integration",
+        "ja": "ワークフロー統合"
+      }
+    ],
+    "body": {
+      "en": [
+        "The concept of \"AI psychosis\" describes a debate over AI models exhibiting persistent, internally inconsistent, or seemingly delusional outputs, moving beyond simple factual hallucinations. It suggests that an AI system might maintain a flawed \"belief\" or narrative over time, rather than just making isolated mistakes.",
+        "This phenomenon poses a significant challenge to professionals integrating AI into critical workflows. The reliability of AI-generated reports, code, or strategic analyses comes into question when the system itself may be operating from a consistently flawed internal state. It underscores the ongoing necessity for robust human verification and oversight, especially for high-stakes tasks.",
+        "Technically, understanding the root causes of such persistent errors — whether stemming from training data biases, model architecture, or prompt sensitivity — remains a complex research frontier. The goal is to develop AI systems that not only provide accurate information but also exhibit transparent and consistent reasoning, allowing users to trust their outputs more fully.",
+        "> The debate centers on whether AI exhibits a consistent, internally coherent form of error, rather than isolated factual mistakes."
+      ],
+      "ja": [
+        "「AIサイコシス」とは、単なる事実誤認を超え、AIが継続的に内部矛盾を抱えたり、誤った「信念」を保持し続ける現象を巡る議論である。これは、AIの出力が一貫して信頼できるかという根本的な問いを投げかける。",
+        "この議論は、ビジネスにおけるAIの活用法に直接的な影響を与える。特に、重要な意思決定支援や長文コンテンツ生成において、AIの生成物を鵜呑みにすることの危険性を示唆し、人間による厳格な検証プロセスが不可欠であることを強調する。",
+        "技術的な観点からは、この現象のメカニズム解明と対策が課題だ。トレーニングデータ、モデル構造、プロンプトの設計が、AIの「精神状態」にどう影響するか、その理解が求められている。",
+        "> AIが単発的な事実誤認ではなく、一貫した内部矛盾を伴うエラーを示すかどうかが議論の焦点となっている。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "For Tokyo professionals, the \"AI psychosis\" debate underscores a critical need for caution. While AI tools offer efficiency, the risk of persistent, subtle errors in Japanese-language output could be higher due to fewer high-quality, domain-specific Japanese datasets. Relying solely on AI for sensitive reports or client communications remains risky.",
+        "This highlights the ongoing value of human expertise and oversight in Japan's business culture, which often prioritizes accuracy and nuance. Companies like ELYZA and Sakana AI, focusing on Japanese-specific models and robustness, are implicitly addressing these reliability concerns by building models attuned to local language and context. Their efforts could mitigate some of these \"psychosis\" risks.",
+        "The \"off-world\" implication suggests future applications in high-stakes, isolated environments. For Tokyo, this translates to critical infrastructure management or advanced robotics where AI reliability is non-negotiable. The lessons learned about AI trustworthiness today will be crucial for any future integration into Japan's smart city initiatives or disaster response systems, where errors could have severe consequences."
+      ],
+      "ja": [
+        "東京のビジネスプロフェッショナルにとって、「AIサイコシス」の議論は、AI活用における慎重さの重要性を浮き彫りにする。日本語の高品質なデータセットが英語圏に比べて少ない現状では、AIが生成する日本語出力に、より持続的かつ微妙な誤りが生じるリスクがある。機密性の高い報告書や顧客向けコミュニケーションにおいて、AIのみに依存することは依然として危険だ。",
+        "これは、正確性とニュアンスを重視する日本のビジネス文化において、人間の専門知識と監視が引き続き不可欠であることを示唆する。ELYZAやSakana AIのような国内企業が日本語特化型モデルや堅牢性向上に注力しているのは、このような信頼性への懸念に間接的に応えていると言えるだろう。彼らの取り組みは、ローカルな言語と文脈に合わせたモデルを構築することで、この種の「サイコシス」現象のリスクを低減する可能性を秘めている。",
+        "「オフワールド」という視点は、将来的には高リスクな孤立環境でのAI応用を示唆する。東京においては、これは重要なインフラ管理や高度なロボティクスへの応用と読み替えられる。AIの信頼性に関する今日の教訓は、日本のスマートシティ構想や災害対応システムにAIを統合する将来において不可欠となる。そこでは、わずかなエラーが甚大な結果を招きかねないため、AIの「精神状態」を管理する技術が求められるだろう。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "Understanding AI's erratic behavior is key to reliable integration.",
+        "ja": "AIの不安定な挙動を理解し、信頼できる統合へ。"
+      },
+      "useCase": {
+        "en": "For any professional relying on LLMs for critical information or content generation, this debate underscores the need for vigilant verification and robust human oversight.",
+        "ja": "LLMを重要な情報収集やコンテンツ生成に用いるプロフェッショナルが、AIの出力を検証し、人間の監視を強化する必要性を再認識するための論点。"
+      },
+      "vsCompetitor": {
+        "en": "Unlike simple hallucination, AI psychosis suggests a deeper, persistent deviation, challenging the reliability promised by even advanced models like GPT-4o or Claude 3.5 for continuous, high-stakes tasks.",
+        "ja": "単なるハルシネーションと異なり、AIサイコシスはより深く持続的な逸脱を示唆し、GPT-4oやClaude 3.5のような高度なモデルでも、高リスクの継続的なタスクにおける信頼性を問い直す。"
+      },
+      "tokyoTake": {
+        "en": "For Tokyo professionals, the debate around AI psychosis highlights the critical need for human oversight, especially with Japanese-language models. Local players like ELYZA and Sakana AI, focusing on robust Japanese-specific AI, are implicitly addressing these reliability concerns, which will be vital for future high-stakes applications in smart city infrastructure.",
+        "ja": "東京のプロフェッショナルにとって、AIサイコシス論争は、特に日本語モデルにおける人間の監視の重要性を強調する。ELYZAやSakana AIのような国内企業が日本語特化AIの堅牢性向上に注力するのは、これらの信頼性への懸念に対応しており、スマートシティインフラにおける将来の重要応用にとって不可欠となる。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/05/31/making-sense-of-the-debate-over-ai-psychosis/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3128061",
+    "status": "published"
+  },
+  {
+    "slug": "ai-accelerated-prototyping-the-new-pace-of-development",
+    "category": "dev-tools",
+    "issue": "Vol. 01",
+    "publishedAt": "2026-05-31T16:37:34.000Z",
+    "readingMinutes": 5,
+    "feature": false,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
+    },
+    "title": {
+      "en": "AI-Accelerated Prototyping: The New Pace of Development",
+      "ja": "AIによるプロトタイピング加速：開発の新たな速度"
+    },
+    "dek": {
+      "en": "Generative AI is reshaping software development by drastically shortening the prototyping cycle, enabling unprecedented iteration speed.",
+      "ja": "生成AIがプロトタイピングサイクルを劇的に短縮し、開発のイテレーション速度を未曾有のレベルに引き上げている。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "TOKYO",
+      "ja": "東京"
+    },
+    "tags": [
+      {
+        "en": "Prototyping",
+        "ja": "プロトタイピング"
+      },
+      {
+        "en": "Developer Tools",
+        "ja": "開発ツール"
+      },
+      {
+        "en": "Generative AI",
+        "ja": "生成AI"
+      },
+      {
+        "en": "Workflow Automation",
+        "ja": "ワークフロー自動化"
+      }
+    ],
+    "body": {
+      "en": [
+        "The ongoing evolution of AI is fundamentally transforming how software is built, particularly in the initial prototyping phases. Generative AI models are now capable of assisting with everything from initial code generation to UI scaffolding and even suggesting architectural patterns, significantly compressing the time required to move from a raw concept to a functional prototype.",
+        "This shift allows developers to validate ideas and build minimum viable products (MVPs) in hours or days, rather than weeks or months. The result is a lower barrier to entry for new innovations, fostering more aggressive experimentation and democratizing access to complex development tasks. It enables teams to explore a wider range of solutions and pivot more quickly based on early feedback.",
+        "> \"The real shift is not just faster coding, but faster *learning* through rapid iteration.\"",
+        "However, this acceleration is not without its caveats. While AI excels at generating initial drafts, the quality and robustness of AI-generated code still demand human oversight and refinement. For production-ready systems, thorough testing, security audits, and architectural hardening remain critical, meaning the \"speed\" often applies more to the ideation and initial implementation stages than to the final deployment."
+      ],
+      "ja": [
+        "AIの継続的な進化は、特にソフトウェア開発のプロトタイピング段階において、その構築方法を根本的に変えつつある。生成AIモデルは現在、初期コード生成からUIの足場作り、さらにはアーキテクチャパターンの提案までを支援し、生きたアイデアを機能的なプロトタイプへと移行させるのに必要な時間を大幅に短縮している。",
+        "この変化により、開発者は数週間や数ヶ月ではなく、数時間から数日でアイデアを検証し、最小実行可能製品（MVP）を構築できるようになった。その結果、新しいイノベーションへの参入障壁が低くなり、より積極的な実験が促進され、複雑な開発タスクへのアクセスが民主化される。これにより、チームはより幅広いソリューションを探索し、初期のフィードバックに基づいて迅速に方向転換することが可能になる。",
+        "「真の変化は、コーディングの高速化だけでなく、迅速な反復による『学習の高速化』にある」",
+        "しかし、この加速には注意点もある。AIは初期ドラフトの生成に優れているものの、AIが生成するコードの品質と堅牢性は依然として人間の監視と修正を必要とする。本番環境レベルのシステムでは、徹底的なテスト、セキュリティ監査、アーキテクチャの強化が依然として不可欠であり、「高速化」は最終的なデプロイメントよりも、アイデア出しと初期実装の段階により多く適用されることが多い。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "The acceleration of prototyping through AI offers a compelling vision globally. For Tokyo professionals, its immediate utility hinges on the practical availability and quality of Japanese-language-optimized AI development tools. While general-purpose LLMs like GPT-4o are accessible, specialized frameworks that deeply understand Japanese development patterns or integrate with local SaaS ecosystems are still nascent. Many Japanese organizations, particularly larger enterprises, maintain more conservative development cycles and may not immediately adopt such rapid prototyping methods without robust security and quality assurances.",
+        "The current landscape in Japan sees many developers leveraging raw OpenAI API or open-source models for specific tasks, rather than relying on fully integrated AI prototyping suites. Companies like ELYZA or Sakana AI are focusing on foundational models or specific applications, but a comprehensive, AI-driven prototyping platform tailored for the Japanese market, complete with local UI/UX conventions and integrations (e.g., with LINE WORKS or local payment systems), is not yet prevalent. This means Tokyo-based engineers often piece together solutions, which can negate some of the promised speed gains.",
+        "Looking beyond immediate business applications, the profound implications of AI-accelerated prototyping extend to humanity's most ambitious endeavors. By drastically shortening the development cycles for complex systems, AI could accelerate scientific discovery and engineering breakthroughs in fields critical for our collective future—from advanced robotics and sustainable energy to space exploration. For Tokyo, a global hub of high-tech manufacturing and precision engineering, this means a potential fast-track to contributing significantly to global efforts in these frontier domains. This cultural shift towards rapid iteration, even within traditionally cautious Japanese industries, could unlock new capacities, positioning Japan not just as a technology leader on Earth, but as a key player in shaping a broader, potentially \"off-world\" future."
+      ],
+      "ja": [
+        "AIによるプロトタイピングの加速は、世界的に見て魅力的なビジョンを提示する。東京のプロフェッショナルにとって、その即座の有用性は、日本語に最適化されたAI開発ツールの実用性と品質にかかっている。GPT-4oのような汎用LLMは利用可能だが、日本の開発パターンを深く理解し、ローカルのSaaSエコシステムと統合された専門的なフレームワークはまだ初期段階にある。特に大企業を中心とした多くの日本企業は、より保守的な開発サイクルを維持しており、堅牢なセキュリティと品質保証なしには、このような高速プロトタイピング手法をすぐには採用しないかもしれない。",
+        "現在の日本の開発現場では、完全に統合されたAIプロトタイピングスイートに頼るよりも、多くのエンジニアが特定のタスクのためにOpenAI APIやオープンソースモデルを直接活用している。ELYZAやSakana AIのような企業は基盤モデルや特定のアプリケーションに注力しているが、日本の市場向けにUI/UXやローカルサービス（LINE WORKSなど）との連携を考慮した包括的なAI駆動型プロトタイピングプラットフォームはまだ普及していない。このため、東京のエンジニアはしばしば複数のツールを組み合わせて対応しており、本来期待される速度向上のメリットが相殺されることもある。",
+        "さらに視野を広げると、AIによるプロトタイピング加速の深い含意は、人類の最も野心的な試みにまで及ぶ。複雑なシステムの開発サイクルを劇的に短縮することで、AIは、先進ロボット工学、持続可能エネルギー、宇宙探査といった、我々の集合的な未来にとって極めて重要な分野における科学的発見と工学的ブレークスルーを加速させる可能性がある。精密工学とハイテク製造の世界的拠点である東京にとって、これはこれらのフロンティア領域における地球規模の取り組みに大きく貢献するための潜在的な近道となる。伝統的に慎重な日本の産業界においても、迅速なイテレーションへの文化的なシフトが新たな能力を解き放ち、日本を地球上の技術リーダーとしてだけでなく、より広範な「地球外」の未来を形作る上での主要なプレイヤーとして位置づける可能性を秘めている。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "AI-driven prototyping tools accelerate iteration cycles.",
+        "ja": "AIがプロトタイピングと開発サイクルを加速。"
+      },
+      "useCase": {
+        "en": "For a Tokyo-based indie founder or startup engineer needing to rapidly validate new product concepts or build functional MVPs, leveraging AI to significantly reduce initial development time.",
+        "ja": "東京のインディーズ開発者やスタートアップのエンジニアが、AIを活用して新しいプロダクトの概念検証やMVP構築にかかる時間を大幅に短縮し、迅速な市場投入を目指す際に。"
+      },
+      "vsCompetitor": {
+        "en": "This approach differs from traditional manual coding or even basic low-code platforms by integrating generative AI directly into the design and development loop, allowing for dynamic code generation and iterative refinement.",
+        "ja": "従来のコーディングや既存のローコードプラットフォームとは異なり、生成AIを設計・開発プロセスに直接組み込むことで、動的なコード生成と反復的な改善を可能にする。"
+      },
+      "tokyoTake": {
+        "en": "While AI-accelerated prototyping offers universal value, its direct impact in Tokyo depends on the availability of robust, Japanese-language-optimized AI dev tools, which are still emerging.",
+        "ja": "AIによるプロトタイピング加速は普遍的価値を持つが、東京での具体的な効果は、日本語に最適化されたAI開発ツールの普及にかかっている。"
+      }
+    },
+    "source": {
+      "name": "Hacker News Top",
+      "url": "https://darylcecile.net/notes/speed-of-prototyping-age-of-ai"
+    },
+    "sourceGuid": "https://news.ycombinator.com/item?id=48347153",
+    "status": "published"
+  },
+  {
+    "slug": "softbanks-strategic-play-for-european-ai-compute",
+    "category": "dev-tools",
+    "issue": "Vol. 01",
+    "publishedAt": "2026-05-30T21:45:00.000Z",
+    "readingMinutes": 5,
+    "feature": false,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
+    },
+    "title": {
+      "en": "SoftBank's Strategic Play for European AI Compute",
+      "ja": "ソフトバンク、欧州AI計算資源確保への戦略的布石"
+    },
+    "dek": {
+      "en": "SoftBank plans a significant investment in French data centers, signaling a strategic push into foundational AI compute amid global competition and the quest for energy-efficient infrastructure.",
+      "ja": "ソフトバンクがフランスでデータセンターに巨額投資を計画。AI計算資源を巡る国際競争とエネルギー効率の高いインフラ構築への戦略的注力を示す。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "2026-05-30",
+      "ja": "2026年5月30日"
+    },
+    "tags": [
+      {
+        "en": "AI Infrastructure",
+        "ja": "AIインフラ"
+      },
+      {
+        "en": "Data Centers",
+        "ja": "データセンター"
+      },
+      {
+        "en": "Compute",
+        "ja": "計算資源"
+      },
+      {
+        "en": "SoftBank",
+        "ja": "ソフトバンク"
+      }
+    ],
+    "body": {
+      "en": [
+        "SoftBank is preparing to invest up to €75 billion in France to develop a network of advanced data centers. This move positions the Japanese conglomerate as a key player in the European AI infrastructure landscape, addressing the escalating global demand for high-performance computing.",
+        "The investment is not merely financial; it represents a strategic commitment to securing critical compute capacity for the burgeoning AI industry. As demand for model training and AI service deployment grows, access to robust data center infrastructure becomes a national and corporate priority, influencing everything from data sovereignty to regulatory compliance.",
+        "This push into European infrastructure highlights the increasing importance of energy supply and localized data processing in the global AI race. Establishing such large-scale facilities aims to mitigate concerns around data egress and strengthen regional digital autonomy within the EU.",
+        "> SoftBank says it will invest up to €75 billion to build French data centers.",
+        "The focus on France also underscores a broader trend: the decentralization of AI compute away from traditional hubs, driven by geopolitical considerations and the need for diverse, resilient infrastructure to power the next generation of AI applications."
+      ],
+      "ja": [
+        "ソフトバンクはフランスで最大750億ユーロを投資し、先進的なデータセンター網の開発を進める計画だ。この動きは、高性能コンピューティングに対する世界的な需要の高まりに対応するため、日本のコングロマリットが欧州のAIインフラ領域で主要なプレーヤーとしての地位を確立するものである。",
+        "この投資は単なる資金提供ではなく、急成長するAI産業にとって不可欠な計算能力を確保するための戦略的コミットメントを示す。モデル訓練やAIサービス展開への需要が高まる中、堅牢なデータセンターインフラへのアクセスは、データ主権から規制遵守まであらゆる側面に影響を与える国家および企業の優先事項となる。",
+        "欧州インフラへのこの注力は、世界のAI競争におけるエネルギー供給とローカライズされたデータ処理の重要性の高まりを浮き彫りにする。大規模施設の設立は、データ流出に関する懸念を軽減し、EU圏内での地域的なデジタル自律性を強化することを目的としている。",
+        "> ソフトバンクはフランスでデータセンターを建設するために最大750億ユーロを投資すると述べている。",
+        "フランスへの焦点は、地政学的要因と、次世代AIアプリケーションを支えるための多様で回復力のあるインフラの必要性によって、AI計算能力が従来のハブから分散化するという広範なトレンドも示唆している。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "SoftBank's substantial investment in European data centers underscores a global strategic pivot towards securing AI compute capacity. For a business professional in Tokyo, this news, while geographically distant, is a stark reminder of the foundational infrastructure required to sustain an AI economy. Japan, with its high energy costs and limited land availability in urban centers, faces unique challenges in scaling similar domestic initiatives.",
+        "Currently, Japanese AI developers, from startups like Sakana AI to established enterprises, largely depend on hyperscale cloud providers like AWS, Google Cloud, and Azure, often leveraging regions outside Japan for cutting-edge GPU access. While there are efforts to build domestic supercomputing capabilities, such as those at RIKEN or through private initiatives like Preferred Networks' MN-Core, they are not yet at the scale seen in the US or Europe for broad commercial AI development.",
+        "The implication for Tokyo professionals is clear: the global race for AI compute capacity is intensifying. While SoftBank makes its move in France, Japan must accelerate its own strategy for energy-efficient, localized AI infrastructure. Without it, the promise of AI innovation, whether in financial services, manufacturing, or consumer tech, risks being bottlenecked by a lack of accessible and cost-effective compute resources within the home market. This is not just about technology; it is about national economic resilience in the AI era."
+      ],
+      "ja": [
+        "ソフトバンクによる欧州でのデータセンターへの巨額投資は、AI計算能力確保に向けた世界的な戦略転換を浮き彫りにする。東京のビジネスパーソンにとって、このニュースは地理的には遠いものの、AI経済を支えるために不可欠な基盤インフラの重要性を強く想起させる。高エネルギーコストと都市部での限られた土地という課題を抱える日本は、同様の国内イニシアチブをスケールさせる上で特有の困難に直面している。",
+        "現在、Sakana AIのようなスタートアップから既存の大企業に至るまで、日本のAI開発者は、最先端のGPUアクセスを求め、AWS、Google Cloud、Azureといったハイパースケールクラウドプロバイダー、特に海外リージョンに大きく依存しているのが現状だ。理化学研究所の富岳やPreferred NetworksのMN-Coreのような国内スパコン能力構築の取り組みはあるものの、商用AI開発向けとしては、米国や欧州で見られる規模にはまだ達していない。",
+        "東京のプロフェッショナルにとっての示唆は明確だ。AI計算能力を巡る世界的競争は激化している。ソフトバンクがフランスで動く中、日本はエネルギー効率の高い、ローカライズされたAIインフラ構築戦略を加速させる必要がある。それがなければ、金融サービス、製造業、消費者向けテックなど、あらゆる分野でのAIイノベーションの可能性は、国内市場におけるアクセスしやすく費用対効果の高い計算資源の不足によって阻害されるリスクがある。これは単なる技術の話ではなく、AI時代における国家経済のレジリエンスに関わる問題だ。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "SoftBank builds foundational AI compute infrastructure in Europe.",
+        "ja": "ソフトバンク、欧州でAI計算基盤を構築。"
+      },
+      "useCase": {
+        "en": "For European AI startup founders or enterprise AI leads seeking stable, localized compute resources for model training and deployment, this investment signals future availability and potentially reduced data sovereignty concerns.",
+        "ja": "安定したローカル計算資源を求める欧州のAIスタートアップ創業者や企業AI担当者にとって、将来の計算資源確保とデータ主権懸念の軽減に繋がるシグナルとなる。"
+      },
+      "vsCompetitor": {
+        "en": "This initiative competes with existing hyperscale cloud providers (AWS, Azure, GCP) by offering new, potentially sovereign, compute capacity, rather than simply reselling their services, aiming for greater regional control and efficiency.",
+        "ja": "既存のハイパースケールクラウドプロバイダー（AWS, Azure, GCP）とは異なり、新たな、場合によっては主権的な計算能力を提供することで競合し、より地域的な制御と効率性を目指す。"
+      },
+      "tokyoTake": {
+        "en": "While a European play, this highlights the global race for AI compute. Japan faces similar challenges in securing domestic, energy-efficient AI infrastructure; local players like Preferred Networks or ELYZA still rely heavily on existing cloud or smaller-scale domestic clusters, underscoring a strategic gap.",
+        "ja": "欧州での動きだが、AI計算資源を巡る世界的競争を浮き彫りにする。日本も同様に国内でのエネルギー効率の高いAIインフラ確保が課題であり、Preferred NetworksやELYZAといった国内プレイヤーは既存クラウドや小規模クラスターに依然として大きく依存しており、戦略的なギャップを浮き彫りにする。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/05/30/softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3128041",
+    "status": "published"
+  },
+  {
     "slug": "openrouter-secures-series-b-to-streamline-llm-access",
     "category": "dev-tools",
     "issue": "Vol. 01",
@@ -473,8 +1047,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Shift's Free Data Cleaning: A Closer Look at the AI Data Pipeline",
@@ -565,8 +1139,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "The AI Coding Assistant Dilemma",
@@ -845,8 +1419,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0e10"
+      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101011"
     },
     "title": {
       "en": "Liquid AI's LFM2.5-8B: A New Contender in Efficient LLMs",
@@ -1503,8 +2077,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "YouTube Deploys AI for Video Categorization",
@@ -1784,7 +2358,7 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0a0a0c"
     },
     "title": {
@@ -2072,7 +2646,7 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0c0c0e"
     },
     "title": {
@@ -2258,8 +2832,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101011"
+      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "Minicor Bridges AI to Legacy Desktops with LLM-Driven RPA",
@@ -2354,8 +2928,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "OpenRouter: A Unified API for Diverse LLMs",
@@ -2446,8 +3020,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101012"
     },
     "title": {
       "en": "Local AI & Outsourcing: A Cost-Effective Alternative to Frontier Models",
@@ -2638,8 +3212,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
     },
     "title": {
       "en": "Norway's National LLM Ambitions and Huawei Infrastructure",
@@ -2926,8 +3500,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101010"
+      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
     },
     "title": {
       "en": "The Vatican's Stance on AI: Beyond the Algorithm",
@@ -3020,8 +3594,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "Chert: Bringing iMessage to Business Workflows at Scale",
@@ -3112,8 +3686,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "Off-World AI Ventures: The Next Frontier for Startup Capital",
@@ -3216,8 +3790,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "The Limits of LLMs in Expert Design: Claude and the Architect's Role",
@@ -3410,8 +3984,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0b0b0d"
+      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101012"
     },
     "title": {
       "en": "The Economics of AI Chips: Beyond Core Compute",
@@ -3598,8 +4172,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Ferrari's AI Fan Engagement: A Blueprint for Global Brands",
@@ -3696,7 +4270,7 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0c0c0e"
     },
     "title": {
@@ -3792,8 +4366,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "Voice Cloning Revives Historical Pilot Audio for Simulation",
@@ -3880,8 +4454,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "AI Recreates Deceased Voices from Sensitive Audio",
@@ -3976,8 +4550,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101011"
+      "src": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0d0f"
     },
     "title": {
       "en": "Wozniak on Apple's AI Direction",
@@ -4068,8 +4642,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0b0b0d"
+      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101012"
     },
     "title": {
       "en": "LLMs and OpenSCAD: A Benchmark for Programmatic 3D Design",
@@ -4164,8 +4738,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "US AI Security Order Delayed: Innovation Over Immediate Regulation",
