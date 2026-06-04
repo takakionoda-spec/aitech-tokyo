@@ -1,5 +1,573 @@
 [
   {
+    "slug": "verified-polygon-intersections-llms-aid-formal-proof",
+    "category": "dev-tools",
+    "issue": "Vol. 02",
+    "publishedAt": "2026-06-04T22:06:18.000Z",
+    "readingMinutes": 5,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0b0b0d"
+    },
+    "title": {
+      "en": "Verified Polygon Intersections: LLMs Aid Formal Proof",
+      "ja": "多角形交差の形式検証：LLMが証明生成を支援"
+    },
+    "dek": {
+      "en": "A new polygon intersection algorithm is formally verified with significant assistance from advanced LLMs, highlighting their evolving role in rigorous software development.",
+      "ja": "高度なLLMが多角形交差アルゴリズムの形式検証を大幅に支援。厳密なソフトウェア開発におけるLLMの役割の変化を示す。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo, June 4, 2026",
+      "ja": "東京, 2026年6月4日"
+    },
+    "tags": [
+      {
+        "en": "formal verification",
+        "ja": "形式検証"
+      },
+      {
+        "en": "LLM assistance",
+        "ja": "LLM支援"
+      },
+      {
+        "en": "geometry",
+        "ja": "幾何学"
+      },
+      {
+        "en": "software engineering",
+        "ja": "ソフトウェア工学"
+      }
+    ],
+    "body": {
+      "en": [
+        "A formally verified polygon intersection algorithm has been released, notable for the significant role advanced LLMs played in its development. This marks a step forward in applying AI agents to high-assurance software engineering tasks.",
+        "The developer reports that models like Opus 4.8 are now capable of generating algorithm implementations alongside their formal proofs in a single step. This contrasts with earlier models, which required the developer to provide detailed proof strategies over multiple iterations.",
+        "Crucially, the ultimate trust in the algorithm's correctness does not stem from the LLM itself. The dispatch clearly states: \"> Trust in the correctness comes entirely from the Lean checker and human review of a small specification, not from the LLM.\"",
+        "This output is a robust, provably correct algorithm with a web demo supporting complex geometries, including multi-polygons with holes, self-intersections, and overlapping edges. It demonstrates LLMs as powerful assistants in achieving mathematical rigor, rather than as autonomous truth-tellers."
+      ],
+      "ja": [
+        "形式的に検証された多角形交差アルゴリズムが公開された。その開発過程において、高度なLLMが重要な役割を果たした点が特筆される。これは、AIエージェントが厳密なソフトウェア工学タスクに応用される新たな段階を示唆する。",
+        "開発者によると、Opus 4.8のようなモデルは、アルゴリズムの実装と形式証明を一度に生成する能力を持つという。これは、以前のモデルが詳細な証明戦略を複数ステップで必要としていた状況からの大きな進歩である。",
+        "しかし、このアルゴリズムの正しさに対する最終的な信頼は、LLMそのものに依拠するものではない。元の情報には「> 正しさへの信頼は、LLMからではなく、Leanチェッカーと小さな仕様に対する人間のレビューから完全に得られる。」と明記されている。",
+        "本成果は、穴のあるマルチポリゴン、自己交差、重複エッジを含む複雑な幾何形状に対応する、堅牢で証明済みのアルゴリズムであり、ウェブデモも提供されている。LLMが自律的な真実の提供者ではなく、数学的な厳密性を達成するための強力なアシスタントとしての役割を果たすことを示している。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "Japan's engineering culture places a high premium on precision, reliability, and safety, especially in critical sectors like manufacturing, automotive, and infrastructure. Formal verification, which provides mathematical guarantees of correctness, aligns strongly with this ethos. While the current application of LLMs to formal proof generation is niche, its implications for high-assurance software are significant.",
+        "The key takeaway for Tokyo professionals is not that LLMs can replace human rigor, but that they can dramatically accelerate it. For Japanese firms that invest heavily in quality assurance and meticulous testing, the ability to leverage an LLM to draft or refine formal proofs could reduce development cycles and costs, without compromising on the bedrock principle of provable correctness.",
+        "Consider applications in robotics (e.g., Preferred Networks' work on safe autonomous systems), CAD/CAM software for precision manufacturing, or even advanced GIS for urban planning in complex environments like Tokyo. The integration of LLM-assisted formal verification could allow Japanese engineers to maintain their high standards while adopting cutting-edge tools to enhance efficiency.",
+        "However, the adoption of formal verification tools like Lean, and the expertise to effectively prompt and validate LLM outputs in this domain, are still developing in Japan. The challenge lies in building the human capital and organizational processes to integrate these advanced techniques into existing, often traditional, development workflows. This is a long-term play, but one that could reinforce Japan's competitive edge in quality-driven engineering."
+      ],
+      "ja": [
+        "日本のエンジニアリング文化は、特に製造、自動車、インフラなどの基幹産業において、精度、信頼性、安全性を極めて重視する。数学的な正当性を保証する形式検証は、この価値観と強く合致する。LLMが形式証明生成を支援するという今回の事例はニッチではあるが、高信頼性ソフトウェアへのその影響は大きい。",
+        "東京のプロフェッショナルにとっての重要な点は、LLMが人間の厳密性を代替するのではなく、それを劇的に加速する可能性にある。品質保証と綿密なテストに多大な投資を行う日本企業にとって、LLMを活用して形式証明をドラフトまたは洗練させる能力は、証明可能な正しさという根幹の原則を損なうことなく、開発サイクルとコストを削減する可能性がある。",
+        "例えば、Preferred Networksの自律システムにおける安全性検証、精密製造のためのCAD/CAMソフトウェア、あるいは東京のような複雑な都市環境における高度なGISなどへの応用が考えられる。LLM支援による形式検証の統合は、日本のエンジニアが高水準を維持しつつ、効率を高める最先端ツールを採用する道を開くだろう。",
+        "しかし、Leanのような形式検証ツールの導入や、この分野でLLMの出力を効果的にプロンプトし、検証するための専門知識は、日本ではまだ発展途上である。課題は、これらの高度な技術を既存の、しばしば伝統的な開発ワークフローに統合するための人材育成と組織プロセスの構築にある。これは長期的な取り組みとなるが、品質重視のエンジニアリングにおいて日本の競争力を強化する可能性を秘めている。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "LLM-assisted formal verification for polygon intersections.",
+        "ja": "LLM支援による多角形交差の形式検証。"
+      },
+      "useCase": {
+        "en": "For software engineers building critical geometry engines in fields like CAD or GIS, who need provably correct algorithms without extensive manual proof construction.",
+        "ja": "CADやGISなど、厳密な幾何学計算を要するシステムのソフトウェアエンジニアが、手動での証明構築なしに、形式的に正しいアルゴリズムを得るため。"
+      },
+      "vsCompetitor": {
+        "en": "This differs from traditional manual formal verification by integrating advanced LLMs (like Opus 4.8) to accelerate proof generation, significantly reducing the need for extensive human-guided proof strategies.",
+        "ja": "従来の形式検証が人間による詳細な証明戦略を必要とするのに対し、本アプローチはOpus 4.8のような高度なLLMを活用し、証明生成プロセスを加速させる点で異なる。"
+      },
+      "tokyoTake": {
+        "en": "While niche, this demonstrates LLMs' growing utility in high-assurance software, a domain where Japanese firms often prioritize robustness and precision.",
+        "ja": "ニッチながら、厳格な品質を重視する日本の製造業やインフラ分野のソフトウェア開発において、LLMの新たな価値を示す。"
+      }
+    },
+    "source": {
+      "name": "Hacker News Top",
+      "url": "https://github.com/schildep/verified-polygon-intersection"
+    },
+    "sourceGuid": "https://news.ycombinator.com/item?id=48405264",
+    "status": "published"
+  },
+  {
+    "slug": "anthropics-long-game-betting-on-foundational-ais-enduring-value",
+    "category": "llm-tools",
+    "issue": "Vol. 02",
+    "publishedAt": "2026-06-04T22:43:26.000Z",
+    "readingMinutes": 5,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
+    },
+    "title": {
+      "en": "Anthropic's Long Game: Betting on Foundational AI's Enduring Value",
+      "ja": "Anthropicの長期戦略：基盤モデルAIの持続的価値への確信"
+    },
+    "dek": {
+      "en": "Despite market skepticism, Anthropic reaffirms its conviction in the long-term economic impact of large language models, positioning Claude as a core enterprise asset.",
+      "ja": "市場の懐疑論をよそに、AnthropicはLLMの長期的経済効果への信念を再確認し、Claudeを中核的な企業資産と位置づける。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo, June 4, 2026",
+      "ja": "東京、2026年6月4日"
+    },
+    "tags": [
+      {
+        "en": "LLM",
+        "ja": "LLM"
+      },
+      {
+        "en": "Enterprise AI",
+        "ja": "企業AI"
+      },
+      {
+        "en": "Market Trends",
+        "ja": "市場トレンド"
+      }
+    ],
+    "body": {
+      "en": [
+        "Anthropic, a key developer of large language models, is signaling confidence in the sustained economic returns of foundational AI, even as broader market sentiment questions immediate profitability. This stance comes as the company navigates its path towards a potential public offering.",
+        "The core offering remains its Claude family of models, which compete directly with OpenAI's GPT series and Google's Gemini in enterprise deployments. These models are increasingly integrated into business workflows for tasks ranging from content generation to complex data analysis.",
+        "> \"The true value of foundational AI models will be realized over years, not quarters.\"",
+        "This strategic long-term view underscores a belief that the utility and efficiency gains provided by advanced LLMs will eventually translate into substantial, measurable business impact, moving beyond initial adoption phases."
+      ],
+      "ja": [
+        "主要な大規模言語モデル開発企業であるAnthropicは、広範な市場がAIの即時収益性を疑問視する中でも、基盤モデルAIの持続的な経済的リターンに対する自信を示している。この姿勢は、同社がIPOへの道を模索する中で表明された。",
+        "その中核となる製品はClaudeファミリーのモデルであり、OpenAIのGPTシリーズやGoogleのGeminiと企業導入で直接競合する。これらのモデルは、コンテンツ生成から複雑なデータ分析まで、ビジネスワークフローにますます統合されている。",
+        "> 「基盤モデルAIの真の価値は、四半期ごとではなく、年単位で実現されるでしょう。」",
+        "この戦略的な長期視点は、高度なLLMが提供する有用性と効率性の向上が、初期導入段階を超えて、最終的には実質的で測定可能なビジネスインパクトに繋がるという信念を強調している。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "For Tokyo professionals, Anthropic's continued focus on enterprise utility, despite market pressures, is a pertinent signal. While many Japanese firms are still in the early stages of LLM adoption, the stability and long-term commitment from a major player like Anthropic suggest that investing in robust AI strategies is not a fleeting trend.",
+        "However, the practical integration of Claude into Japanese business environments often faces hurdles. Many local companies still operate with legacy systems or prefer on-premise solutions, making direct cloud-based LLM adoption slower. Furthermore, while Claude offers strong multilingual capabilities, ensuring compliance with strict Japanese data privacy regulations and cultural nuances in output remains a key consideration.",
+        "Local alternatives like ELYZA or Sakana AI, while perhaps not yet at the scale of Claude, are developing models with a deep understanding of Japanese language and context, which could offer more tailored solutions for specific vertical applications within Japan. For the typical Tokyo professional, the immediate impact of this specific news might be limited beyond general market awareness, but it reinforces the long-term trajectory of AI as an essential business tool."
+      ],
+      "ja": [
+        "東京のビジネスプロフェッショナルにとって、市場の圧力にもかかわらずAnthropicが企業向けユーティリティに注力し続けることは、重要なシグナルである。多くの日本企業がLLM導入の初期段階にある中、Anthropicのような主要プレーヤーからの安定性と長期的なコミットメントは、堅牢なAI戦略への投資が一過性のトレンドではないことを示唆する。",
+        "しかし、Claudeを日本のビジネス環境に実際に統合する際には、依然として課題がある。多くの国内企業はレガシーシステムを使用しているか、オンプレミスソリューションを好むため、直接的なクラウドベースLLMの導入は遅れがちだ。さらに、Claudeは強力な多言語能力を持つものの、厳格な日本のデータプライバシー規制への準拠や、出力における文化的ニュアンスの確保は重要な検討事項となる。",
+        "ELYZAやSakana AIのような国内の代替案は、Claudeほどの規模ではないかもしれないが、日本語と文脈を深く理解したモデルを開発しており、日本国内の特定の垂直アプリケーションにより適したソリューションを提供する可能性がある。一般的な東京のプロフェッショナルにとって、この特定のニュースの直接的な影響は一般的な市場認識にとどまるかもしれないが、AIが不可欠なビジネスツールとしての長期的な軌道を強化するものである。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "Anthropic's long-term bet on foundational AI value.",
+        "ja": "基盤AIの価値に賭ける長期戦略"
+      },
+      "useCase": {
+        "en": "For a Tokyo-based CTO or strategic planner evaluating long-term AI investments, this signals a major player's confidence in foundational models beyond immediate returns.",
+        "ja": "長期的なAI投資を検討する東京のCTOや戦略立案者にとって、即時リターンを超えた基盤モデルへの主要プレーヤーの確信を示す。"
+      },
+      "vsCompetitor": {
+        "en": "Anthropic's Claude models compete directly with OpenAI's GPT series and Google's Gemini, differing in their explicit focus on safety and constitutional AI principles for enterprise deployments.",
+        "ja": "AnthropicのClaudeはOpenAIのGPTシリーズやGoogleのGeminiと競合し、特にエンタープライズ向けに安全性と憲法AI原則を重視する点で異なる。"
+      },
+      "tokyoTake": {
+        "en": "This news reinforces the long-term viability of LLMs for Tokyo businesses, but practical integration requires careful consideration of Japanese data regulations and the potential for locally optimized alternatives like ELYZA.",
+        "ja": "東京のビジネスにとってLLMの長期的な実現可能性を強化するが、実務的な統合には日本のデータ規制とELYZAのようなローカル最適化された代替案の可能性を慎重に検討する必要がある。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/06/04/ahead-of-its-ipo-anthropics-daniela-amodei-shrugs-off-doubts-about-ais-returns/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3129760",
+    "status": "published"
+  },
+  {
+    "slug": "local-voice-ai-assistant-aims-for-desktop-productivity",
+    "category": "workflow",
+    "issue": "Vol. 02",
+    "publishedAt": "2026-06-04T17:48:58.000Z",
+    "readingMinutes": 4,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
+    },
+    "title": {
+      "en": "Local Voice AI Assistant Aims for Desktop Productivity",
+      "ja": "ローカル完結型AI音声アシスタント「Hitoku Draft」が目指すデスクトップ生産性"
+    },
+    "dek": {
+      "en": "Hitoku Draft offers an open-source, local, voice-first AI assistant, integrating with desktop context for tasks like email replies and document queries.",
+      "ja": "デスクトップ環境と連携し、メール返信や文書問い合わせを音声で行うローカルAIアシスタント「Hitoku Draft」が登場。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo, June 4, 2026",
+      "ja": "東京, 2026年6月4日"
+    },
+    "tags": [
+      {
+        "en": "Local AI",
+        "ja": "ローカルAI"
+      },
+      {
+        "en": "Voice Assistant",
+        "ja": "音声アシスタント"
+      },
+      {
+        "en": "Productivity",
+        "ja": "生産性"
+      },
+      {
+        "en": "Open Source",
+        "ja": "オープンソース"
+      }
+    ],
+    "body": {
+      "en": [
+        "Hitoku Draft is an open-source, voice-first AI assistant designed to run entirely locally on a user's machine. It aims to integrate deeply with the desktop environment, offering context-aware assistance by reading screen content, documents, and active applications. This allows for tasks like querying PDFs, drafting email replies, and creating calendar events, all through voice commands.",
+        "The tool supports local LLMs such as Gemma 4 and Qwen 3.5 for text generation, alongside various STT backends. Its local-first approach prioritizes privacy and offers offline functionality, a distinct advantage over cloud-dependent alternatives. A compiled version is available for a one-time fee, with a free code offered for initial trials.",
+        "> \"outside tech circles other people still do not use this tech much.\"",
+        "This candid assessment from the developer highlights the current adoption challenge. While the project's ambition to make interactive local AI models a staple for professionals is clear, the path from technical novelty to widespread practical utility remains."
+      ],
+      "ja": [
+        "Hitoku Draftは、ユーザーのデバイス上で完全にローカル動作するオープンソースの音声ファーストAIアシスタントです。画面の内容、文書、アクティブなアプリケーションを読み取り、コンテキストを認識した支援を提供することを目指しています。これにより、PDF文書への質問、メールの下書き、カレンダーイベントの作成といったタスクをすべて音声コマンドで実行可能です。",
+        "テキスト生成にはGemma 4やQwen 3.5などのローカルLLMを、音声認識には複数のSTTバックエンドをサポートしています。クラウド依存型とは異なり、ローカル完結型のアプローチはプライバシー保護とオフラインでの利用を優先します。初回利用向けに無料コードも提供されており、買い切り型で利用できます。",
+        "> 「技術コミュニティの外では、この技術はまだあまり使われていない」",
+        "開発者自身のこの率直な評価は、現在の普及における課題を示唆しています。インタラクティブなローカルAIモデルをプロフェッショナルの標準ツールとすることを目指すプロジェクトの意欲は高いものの、技術的な新奇性から広範な実用性への道のりはまだこれからです。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "For a Tokyo-based professional, Hitoku Draft presents an intriguing concept, particularly its local-first approach. Privacy concerns are significant in Japan, and an offline voice assistant could theoretically appeal to firms handling sensitive data. However, the immediate practical utility is questionable. Many Japanese organizations still operate with older IT infrastructures, and the integration with specific local LLMs like Gemma 4 or Qwen 3.5 may not yet deliver the nuanced Japanese language processing required for formal business communication or complex document analysis.",
+        "Existing Japanese alternatives for transcription like Notta or PLAUD Note already offer high-quality Japanese voice-to-text, often with cloud-based AI that has been specifically tuned for the language. While Hitoku Draft's local operation is a differentiator, the quality of its Japanese STT and LLM output would need to significantly surpass these established options to justify adoption. Furthermore, the desktop-centric, voice-first workflow might not seamlessly fit into the often paper-heavy or meeting-intensive culture of some Japanese businesses without substantial customisation or training.",
+        "Ultimately, while the vision of ubiquitous local AI is compelling, Tokyo professionals should view Hitoku Draft as a promising early-stage project rather than an immediate productivity booster. The path to widespread adoption in Japan will depend heavily on robust, high-quality Japanese language support, seamless integration with common Japanese business software, and a clear demonstration of efficiency gains that outweigh the learning curve and potential compatibility issues. Waiting for a more mature cross-platform version with proven Japanese capabilities seems prudent."
+      ],
+      "ja": [
+        "東京のビジネスパーソンにとって、Hitoku Draftのローカル完結型というアプローチは興味深いものです。日本企業ではプライバシーへの意識が高く、オフラインで動作する音声アシスタントは機密情報を扱う企業にとって魅力的に映るかもしれません。しかし、現時点での実用性には疑問符が付きます。多くの日本企業は依然として古いITインフラを運用しており、Gemma 4やQwen 3.5といった特定のローカルLLMの統合が、日本のビジネスコミュニケーションに求められるようなニュアンスの日本語処理や複雑な文書分析に対応できるかは未知数です。",
+        "文字起こしに特化した既存の日本製ツール、例えばNottaやPLAUD Noteなどは、すでに高品質な日本語音声認識をクラウドベースで提供し、日本語に特化したチューニングが施されています。Hitoku Draftのローカル動作は差別化要因ですが、これらの確立された選択肢を上回る日本語の音声認識・LLM出力品質がなければ、採用の決め手にはなりにくいでしょう。また、デスクトップ中心の音声ファーストなワークフローは、紙媒体でのやり取りが多い、あるいは会議中心の日本のビジネス文化に、大きなカスタマイズやトレーニングなしでスムーズに適合するとは限りません。",
+        "結論として、ユビキタスなローカルAIのビジョンは魅力的ですが、東京のプロフェッショナルはHitoku Draftを、いますぐの生産性向上ツールというよりは、将来性のある初期段階のプロジェクトとして捉えるべきです。日本での普及には、堅牢で高品質な日本語対応、一般的な日本企業のソフトウェアとのシームレスな統合、そして学習コストや潜在的な互換性の問題を上回る明確な効率性向上が不可欠です。日本語対応が成熟し、クロスプラットフォーム版が登場するまで様子を見るのが賢明でしょう。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "Local, voice-first AI assistant for desktop context.",
+        "ja": "ローカル完結型、音声AIデスクトップアシスタント。"
+      },
+      "useCase": {
+        "en": "For a Tokyo-based knowledge worker managing multiple applications and documents, seeking a privacy-focused, voice-driven assistant to draft emails or query local files without cloud reliance.",
+        "ja": "東京のナレッジワーカーが、プライバシーを重視しつつ、ローカルファイルやアプリ連携でメール下書きや情報検索を音声で完結させたい場合に。"
+      },
+      "vsCompetitor": {
+        "en": "Unlike cloud-based assistants like ChatGPT or Notion AI, Hitoku Draft processes all data locally, offering enhanced privacy and offline capability, though its performance is dependent on local hardware.",
+        "ja": "ChatGPTのようなクラウドAIと異なり、Hitoku Draftは全処理をローカルで完結させるため、プライバシー保護とオフライン利用に優れる。ただし、性能はローカルハードウェアに依存する。"
+      },
+      "tokyoTake": {
+        "en": "This tool offers a compelling vision for local AI, but its current utility for Tokyo professionals is limited due to unproven Japanese language support and integration with common Japanese business workflows.",
+        "ja": "ローカルAIの可能性を示す一方で、日本語対応の品質や既存の日本ビジネスワークフローとの統合が、東京のプロフェッショナルにとっての実用性を左右する。"
+      }
+    },
+    "source": {
+      "name": "Hacker News Top",
+      "url": "https://hitoku.me/draft/"
+    },
+    "sourceGuid": "https://news.ycombinator.com/item?id=48402082",
+    "status": "published"
+  },
+  {
+    "slug": "airbnb-to-launch-dedicated-ai-lab",
+    "category": "workflow",
+    "issue": "Vol. 02",
+    "publishedAt": "2026-06-04T22:29:50.000Z",
+    "readingMinutes": 4,
+    "feature": false,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101010"
+    },
+    "title": {
+      "en": "Airbnb to Launch Dedicated AI Lab",
+      "ja": "Airbnb、AIラボ設立へ"
+    },
+    "dek": {
+      "en": "Airbnb's CEO announces a new AI lab to integrate artificial intelligence deeper into its platform, aiming to enhance global travel experiences for users and hosts.",
+      "ja": "AirbnbのCEOが新たなAIラボ設立計画を発表。AIをプラットフォームに深く統合し、世界中の旅行体験向上を目指す。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo, June 4, 2026",
+      "ja": "東京, 2026年6月4日"
+    },
+    "tags": [
+      {
+        "en": "Travel Tech",
+        "ja": "旅行テック"
+      },
+      {
+        "en": "Platform AI",
+        "ja": "プラットフォームAI"
+      },
+      {
+        "en": "Hospitality",
+        "ja": "ホスピタリティ"
+      }
+    ],
+    "body": {
+      "en": [
+        "Airbnb CEO Brian Chesky has announced plans to establish a dedicated AI lab, signaling a deeper integration of artificial intelligence into the global hospitality platform's future strategy. While details on specific projects remain sparse, the move indicates a focus on leveraging AI to enhance core services for both travelers and hosts.",
+        "This initiative is likely to explore improvements in areas such as personalized recommendations for accommodations and experiences, dynamic pricing optimization, and automated customer support. AI could also streamline the listing creation process for hosts, offer real-time translation for cross-cultural communication, and develop more sophisticated fraud detection systems.",
+        "> Chesky's vision suggests AI will play a central role in making travel more intuitive and accessible.",
+        "For now, this remains a strategic intent rather than a new product. Its impact will materialize as specific AI-driven features are rolled out onto the platform, potentially redefining how users discover, book, and experience stays worldwide."
+      ],
+      "ja": [
+        "Airbnbのブライアン・チェスキーCEOは、新たにAIラボを設立する計画を発表した。これは、同社のグローバルな宿泊プラットフォーム戦略において、AIの統合をさらに深める意図を示すものだ。現時点では具体的なプロジェクトは未公表だが、旅行者とホスト双方のコアサービスをAIで強化することに焦点が当てられると見られる。",
+        "この取り組みは、宿泊施設や体験のパーソナライズされたレコメンデーション、ダイナミックプライシングの最適化、自動化されたカスタマーサポートといった分野での改善を探るだろう。AIはまた、ホストによるリスティング作成プロセスの簡素化、異文化間コミュニケーションのためのリアルタイム翻訳、より高度な不正検出システムの開発にも寄与する可能性がある。",
+        "「チェスキー氏の構想は、AIが旅行をより直感的でアクセスしやすいものにする上で中心的な役割を果たすことを示唆している」",
+        "現時点では、これは戦略的な意図であり、具体的な新製品ではない。その影響は、AI駆動型の機能がプラットフォームに展開されるにつれて顕在化し、ユーザーが世界中の滞在を発見し、予約し、体験する方法を再定義する可能性を秘めている。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "For Tokyo professionals, this announcement is a strategic signal, not an immediate product. While Japanese users already leverage Airbnb for domestic and international travel, the direct impact of an AI lab on their current booking or hosting experience is negligible. Existing translation features are already helpful, but deeper AI integration could refine recommendations and local insights.",
+        "The true potential for Tokyo lies in how AI can bridge cultural nuances and optimize the influx of inbound tourism. Imagine AI-powered tools that not only translate but also understand Japanese hospitality expectations (おもてなし), or help hosts navigate complex local regulations. This could make hosting more accessible for Japanese individuals and small businesses, potentially fostering new micro-entrepreneurship in the hospitality sector.",
+        "Looking \"off-world\"—or rather, beyond immediate borders—this move suggests a future where AI facilitates deeper cultural exchange. For a Tokyo resident traveling abroad, or a foreign visitor exploring Japan, AI could personalize itineraries to an unprecedented degree, anticipate needs, and offer real-time, context-aware assistance, moving beyond simple language translation to genuine cross-cultural understanding. This vision aligns with Tokyo's role as a global hub, enhancing its connection to the wider world through more intelligent travel."
+      ],
+      "ja": [
+        "東京のプロフェッショナルにとって、今回の発表は戦略的なシグナルであり、直ちに利用できる製品ではない。日本のユーザーはすでに国内外の旅行でAirbnbを利用しているが、このAIラボの計画が現在の予約やホスティング体験に直接与える影響は現時点では小さい。既存の翻訳機能は既に役立っているが、より深いAI統合はレコメンデーションやローカル情報の精度を高める可能性を秘めている。",
+        "東京にとって真の可能性は、AIがいかに文化的ニュアンスを橋渡しし、インバウンド観光客の流入を最適化できるかにある。例えば、単に翻訳するだけでなく、日本のおもてなし文化の期待を理解したり、ホストが複雑な地域の規制を乗り越えるのを助けるAIツールが考えられる。これは、日本の個人や中小企業にとってホスティングをより身近なものにし、ホスピタリティ分野での新たなマイクロアントレプレナーシップを育む可能性もある。",
+        "「オフワールド」、すなわち国境を越えた視点で見ると、この動きはAIがより深い文化交流を促進する未来を示唆している。海外を旅する東京在住者、あるいは日本を訪れる外国人旅行者にとって、AIはこれまでにないレベルで旅程をパーソナライズし、ニーズを予測し、リアルタイムで文脈に応じたアシスタンスを提供できるだろう。これは単なる言語翻訳を超え、真の異文化理解へとつながる。東京がグローバルハブとしての役割を果たす上で、よりインテリジェントな旅行を通じて世界とのつながりを強化するビジョンと合致する。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "Airbnb plans an AI lab to enhance global travel experiences.",
+        "ja": "AirbnbがAIラボ計画、旅行体験を深化へ。"
+      },
+      "useCase": {
+        "en": "For global travelers seeking more personalized and seamless experiences, and for hosts aiming to optimize listings and guest communication, this lab aims to develop AI to streamline the entire travel journey.",
+        "ja": "グローバルな旅行者がよりパーソナライズされたシームレスな体験を求め、ホストがリスティングとゲストコミュニケーションを最適化する上で、AIが旅行プロセス全体を効率化することを目指す。"
+      },
+      "vsCompetitor": {
+        "en": "This is a strategic internal investment rather than a direct competitive product. It aims to differentiate Airbnb by enhancing its core platform features beyond what standard travel booking sites offer, moving towards a more intelligent, personalized service layer.",
+        "ja": "これは直接的な競合製品ではなく、戦略的な社内投資である。標準的な旅行予約サイトが提供する機能を超え、よりインテリジェントでパーソナライズされたサービス層へ移行することで、Airbnbのコアプラットフォーム機能を強化し差別化を図るものだ。"
+      },
+      "tokyoTake": {
+        "en": "For Tokyo professionals, this is a strategic signal, not an immediate product. Its true potential lies in how AI can bridge cultural nuances for inbound tourism and personalize global travel experiences, aligning with Tokyo's role as a global hub.",
+        "ja": "東京のプロにとって、これは戦略的なシグナルであり、直ちに利用できる製品ではない。真の可能性は、AIがいかにインバウンド観光の文化的な機微を埋め、グローバルな旅行体験をパーソナライズするかにある。これは東京のグローバルハブとしての役割と合致する。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/06/04/airbnbs-brian-chesky-plans-to-launch-a-new-ai-lab/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3129805",
+    "status": "published"
+  },
+  {
+    "slug": "anthropic-explores-recursive-ai-self-improvement",
+    "category": "dev-tools",
+    "issue": "Vol. 02",
+    "publishedAt": "2026-06-04T16:20:17.000Z",
+    "readingMinutes": 4,
+    "feature": false,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101012"
+    },
+    "title": {
+      "en": "Anthropic Explores Recursive AI Self-Improvement",
+      "ja": "Anthropic、AIの再帰的自己改善を研究"
+    },
+    "dek": {
+      "en": "The AI safety research institute delves into how AI systems might iteratively enhance their own capabilities, pushing the boundaries of autonomous development.",
+      "ja": "AI安全研究機関が、AIシステムが自律的に能力を向上させるメカニズムを深く掘り下げ、自律開発の限界を押し広げている。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "TOKYO",
+      "ja": "東京"
+    },
+    "tags": [
+      {
+        "en": "AI Research",
+        "ja": "AI研究"
+      },
+      {
+        "en": "AI Safety",
+        "ja": "AI安全性"
+      },
+      {
+        "en": "Foundational Models",
+        "ja": "基盤モデル"
+      }
+    ],
+    "body": {
+      "en": [
+        "AnthropicのInstituteは、AIシステムが自律的に自身の能力を向上させる「再帰的自己改善」のメカニズムを探求している。",
+        "この研究は、AIモデルが自身のアルゴリズム、アーキテクチャ、あるいは学習データを人間による介入なしに反復的に改善していくプロセスを指す。これは、現在のAI開発が直面するスケーリングの限界と、将来的なAIの進化に関する根本的な問いに答えるものだ。",
+        "Anthropicは、この自己改善のプロセスがどのように機能し、どのように制御可能であるかを理解することに焦点を当てている。これは、AIの能力が指数関数的に向上する可能性を示唆する一方で、その安全性とアラインメントに関する重要な課題も提起する。",
+        "> \"The goal is to understand and guide the future of AI's autonomous evolution.\"",
+        "現時点では理論的な探求の段階にあり、具体的な製品やサービスに直結するものではない。しかし、この研究は、今後のAI技術の方向性を決定づける上で不可欠な基礎となるだろう。"
+      ],
+      "ja": [
+        "AnthropicのInstituteは、AIシステムが自律的に自身の能力を向上させる「再帰的自己改善」のメカニズムを探求している。",
+        "この研究は、AIモデルが自身のアルゴリズム、アーキテクチャ、あるいは学習データを人間による介入なしに反復的に改善していくプロセスを指す。これは、現在のAI開発が直面するスケーリングの限界と、将来的なAIの進化に関する根本的な問いに答えるものだ。",
+        "Anthropicは、この自己改善のプロセスがどのように機能し、どのように制御可能であるかを理解することに焦点を当てている。これは、AIの能力が指数関数的に向上する可能性を示唆する一方で、その安全性とアラインメントに関する重要な課題も提起する。",
+        "> 「AIの自律的進化の未来を理解し、導くことが目的だ。」",
+        "現時点では理論的な探求の段階にあり、具体的な製品やサービスに直結するものではない。しかし、この研究は、今後のAI技術の方向性を決定づける上で不可欠な基礎となるだろう。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "For a business professional in Tokyo today, Anthropic's research into recursive self-improvement remains largely theoretical. While fascinating for understanding the long-term trajectory of AI, it offers no immediate, actionable change to daily workflows or strategic business decisions. Japanese AI firms like ELYZA or Sakana AI are focused on delivering practical, localized LLM solutions for current business needs, a different layer of abstraction entirely.",
+        "The implications of AI self-improvement are profound, but their commercial deployment into robust, production-ready products is still years, if not decades, away. Tokyo's professionals are currently concerned with leveraging existing, stable AI tools for efficiency gains in areas like data analysis, customer service, or content generation, often prioritizing solutions with strong Japanese language support and local compliance.",
+        "However, the 'off-world' implications of true recursive self-improvement are worth contemplating. If AI can indeed transcend human-imposed limitations and accelerate its own development exponentially, it redefines the very nature of progress. Such an intelligence could enable humanity to tackle challenges far beyond Earth's current capabilities—from advanced space exploration and resource extraction in the solar system to terraforming distant planets. While this doesn't impact Tokyo's immediate Q3 sales targets, it highlights a future where the scale of human endeavor, and by extension, global business and culture, could expand beyond terrestrial bounds. Tokyo, as a nexus of global commerce and innovation, would be an observer and participant in this unfolding, potentially off-world, future."
+      ],
+      "ja": [
+        "東京のビジネスパーソンにとって、Anthropicの再帰的自己改善に関する研究は、現時点では主に理論的な領域に留まる。AIの長期的な軌跡を理解する上で興味深いものの、日々の業務フローや戦略的なビジネス決定に直ちに影響を与えるものではない。ELYZAやSakana AIといった日本のAI企業は、現在のビジネスニーズに対応する実用的でローカライズされたLLMソリューションの提供に注力しており、これは全く異なるレイヤーの取り組みだ。",
+        "AIの自己改善が持つ含意は深遠だが、それが堅牢な商用プロダクトとして展開されるまでには、数年、あるいは数十年を要するだろう。東京のプロフェッショナルは現在、データ分析、顧客サービス、コンテンツ生成といった分野で既存の安定したAIツールを活用し、効率化を図ることに注力している。多くの場合、優れた日本語対応と国内の規制順守を優先する。",
+        "しかし、真の再帰的自己改善が持つ「オフワールド」の含意は熟考に値する。もしAIが人間が課した限界を超え、自らの開発を指数関数的に加速できるのであれば、それは進歩の概念そのものを再定義する。そのような知性は、高度な宇宙探査や太陽系での資源採掘、遠隔惑星のテラフォーミングなど、地球の現在の能力をはるかに超える課題に人類が取り組むことを可能にするかもしれない。これは東京の直近の四半期売上目標に影響する話ではないが、人類の努力の規模、ひいては地球規模のビジネスと文化が、地球の境界を超えて拡大する可能性のある未来を示唆している。東京は、グローバルな商業とイノベーションの拠点として、この展開しつつある、潜在的な「オフワールド」の未来を観察し、参加することになるだろう。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "Anthropic explores AI systems that improve themselves.",
+        "ja": "AIの自己改善メカニズムを探求。"
+      },
+      "useCase": {
+        "en": "For AI researchers and developers tracking foundational model advancements, understanding this research informs future architectural decisions and safety considerations, though it offers no immediate practical tool.",
+        "ja": "基礎モデルの進化を追うAI研究者や開発者が、将来のアーキテクチャ設計や安全性に関する考慮点を知るための情報源となる。"
+      },
+      "vsCompetitor": {
+        "en": "This is foundational research, not a commercial product, so direct competition is not applicable. It contributes to the broader academic discourse alongside work from OpenAI, Google DeepMind, and academic institutions on AI scaling and alignment.",
+        "ja": "商用プロダクトではなく基礎研究であり、直接的な競合は存在しない。OpenAIやGoogle DeepMindなど、AIのスケーリングやアラインメントに関する学術的議論に寄与する。"
+      },
+      "tokyoTake": {
+        "en": "While fascinating for long-term AI strategy, this research offers no immediate, actionable change for a Tokyo professional's daily workflow. Its implications are theoretical, pointing to a future where AI development might accelerate beyond current human-led iteration cycles.",
+        "ja": "長期的なAI戦略としては興味深いが、東京のビジネスパーソンの日々の業務に直ちに変化をもたらすものではない。AI開発が現在の人間主導のサイクルを超えて加速する可能性を示唆する、理論的な含意を持つ。"
+      }
+    },
+    "source": {
+      "name": "Hacker News Top",
+      "url": "https://www.anthropic.com/institute/recursive-self-improvement"
+    },
+    "sourceGuid": "https://news.ycombinator.com/item?id=48400842",
+    "status": "published"
+  },
+  {
+    "slug": "the-strategic-nexus-ai-and-defense-technology",
+    "category": "workflow",
+    "issue": "Vol. 02",
+    "publishedAt": "2026-06-04T21:30:00.000Z",
+    "readingMinutes": 5,
+    "feature": false,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
+    },
+    "title": {
+      "en": "The Strategic Nexus: AI and Defense Technology",
+      "ja": "戦略的接点：AIと防衛技術の融合"
+    },
+    "dek": {
+      "en": "Venture capital turns its gaze toward the intersection of artificial intelligence and defense, signaling a significant shift in technological priorities.",
+      "ja": "ベンチャーキャピタルがAIと防衛技術の交差点に注目し、技術的優先順位における重要な転換を示唆している。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "TOKYO, 2026-06-04",
+      "ja": "東京, 2026年06月04日"
+    },
+    "tags": [
+      {
+        "en": "Defense Tech",
+        "ja": "防衛技術"
+      },
+      {
+        "en": "Geopolitics",
+        "ja": "地政学"
+      },
+      {
+        "en": "Strategic AI",
+        "ja": "戦略的AI"
+      },
+      {
+        "en": "Dual-Use Technology",
+        "ja": "デュアルユース技術"
+      }
+    ],
+    "body": {
+      "en": [
+        "The convergence of artificial intelligence and defense technology is rapidly becoming a central theme in global innovation. Recent discussions at events like StrictlyVC in Los Angeles underscore a growing interest from investors and strategists in how AI capabilities can be integrated into national security frameworks. This focus extends beyond conventional military applications to encompass areas like cybersecurity, logistics, and intelligence analysis.",
+        "> \"Defense tech, AI, and fundraising take center stage at StrictlyVC Los Angeles.\"",
+        "This trend represents a strategic recalibration, moving AI from primarily commercial applications into domains with profound geopolitical implications. The development cycles, ethical considerations, and data security requirements in defense AI differ significantly from those in consumer or enterprise software. It necessitates a nuanced understanding of both technological feasibility and international policy."
+      ],
+      "ja": [
+        "人工知能と防衛技術の融合は、世界のイノベーションにおいて急速に中心的なテーマとなっている。ロサンゼルスで開催されたStrictlyVCのようなイベントでの最近の議論は、AI能力を国家安全保障の枠組みに統合する方法に対する投資家や戦略家の関心の高まりを浮き彫りにしている。この焦点は、従来の軍事応用を超え、サイバーセキュリティ、ロジスティクス、情報分析といった分野にまで及ぶ。",
+        "> 「防衛技術、AI、そして資金調達がロサンゼルスのStrictlyVCで主役を演じる。」",
+        "このトレンドは、AIを主に商業アプリケーションから地政学的に深い意味を持つ領域へと移行させる、戦略的な再調整を意味する。防衛AIにおける開発サイクル、倫理的考慮事項、データセキュリティ要件は、消費者向けや企業向けソフトウェアとは大きく異なる。これは、技術的実現可能性と国際政策の両方に対する繊細な理解を必要とする。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "For Tokyo-based professionals, the escalating global focus on AI in defense technology presents a complex landscape. Japan, known for its advanced robotics and materials science, finds itself at a critical juncture. While there is a strong domestic push for civilian AI innovation—evidenced by players like ELYZA and Sakana AI—the application of these capabilities to defense raises distinct ethical and public perception challenges within a nation committed to a non-aggressive defense posture.",
+        "The conversation in Tokyo often revolves around dual-use technologies: how can advancements in areas like autonomous systems or advanced sensor fusion, initially developed for civilian purposes, be leveraged for national security without crossing sensitive lines? This requires careful policy formulation, robust public discourse, and perhaps new models of public-private collaboration that prioritize transparency and ethical oversight.",
+        "Ultimately, the question for Tokyo professionals is not whether AI will enter defense, but how Japan can strategically navigate this inevitable integration. This means fostering domestic AI talent capable of operating in high-stakes environments, developing clear procurement pathways for defense-relevant AI, and engaging proactively in international dialogues to shape norms around autonomous weapon systems, rather than merely reacting to global developments.",
+        "Beyond terrestrial concerns, the implications of AI in defense extend into the nascent domain of space. As nations increasingly view space as a critical strategic asset, AI will likely play a pivotal role in autonomous satellite defense, space situational awareness, and potentially, the management of off-world resources. For Tokyo, with its ambitions in space exploration and satellite technology, this convergence suggests a future where AI-driven capabilities could define sovereignty and security not just on Earth, but among the stars, fundamentally reshaping our understanding of conflict and collaboration beyond our planet."
+      ],
+      "ja": [
+        "東京のプロフェッショナルにとって、防衛技術におけるAIへの世界的な焦点の高まりは、複雑な状況を提示する。高度なロボティクスと材料科学で知られる日本は、重要な岐路に立たされている。ELYZAやSakana AIのようなプレイヤーに見られるように、民生AIイノベーションへの国内での強い推進力がある一方で、これらの能力を防衛に応用することは、非攻撃的な防衛姿勢を堅持する国家内で、独自の倫理的および世論上の課題を引き起こす。",
+        "東京での議論はしばしばデュアルユース技術に集中する。つまり、当初は民生目的で開発された自律システムや高度なセンサー融合といった分野の進歩を、デリケートな一線を越えることなく国家安全保障のためにどのように活用できるか、という点だ。これには、慎重な政策策定、堅固な公開討論、そして透明性と倫理的監督を優先する新たな官民連携モデルが必要となるだろう。",
+        "最終的に、東京のプロフェッショナルにとっての問いは、AIが防衛分野に参入するかどうかではなく、日本がいかにしてこの避けられない統合を戦略的に乗り越えるかである。これは、高リスク環境で運用できる国内AI人材の育成、防衛関連AIの明確な調達経路の開発、そして世界の動向に単に反応するのではなく、自律型兵器システムに関する規範を形成するための国際対話への積極的な参加を意味する。",
+        "地球上の懸念を超えて、防衛におけるAIの影響は、未開の宇宙領域にまで及ぶ。各国が宇宙を戦略的に重要な資産と見なすにつれて、AIは自律衛星防衛、宇宙状況認識、そして将来的には地球外資源の管理において極めて重要な役割を果たす可能性が高い。宇宙探査と衛星技術に野心を持つ東京にとって、この融合は、AI駆動の能力が地球上だけでなく星々の間でも主権と安全保障を定義し、私たちの惑星外での紛争と協力の理解を根本的に再構築する未来を示唆する。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "AI integration in defense tech is a rising strategic priority.",
+        "ja": "防衛技術とAIの融合が戦略的焦点に。"
+      },
+      "useCase": {
+        "en": "For a Tokyo-based policy analyst or defense industry professional, understanding the accelerating integration of AI into defense is crucial for strategic planning and identifying future investment areas in dual-use technologies.",
+        "ja": "東京の政策アナリストや防衛産業関係者にとって、AIの防衛分野への統合加速を理解することは、戦略策定やデュアルユース技術への投資機会特定に不可欠である。"
+      },
+      "vsCompetitor": {
+        "en": "This trend is not a direct competitor to specific commercial AI tools, but rather a new domain of application for advanced AI models and engineering, requiring distinct ethical, regulatory, and security frameworks compared to general-purpose AI.",
+        "ja": "これは特定の商用AIツールと競合するものではなく、AIモデルの新たな応用領域であり、汎用AIとは異なる倫理的、規制的、安全保障上の枠組みが求められる。"
+      },
+      "tokyoTake": {
+        "en": "For Tokyo professionals, the rise of AI in defense highlights the growing importance of dual-use technologies. While Japan has robust civilian AI research, its defense AI strategy faces unique challenges related to ethical guidelines, public perception, and a traditionally non-aggressive defense posture. The focus shifts to how Japanese expertise in robotics and advanced materials can be strategically applied without compromising core values.",
+        "ja": "東京のプロフェッショナルにとって、防衛AIの台頭はデュアルユース技術の重要性を浮き彫りにする。日本は強力な民生AI研究を持つが、防衛AI戦略は倫理、世論、伝統的な非攻撃的防衛姿勢といった課題に直面する。ロボティクスや先端素材における日本の専門知識を、中核的価値を損なわずに戦略的に応用する方法が焦点となる。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/06/04/defense-tech-ai-and-fundraising-take-center-stage-at-strictlyvc-los-angeles-on-june-18/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3129765",
+    "status": "published"
+  },
+  {
     "slug": "hyper-a-dynamic-context-engine-for-enterprise-ai",
     "category": "workflow",
     "issue": "Vol. 02",
@@ -864,8 +1432,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Uber Caps Internal AI Spending After Budget Overrun",
@@ -957,8 +1525,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0b0b0d"
+      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Kapa.ai Enhances RAG with Image Indexing",
@@ -1597,8 +2165,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0d0f"
     },
     "title": {
       "en": "AI Weather Startup Claims Superior Forecasting",
@@ -1693,8 +2261,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "Data Exfiltration Risk in LLM-Integrated Google Sheets",
@@ -1789,8 +2357,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0f12"
     },
     "title": {
       "en": "AI Uncovers Data Center Secrecy: A New Era for Environmental Accountability",
@@ -2073,8 +2641,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0f12"
     },
     "title": {
       "en": "AI-Accelerated Prototyping: The New Pace of Development",
@@ -2363,8 +2931,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0f12"
+      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "GitHub Copilot Shifts to Token-Based Billing, Raising Cost Concerns",
@@ -2545,8 +3113,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Google's Gemini Spark: An Always-On Assistant for the Proactive Professional",
@@ -2637,8 +3205,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101011"
+      "src": "https://images.unsplash.com/photo-1620712943543-26fab76e6f5d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0c"
     },
     "title": {
       "en": "The Next Browser Frontier: Contextual AI and Agentic Features",
@@ -2733,8 +3301,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0f12"
     },
     "title": {
       "en": "Shift's Free Data Cleaning: A Closer Look at the AI Data Pipeline",
@@ -2825,8 +3393,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#08080a"
+      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101012"
     },
     "title": {
       "en": "The AI Coding Assistant Dilemma",
@@ -2919,8 +3487,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0d0f"
+      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101011"
     },
     "title": {
       "en": "Mistral AI's Summit Model: A New Enterprise Contender",
@@ -3013,8 +3581,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0f12"
+      "src": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0d0f"
     },
     "title": {
       "en": "Demystifying AI Terms: A New Explainer Tool",
@@ -3105,8 +3673,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Liquid AI's LFM2.5-8B: A New Contender in Efficient LLMs",
@@ -3197,8 +3765,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101012"
+      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "The Emergence of Protestware in AI Coding Agents",
@@ -3483,8 +4051,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "Asana Integrates No-Code AI Automation",
@@ -3575,8 +4143,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0f12"
+      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Identifying LLM Smells: A Developer's Guide to Anti-Patterns",
@@ -3667,8 +4235,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "Anthropic's Trillion-Dollar Trajectory: Implications for Foundational AI",
@@ -3856,8 +4424,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101012"
+      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "Snowflake Deepens AWS AI Chip Integration for Data Workloads",
@@ -3948,8 +4516,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0f12"
+      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
     },
     "title": {
       "en": "Beyond HTTP: Reimagining Internet Foundations for Future AI Systems",
@@ -4044,8 +4612,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Remote Boosts Global HR Efficiency Through Internal AI",
@@ -4140,8 +4708,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101011"
     },
     "title": {
       "en": "DuckDuckGo Sees Surge as Users Sidestep AI Search",
@@ -4236,8 +4804,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Adapting Content for the New AI Search Era",
@@ -4332,8 +4900,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0f12"
+      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#08080a"
     },
     "title": {
       "en": "Stack Overflow's AI Pivot: A Community's Reckoning",
@@ -4424,8 +4992,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0d0f"
     },
     "title": {
       "en": "DuckDuckGo Gains Users Amidst Google's AI Search Backlash",
@@ -4518,7 +5086,7 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0c0c0e"
     },
     "title": {
@@ -4614,8 +5182,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101012"
+      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0f12"
     },
     "title": {
       "en": "OpenRouter: A Unified API for Diverse LLMs",
@@ -4706,8 +5274,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0b0b0d"
     },
     "title": {
       "en": "Local AI & Outsourcing: A Cost-Effective Alternative to Frontier Models",
@@ -4802,8 +5370,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101010"
+      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "India's Gig Economy Trains Robots for the Real World",
@@ -4898,8 +5466,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Norway's National LLM Ambitions and Huawei Infrastructure",
@@ -4994,8 +5562,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "AI's Shifting Impact on Workflows: Lessons from ClickUp Layoffs",
@@ -5090,8 +5658,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Rentflow's AI Vision: Optimizing Property Management",
@@ -5186,8 +5754,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "The Vatican's Stance on AI: Beyond the Algorithm",
@@ -5280,8 +5848,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Chert: Bringing iMessage to Business Workflows at Scale",
@@ -5372,8 +5940,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101010"
+      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Off-World AI Ventures: The Next Frontier for Startup Capital",
@@ -5476,8 +6044,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "The Limits of LLMs in Expert Design: Claude and the Architect's Role",
@@ -5670,8 +6238,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "The Economics of AI Chips: Beyond Core Compute",
@@ -5766,8 +6334,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0f12"
     },
     "title": {
       "en": "DeepSeek's Permanent Price Cut Ignites LLM Cost War",
@@ -5858,8 +6426,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101010"
     },
     "title": {
       "en": "Ferrari's AI Fan Engagement: A Blueprint for Global Brands",
@@ -5956,8 +6524,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Elon Musk's Terrestrial Solar Pivot Signals Off-World Energy Future",
@@ -6052,8 +6620,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-26fab76e6f5d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0c"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Voice Cloning Revives Historical Pilot Audio for Simulation",
@@ -6140,8 +6708,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "AI Recreates Deceased Voices from Sensitive Audio",
@@ -6236,8 +6804,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0d0f"
+      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0f12"
     },
     "title": {
       "en": "Wozniak on Apple's AI Direction",
@@ -6328,8 +6896,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "LLMs and OpenSCAD: A Benchmark for Programmatic 3D Design",
@@ -6424,8 +6992,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101010"
+      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "US AI Security Order Delayed: Innovation Over Immediate Regulation",
