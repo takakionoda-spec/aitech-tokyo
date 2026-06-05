@@ -103,6 +103,49 @@ export type StructuredFieldDef = {
 };
 
 /* ---------------------------------------------------------------------------
+   NEW: monetization types.
+   The site supports three monetization layers stacked behind a single config
+   block under `siteConfig.monetization`:
+
+     1. Affiliate links — per-article / per-tool CTAs (Amazon Associates,
+        SaaS partner programs, ASP networks like A8 / もしも).
+        Surfaced as a small CTA row on cards and a prominent CTA section on
+        article detail pages. Always rendered with rel="sponsored noopener
+        nofollow" per Google's link-attribution guidance.
+
+     2. Sponsor slots — paid placements injected into the directory grid
+        (NOT IMPLEMENTED YET — placeholder type for the next iteration).
+
+     3. Display ads — env-driven AdSense slots
+        (NOT IMPLEMENTED YET — placeholder type for the next iteration).
+
+   The disclosure string is shown in the Footer and on /about per JP 特商法 /
+   景表法 and Google publisher policy. Keep it always-on as long as any
+   affiliate link exists anywhere on the site.
+   ------------------------------------------------------------------------- */
+export type AffiliateNetwork = "amazon" | "partner" | "asp" | "other";
+
+/** A single affiliate / partner CTA attached to an article (= tool entry on
+ *  AITECH TOKYO). The `network` field controls the small badge shown next to
+ *  the button and is also used for compliance accounting (Amazon Associates
+ *  has stricter copy rules than generic ASPs). */
+export type AffiliateLink = {
+  /** Destination URL — the full affiliate / partner URL, NOT the bare product
+   *  page. The renderer attaches rel="sponsored noopener nofollow" and
+   *  target="_blank" automatically. */
+  url: string;
+  /** Network. Used to pick the badge label from
+   *  `monetization.affiliate.networkLabels`. */
+  network: AffiliateNetwork;
+  /** Optional bilingual button label. Falls back to
+   *  `monetization.affiliate.defaultLabel` when omitted. */
+  label?: Bilingual<string>;
+  /** Optional one-line note shown under the button (e.g. "30-day free trial",
+   *  "Japanese UI available"). */
+  note?: Bilingual<string>;
+};
+
+/* ---------------------------------------------------------------------------
    The configuration object itself.
    ------------------------------------------------------------------------- */
 export const siteConfig = {
@@ -625,6 +668,78 @@ export const siteConfig = {
     }
   },
 
+  /* --------------------------------------------------------- MONETIZATION
+     Affiliate / sponsor / display-ad configuration. Read by:
+       - <AffiliateCTA />  → renders the per-link CTA block (cards + detail)
+       - <Footer />        → renders the short disclosure line on every page
+       - <AboutPage />     → renders the long disclosure block
+
+     Per-article affiliate links are NOT declared here — they live in
+     `src/data/affiliate.ts` as a `slug → AffiliateLink[]` overlay, so the
+     LLM-generated articles.json stays a pure content artefact and affiliate
+     URLs stay editorial / commercial.
+
+     Disable the layer entirely on a sister title by setting `affiliate.enabled`
+     to false — the Footer / About disclosure and all CTAs go away.
+     ---------------------------------------------------------------------- */
+  monetization: {
+    affiliate: {
+      enabled: true,
+      /** Networks the site is allowed to surface. Mirror the actual programs
+       *  you are signed up for. The renderer ignores any AffiliateLink whose
+       *  `network` is not in this list (so you can stage links in
+       *  affiliate.ts before a program is approved without breaking the UI). */
+      networks: ["amazon", "partner", "asp"] as readonly AffiliateNetwork[],
+      /** Small badge shown next to each CTA. Keep the JP wording compliant
+       *  with 景表法 / 特商法 — "PR" or "アフィリエイト" is safer than
+       *  ambiguous neutral language. */
+      networkLabels: {
+        amazon: { en: "Amazon", ja: "Amazon" },
+        partner: { en: "Partner", ja: "公式パートナー" },
+        asp: { en: "PR", ja: "PR" },
+        other: { en: "Sponsored", ja: "PR" }
+      } as Record<AffiliateNetwork, Bilingual<string>>,
+      /** Fallback CTA label when an AffiliateLink doesn't ship its own. */
+      defaultLabel: { en: "Visit site", ja: "公式サイトへ" },
+      /** Short single-line disclosure surfaced in the Footer of every page. */
+      disclosureShort: {
+        en: "Some links on AITECH TOKYO are affiliate links. We may earn a commission when you sign up, at no extra cost to you.",
+        ja: "AITECH TOKYO の一部リンクはアフィリエイト・リンクを含みます。リンク経由でのご利用により当サイトが報酬を受け取る場合がありますが、ご利用料金は変わりません。"
+      },
+      /** Long-form disclosure surfaced on /about and the dedicated
+       *  /transparency page (TODO). Spell out the actual networks per
+       *  Amazon Associates Operating Agreement §5(a) and 景表法 ステマ規制
+       *  (2023/10 施行) — generic wording is not sufficient. */
+      disclosureLong: {
+        en: "AITECH TOKYO participates in the Amazon Associates Program, partner / referral programs run by individual AI tool vendors, and Japanese affiliate networks (ASPs). When a story or directory entry includes a button marked PR / Partner / Amazon, the link is an affiliate link: clicking through and signing up may earn AITECH TOKYO a commission, at no additional cost to you. Affiliate relationships do not determine editorial coverage, do not change the four structured fields a tool is evaluated on (tagline / use case / vs. existing / Tokyo Take), and do not soften the Tokyo Take when the honest answer is 'wait six months'.",
+        ja: "AITECH TOKYO は、Amazon アソシエイト・プログラム、AI ツール各社が運営するパートナー／リファラル・プログラム、および国内アフィリエイト・サービス・プロバイダー（ASP）に参加しています。記事内またはディレクトリエントリーに「PR」「公式パートナー」「Amazon」と表示されたボタンが含まれる場合、当該リンクはアフィリエイト・リンクです。リンク経由でご登録／ご購入いただくと当サイトが報酬を受け取ることがありますが、ユーザーの支払金額は変わりません。アフィリエイト関係は編集方針に影響を与えず、各ツールを評価する 4 つの構造化フィールド（タグライン／使いどころ／既存ツールとの違い／東京視点）の判断、および「半年待った方がよい」と書くべき場面での率直さを変えるものではありません。"
+      }
+    },
+    /** Sponsor slots — paid placements injected into the directory grid.
+     *  Reserved shape for the next iteration. Empty array means no sponsor
+     *  is currently active and the grid renders as today. */
+    sponsors: [] as readonly {
+      id: string;
+      title: Bilingual<string>;
+      blurb: Bilingual<string>;
+      href: string;
+      sponsoredBy: Bilingual<string>;
+      validUntil: string; // ISO date — past this, the slot self-expires
+    }[],
+    /** Display ads — env-driven AdSense slots.
+     *  Reserved shape for the next iteration. Setting `client` to "" disables
+     *  the layer entirely at runtime regardless of env. */
+    ads: {
+      provider: "adsense" as const,
+      client: "",
+      slots: {
+        feedTop: "",
+        feedMid: "",
+        articleInline: ""
+      }
+    }
+  },
+
   /* ---------------------------------------------------------------- CRON
      UTC schedule consumed by .github/workflows/daily-publish.yml. 03:00 JST
      for AITECH TOKYO so the grid is fresh when Japanese developers open their
@@ -708,3 +823,83 @@ export const STRUCTURED_FIELDS: readonly StructuredFieldDef[] =
 
 /** True iff the LLM contract for this site asks for structured fields. */
 export const HAS_STRUCTURED_FIELDS: boolean = STRUCTURED_FIELDS.length > 0;
+
+/* ---------------------------------------------------------------------------
+   Monetization helpers — same defensive shape as the structured-field helpers
+   above. Sister titles that strip the `monetization` block must still compile.
+   ------------------------------------------------------------------------- */
+type WithOptionalMonetization = SiteConfig & {
+  monetization?: {
+    affiliate?: {
+      enabled?: boolean;
+      networks?: readonly AffiliateNetwork[];
+      networkLabels?: Record<AffiliateNetwork, Bilingual<string>>;
+      defaultLabel?: Bilingual<string>;
+      disclosureShort?: Bilingual<string>;
+      disclosureLong?: Bilingual<string>;
+    };
+  };
+};
+
+/** True iff the affiliate layer is active for this site. Renderers should
+ *  bail early on this before doing any other work — keeps sister titles that
+ *  don't ship monetization (e.g. ARTEMIS TOKYO before the propagation lands)
+ *  visually identical to today. */
+export const AFFILIATE_ENABLED: boolean = Boolean(
+  (siteConfig as WithOptionalMonetization).monetization?.affiliate?.enabled
+);
+
+/** Networks the site is allowed to surface. Empty array if the layer is off. */
+export const AFFILIATE_NETWORKS: readonly AffiliateNetwork[] =
+  (siteConfig as WithOptionalMonetization).monetization?.affiliate?.networks ??
+  ([] as readonly AffiliateNetwork[]);
+
+/** Resolve the bilingual badge label for a given network. Returns a safe
+ *  fallback when the site config omits one — never throws. */
+export const getAffiliateNetworkLabel = (
+  network: AffiliateNetwork
+): Bilingual<string> => {
+  const labels = (siteConfig as WithOptionalMonetization).monetization?.affiliate
+    ?.networkLabels;
+  return (
+    labels?.[network] ?? {
+      en: "Sponsored",
+      ja: "PR"
+    }
+  );
+};
+
+/** Resolve the fallback CTA button label (used when an AffiliateLink omits
+ *  its own `label`). */
+export const getAffiliateDefaultLabel = (): Bilingual<string> => {
+  return (
+    (siteConfig as WithOptionalMonetization).monetization?.affiliate
+      ?.defaultLabel ?? { en: "Visit site", ja: "公式サイトへ" }
+  );
+};
+
+/** Short disclosure line for the Footer. Empty string when not configured. */
+export const getAffiliateDisclosureShort = (): Bilingual<string> => {
+  return (
+    (siteConfig as WithOptionalMonetization).monetization?.affiliate
+      ?.disclosureShort ?? { en: "", ja: "" }
+  );
+};
+
+/** Long disclosure block for /about and /transparency. Empty string when not configured. */
+export const getAffiliateDisclosureLong = (): Bilingual<string> => {
+  return (
+    (siteConfig as WithOptionalMonetization).monetization?.affiliate
+      ?.disclosureLong ?? { en: "", ja: "" }
+  );
+};
+
+/** True iff this network is whitelisted for the current site. Used by
+ *  AffiliateCTA to silently drop links to programs we're not signed up for —
+ *  prevents stale affiliate.ts entries from showing as broken CTAs. */
+export const isAffiliateNetworkActive = (
+  network: AffiliateNetwork
+): boolean => {
+  if (!AFFILIATE_ENABLED) return false;
+  return AFFILIATE_NETWORKS.includes(network);
+};

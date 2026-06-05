@@ -1,6 +1,8 @@
 import type { CategoryKey, Lang } from "@/lib/i18n";
 import { normalizeCategory } from "@/lib/i18n";
+import type { AffiliateLink } from "@/site.config";
 import generated from "./generated/articles.json";
+import { affiliateBySlug } from "./affiliate";
 
 /* =========================================================
    Article shape
@@ -44,6 +46,12 @@ export type Article = {
    *  values by `structured[fieldKey][lang]`. Empty / absent on sister sites
    *  (e.g. ARTEMIS TOKYO) that don't declare any structured fields. */
   structured?: Record<string, LocalizedString | LocalizedRichText>;
+  /** Affiliate / partner CTAs surfaced on the article card and detail page.
+   *  Declared via the `src/data/affiliate.ts` slug → AffiliateLink[] overlay
+   *  (NOT inside generated/articles.json) so editorial content stays separate
+   *  from commercial wiring. Empty / absent on entries with no affiliate
+   *  relationship — the CTA section simply doesn't render in that case. */
+  affiliate?: AffiliateLink[];
   /** Provenance — every article must record where it came from. */
   source: {
     name: string;
@@ -59,10 +67,19 @@ export type Article = {
 
 // JSON files are imported with broad typing; we narrow here and migrate
 // any legacy category (architecture / interview / exploration) on the fly.
-export const articles: Article[] = (generated as unknown as Article[]).map((a) => ({
-  ...a,
-  category: normalizeCategory(a.category)
-}));
+// We also fold in the slug → AffiliateLink[] overlay so the rest of the app
+// reads a single Article shape regardless of whether the affiliate URLs came
+// from generated JSON or from the hand-edited affiliate.ts file.
+export const articles: Article[] = (generated as unknown as Article[]).map((a) => {
+  const overlay = affiliateBySlug[a.slug];
+  return {
+    ...a,
+    category: normalizeCategory(a.category),
+    // overlay wins over any affiliate already on the JSON (which today is
+    // never the case — the LLM doesn't emit affiliate URLs).
+    affiliate: overlay ?? a.affiliate
+  };
+});
 
 /* =========================================================
    Query helpers — same surface as before so existing

@@ -3,10 +3,17 @@
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { CATEGORY_ORDER } from "@/lib/i18n";
-import { siteConfig } from "@/site.config";
+import {
+  AFFILIATE_ENABLED,
+  getAffiliateDisclosureShort,
+  siteConfig
+} from "@/site.config";
 
 export default function Footer() {
   const { dict, lang } = useLanguage();
+  const disclosureShort = AFFILIATE_ENABLED
+    ? getAffiliateDisclosureShort()[lang]
+    : "";
 
   return (
     <footer className="mt-section relative">
@@ -70,6 +77,29 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+
+      {/* Affiliate disclosure — required at the unit of placement, but a
+          site-wide footer line gives the reader the persistent context. The
+          per-link badges (PR / Amazon / 公式パートナー) carry the
+          placement-level disclosure required by 景表法 ステマ規制. Render
+          NOTHING when the monetization layer is disabled site-wide so sister
+          titles without affiliate stay visually identical. */}
+      {disclosureShort ? (
+        <div className="relative">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+          <div className="px-6 lg:px-10 py-4 max-w-[88ch]">
+            <p className="text-[0.6875rem] leading-relaxed text-ink-600">
+              {disclosureShort}{" "}
+              <Link
+                href="/about#affiliate"
+                className="editorial-link text-ink-700 hover:text-ink"
+              >
+                {lang === "ja" ? "詳細はこちら" : "Learn more"}
+              </Link>
+            </p>
+          </div>
+        </div>
+      ) : null}
 
       {/* Hairline gradient rule above the strapline */}
       <div className="relative">

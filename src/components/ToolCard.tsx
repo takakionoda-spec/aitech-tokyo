@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Article } from "@/data/articles";
+import AffiliateCTA from "@/components/AffiliateCTA";
 import {
   STRUCTURED_FIELDS,
   getCategoryDef,
@@ -75,11 +76,17 @@ export default function ToolCard({ article, priority = false }: Props) {
 
   const pillClass = NEON_BY_CATEGORY[article.category] ?? "pill--neon-cyan";
 
+  // Glass / glow lives on the <article> so we can attach an AffiliateCTA
+  // outside the navigational <Link> without breaking nested-anchor rules
+  // (the CTA's own <a target="_blank" rel="sponsored ..."> would otherwise be
+  // nested inside the card's wrapping <Link>, which is invalid HTML).
+  const hasAffiliate = (article.affiliate?.length ?? 0) > 0;
+
   return (
-    <article className="group relative">
+    <article className="group relative glass glow-aurora overflow-hidden">
       <Link
         href={`/articles/${article.slug}`}
-        className="block glass glow-aurora overflow-hidden"
+        className="block"
       >
         {/* Cover — real image OR a category-tone tile with first letter */}
         <div
@@ -116,7 +123,7 @@ export default function ToolCard({ article, priority = false }: Props) {
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-white/5" />
         </div>
 
-        <div className="p-5 lg:p-6">
+        <div className={`p-5 lg:p-6 ${hasAffiliate ? "pb-3 lg:pb-4" : ""}`}>
           <span className={`pill ${pillClass}`}>
             {dict.categories[article.category]}
           </span>
@@ -189,6 +196,15 @@ export default function ToolCard({ article, priority = false }: Props) {
           </div>
         </div>
       </Link>
+
+      {/* Affiliate CTA — rendered OUTSIDE the <Link> so the affiliate <a> is
+          not a nested anchor. The component itself bails when the layer is
+          disabled or the article has no links. */}
+      {hasAffiliate ? (
+        <div className="px-5 lg:px-6 pb-5 lg:pb-6">
+          <AffiliateCTA links={article.affiliate} variant="card" />
+        </div>
+      ) : null}
     </article>
   );
 }
