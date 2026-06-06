@@ -156,7 +156,7 @@ export const siteConfig = {
     /** Wordmark as rendered in Header/Footer (mixed case allowed). */
     wordmark: "Aitech Tokyo",
     /** Canonical site URL — used by SEO, sitemap, JSON-LD, cron User-Agent. */
-    siteUrl: "https://aitech-tokyo.vercel.app",
+    siteUrl: "https://www.aitech-tokyo.com",
     /** Editorial subject — used in metadata description and the LLM voice. */
     subject: {
       en: "the global AI tech conversation — translated into Japanese and read through a Tokyo business lens, every morning",

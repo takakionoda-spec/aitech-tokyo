@@ -52,17 +52,18 @@
 
 import type { AffiliateLink } from "@/site.config";
 
-/** Slug-keyed overlay. ADD ENTRIES BELOW once affiliate programs are signed.
- *  Until then this stays an empty object and the site renders no CTAs — the
- *  rest of the monetization layer is wired and ready. */
+/** Slug-keyed overlay. Each entry maps a slug (from generated/articles.json)
+ *  to one or more affiliate CTAs that should appear on the matching card +
+ *  detail page. Add entries below as affiliate programs are signed up.
+ *
+ *  The Amazon short URLs from SiteStripe (https://amzn.to/xxxxx) already
+ *  carry the associate tracking ID — no need to append ?tag=. */
 export const affiliateBySlug: Record<string, AffiliateLink[]> = {
-  // EXAMPLE — comment out / replace with real slugs:
-  //
-  // "example-slug-here": [
-  //   {
-  //     url: "https://example.com/?ref=aitechtokyo",
-  //     network: "partner",
-  //     label: { en: "Try it free", ja: "無料で試す" }
-  //   }
-  // ]
+  "airbnb-to-launch-dedicated-ai-lab": [
+    {
+      url: "https://amzn.to/4vywXWt",
+      network: "amazon",
+      label: { en: "Related book", ja: "関連書籍" }
+    }
+  ]
 };
