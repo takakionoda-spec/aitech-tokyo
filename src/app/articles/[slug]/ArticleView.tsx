@@ -88,14 +88,52 @@ function currentIssueNumber(): string {
   return String(Math.max(1, offset)).padStart(2, "0");
 }
 
+/** Parse inline markdown links `[label](url)` and render them as React nodes.
+ *  External links open in a new tab with rel="noopener noreferrer" so they're
+ *  safe and don't navigate away from the editorial page. The editorial-link
+ *  class gives them the gold (AITECH: neon-cyan) hover underline that matches
+ *  the rest of the site. This is intentionally a minimal markdown parser —
+ *  only inline links are recognised; bold / italic / etc. are left as plain
+ *  text. */
+function renderInlineMarkdown(text: string): React.ReactNode {
+  const parts: React.ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const label = match[1];
+    const url = match[2];
+    parts.push(
+      <a
+        key={`mdlink-${key++}`}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="editorial-link text-neon-cyan"
+      >
+        {label}
+      </a>
+    );
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts.length === 1 && typeof parts[0] === "string" ? text : parts;
+}
+
 function ParagraphBlock({ raw }: { raw: string }) {
   if (raw.startsWith("## ")) {
-    return <h2>{raw.replace(/^##\s+/, "")}</h2>;
+    return <h2>{renderInlineMarkdown(raw.replace(/^##\s+/, ""))}</h2>;
   }
   if (raw.startsWith("> ")) {
-    return <blockquote>{raw.replace(/^>\s+/, "")}</blockquote>;
+    return <blockquote>{renderInlineMarkdown(raw.replace(/^>\s+/, ""))}</blockquote>;
   }
-  return <p>{raw}</p>;
+  return <p>{renderInlineMarkdown(raw)}</p>;
 }
 
 export default function ArticleView({ slug }: { slug: string }) {
