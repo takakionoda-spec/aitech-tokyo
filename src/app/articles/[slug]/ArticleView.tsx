@@ -45,7 +45,16 @@ function ArticleCover({ article, alt }: { article: Article; alt: string }) {
   const { lang, dict } = useLanguage();
   const cat = getCategoryDef(article.category);
   const tile = cat?.coverPool?.[0]?.tone ?? article.cover.tone ?? "#11131c";
-  const showTone = !article.cover.src || errored;
+
+  // Skip Unsplash stock fallback when the config asks for tone tiles only.
+  const isFromUnsplash =
+    article.cover.src.includes("images.unsplash.com") ||
+    article.cover.src.includes("source.unsplash.com");
+  const preferTone: boolean = Boolean(
+    siteConfig.layout?.directory?.preferToneTileOverStockCover
+  );
+  const showTone =
+    !article.cover.src || errored || (preferTone && isFromUnsplash);
 
   const taglineRaw = article.structured?.tagline?.[lang];
   const coverTagline: string =
