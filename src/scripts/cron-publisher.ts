@@ -109,6 +109,18 @@ const IS_BACKFILL = process.argv.includes("--backfill");
 // `--retrofit-tokyo-view` skips the RSS pipeline entirely and only walks the
 // existing articles.json, patching tokyoView onto every article missing it.
 const IS_RETROFIT_TOKYO_VIEW = process.argv.includes("--retrofit-tokyo-view");
+// `--regenerate-recent` skips the RSS pipeline and re-edits the most recent N
+// articles in articles.json through the current LLM brief (body + closing
+// block + structured fields). Used to retrofit older articles whenever the
+// brief in site.config.ts is upgraded. Preserves slug / publishedAt / cover
+// so URLs stay stable and "画像等の変更はなくていい" is respected.
+//   npm run cron:regenerate-recent             → top 10
+//   npm run cron:regenerate-recent -- --count=20  → top 20
+const IS_REGENERATE_RECENT = process.argv.includes("--regenerate-recent");
+const REGEN_COUNT_RAW = process.argv.find((a) => a.startsWith("--count="));
+const REGEN_COUNT = REGEN_COUNT_RAW
+  ? Math.max(1, Number(REGEN_COUNT_RAW.slice("--count=".length)) || 10)
+  : 10;
 const LOOKBACK_HOURS = Number(process.env.CRON_LOOKBACK_HOURS ?? (IS_BACKFILL ? 720 : 168));
 const MAX_PER_RUN = Number(process.env.CRON_MAX_PER_RUN ?? (IS_BACKFILL ? 30 : 10));
 const RETAIN_ARTICLES = Number(process.env.CRON_RETAIN ?? 80);
@@ -1173,6 +1185,132 @@ async function retrofitTokyoView(dryRun: boolean): Promise<void> {
   log("info", "✓ retrofit-tokyo-view complete.");
 }
 
+// ---------------------------------------------------------------
+// Regenerate-recent — re-edits the most recent N articles through
+// the current brief in site.config.ts. Use this whenever you change
+// composition rules / closing block rules and want existing articles
+// to pick up the new editorial voice without waiting for the source
+// to surface again in the RSS window.
+//
+// Preserves: slug, publishedAt, cover.src, sourceGuid, source.url
+// Re-edits: title, dek, body, tokyoView/closing block, structured
+//           fields, tags, author, location, readingMinutes
+// ---------------------------------------------------------------
+async function regenerateRecent(dryRun: boolean): Promise<void> {
+  log("info", "REGENERATE RECENT — re-editing latest articles with current brief", {
+    count: REGEN_COUNT,
+    provider: LLM_PROVIDER,
+    model: LLM_PROVIDER === "openai" ? OPENAI_MODEL : GEMINI_MODEL
+  });
+  const rawExisting = await readJson<Article[]>(ARTICLES_JSON, []);
+  if (rawExisting.length === 0) {
+    log("warn", "articles.json is empty — nothing to regenerate");
+    return;
+  }
+
+  // Backup before any mutation. Writes alongside articles.json as
+  // articles.backup-2026-06-07T08-12-34Z.json so a one-liner revert
+  // is possible if the regenerated output is worse than the original.
+  if (!dryRun) {
+    const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const backupPath = ARTICLES_JSON.replace(/\.json$/, `.backup-${stamp}.json`);
+    await writeJson(backupPath, rawExisting);
+    log("info", "backup written", { path: backupPath, articles: rawExisting.length });
+  }
+
+  // Newest-first by publishedAt. Tie-breaker: original array order.
+  const indexed = rawExisting.map((a, i) => ({ a, i }));
+  indexed.sort((x, y) => {
+    const cmp = (y.a.publishedAt ?? "").localeCompare(x.a.publishedAt ?? "");
+    return cmp !== 0 ? cmp : x.i - y.i;
+  });
+  const targets = indexed.slice(0, REGEN_COUNT).map((p) => p.a);
+  log("info", "selected for regeneration", {
+    count: targets.length,
+    bySource: targets.reduce<Record<string, number>>((acc, a) => {
+      const k = a.source?.name ?? "?";
+      acc[k] = (acc[k] ?? 0) + 1;
+      return acc;
+    }, {})
+  });
+
+  // Mutable map so the file's original order is preserved on write.
+  const bySlug = new Map(rawExisting.map((a) => [a.slug, a]));
+  let succeeded = 0;
+  let failed = 0;
+
+  for (let n = 0; n < targets.length; n++) {
+    if (n > 0 && LLM_DELAY_MS > 0) await sleep(LLM_DELAY_MS);
+    const previous = targets[n];
+
+    // Synthesize a RawItem the LLM can consume. We pass the existing
+    // body + dek as the "summary" so the model has materially richer
+    // context than a bare RSS title. The original imageUrl is included
+    // so pickCover() prefers it — but we still hard-override `cover`
+    // post-assembly to guarantee the image never changes.
+    const synthesizedSummary = [
+      previous.dek?.en ?? "",
+      ...(previous.body?.en ?? [])
+    ]
+      .filter((s) => s && s.trim().length > 0)
+      .join("\n\n");
+
+    const item: RawItem = {
+      guid: previous.sourceGuid || previous.source?.url || previous.slug,
+      source: previous.source?.name ?? "(unknown)",
+      category: isCategoryKey(previous.category) ? previous.category : CATEGORY_ORDER[0],
+      title: previous.title?.en || previous.slug,
+      link: previous.source?.url ?? "",
+      summary: synthesizedSummary || previous.dek?.en || previous.title?.en || "",
+      publishedAt: previous.publishedAt,
+      imageUrl: previous.cover?.src
+    };
+
+    try {
+      log(
+        "info",
+        `[regen ${n + 1}/${targets.length}] "${summarizeTitle(previous.title?.ja || previous.title?.en || previous.slug)}"  [${item.source}]`
+      );
+      const llm = await callLlm(item);
+      const others = rawExisting.filter((a) => a.slug !== previous.slug);
+      // Local usedCovers set, scoped to this regeneration only.
+      const usedCovers = new Set<string>();
+      const fresh = assembleArticle(item, llm, others, usedCovers, previous);
+      // Preserve the cover image exactly. The user explicitly said
+      // "画像等の変更はなくていい" — never touch this.
+      fresh.cover = previous.cover;
+      // Preserve the original publishedAt (assembleArticle uses item.publishedAt
+      // which we already set above, but this is belt-and-braces).
+      fresh.publishedAt = previous.publishedAt;
+      fresh.feature = previous.feature;
+      bySlug.set(previous.slug, fresh);
+      succeeded++;
+    } catch (err) {
+      failed++;
+      log("error", `regeneration failed for "${summarizeTitle(previous.slug, 60)}"`, {
+        reason: String(err).slice(0, 200)
+      });
+    }
+  }
+
+  log("info", "regeneration complete", {
+    attempted: targets.length,
+    succeeded,
+    failed
+  });
+
+  if (dryRun) {
+    log("info", "DRY RUN — not writing JSON.");
+    return;
+  }
+
+  // Re-emit the file in its ORIGINAL ordering so the rest of the app
+  // (which trusts articles.json order in places) is undisturbed.
+  const out = rawExisting.map((a) => bySlug.get(a.slug) ?? a);
+  await writeJson(ARTICLES_JSON, out);
+  log("info", "✓ regenerate-recent complete.");
+}
+
 async function main(): Promise<void> {
   const dryRun = process.argv.includes("--dry-run");
   const now = new Date();
@@ -1180,6 +1318,11 @@ async function main(): Promise<void> {
 
   if (IS_RETROFIT_TOKYO_VIEW) {
     await retrofitTokyoView(dryRun);
+    return;
+  }
+
+  if (IS_REGENERATE_RECENT) {
+    await regenerateRecent(dryRun);
     return;
   }
 

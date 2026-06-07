@@ -12,6 +12,8 @@
     "cron:publish:dry": "tsx src/scripts/cron-publisher.ts --dry-run",
     "cron:backfill": "tsx src/scripts/cron-publisher.ts --backfill",
     "cron:retrofit-tokyo-view": "tsx src/scripts/cron-publisher.ts --retrofit-tokyo-view",
+    "cron:regenerate-recent": "tsx --env-file=.env.local src/scripts/cron-publisher.ts --regenerate-recent",
+    "cron:regenerate-recent:dry": "tsx --env-file=.env.local src/scripts/cron-publisher.ts --regenerate-recent --dry-run",
     "wire-sheets": "bash scripts/wire-up-sheets-newsletter.sh",
     "wire-sheets:update": "bash scripts/update-sheets-newsletter.sh"
   },
