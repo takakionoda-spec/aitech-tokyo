@@ -42,30 +42,15 @@ import type { Article } from "@/data/articles";
  *  readable. */
 function ArticleCover({ article, alt }: { article: Article; alt: string }) {
   const [errored, setErrored] = useState(false);
-  const { lang, dict } = useLanguage();
   const cat = getCategoryDef(article.category);
   const tile = cat?.coverPool?.[0]?.tone ?? article.cover.tone ?? "#11131c";
-
-  // Skip Unsplash stock fallback when the config asks for tone tiles only.
-  const isFromUnsplash =
-    article.cover.src.includes("images.unsplash.com") ||
-    article.cover.src.includes("source.unsplash.com");
-  const preferTone: boolean = Boolean(
-    siteConfig.layout?.directory?.preferToneTileOverStockCover
-  );
-  const showTone =
-    !article.cover.src || errored || (preferTone && isFromUnsplash);
-
-  const taglineRaw = article.structured?.tagline?.[lang];
-  const coverTagline: string =
-    (Array.isArray(taglineRaw) ? taglineRaw[0] : taglineRaw) || alt || "";
-
+  const showTone = !article.cover.src || errored;
   return (
     <div
       className="relative aspect-[16/9] overflow-hidden bg-neutral-900"
       style={{
         background: showTone
-          ? `linear-gradient(160deg, ${tile} 0%, ${tile} 35%, #07101e 100%)`
+          ? `linear-gradient(135deg, ${tile}, #05060a)`
           : tile
       }}
     >
@@ -81,27 +66,13 @@ function ArticleCover({ article, alt }: { article: Article; alt: string }) {
         />
       )}
       {showTone && (
-        <div className="absolute inset-0 flex flex-col justify-between p-8 lg:p-14">
-          <div className="flex items-start justify-between gap-3">
-            <span className="font-mono text-[0.6875rem] tracking-[0.32em] uppercase text-ink/50">
-              {dict.categories[article.category]}
-            </span>
-            <span className="font-mono text-[0.6875rem] tracking-[0.32em] uppercase text-ink/40">
-              — {siteConfig.brand.name}
-            </span>
-          </div>
-          <p className="font-sans font-bold text-ink/95 text-[2rem] md:text-[2.6rem] lg:text-[3.2rem] leading-[1.04] tracking-[-0.015em] max-w-[18ch]">
-            {coverTagline}
-          </p>
-          <div className="flex items-end justify-between">
-            <span className="font-mono text-[0.6875rem] tracking-[0.32em] uppercase text-neon-cyan/65">
-              Vol. 01 — 2026
-            </span>
-            <span className="font-mono text-[0.6875rem] tracking-[0.22em] uppercase text-ink/40">
-              Issue
-            </span>
-          </div>
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-white/[0.04]" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span
+            aria-hidden
+            className="logo-celine !p-0 text-[6rem] md:text-[8rem] font-extralight text-white/15 select-none"
+          >
+            {(alt ?? "?").charAt(0).toUpperCase()}
+          </span>
         </div>
       )}
     </div>
@@ -117,52 +88,14 @@ function currentIssueNumber(): string {
   return String(Math.max(1, offset)).padStart(2, "0");
 }
 
-/** Parse inline markdown links `[label](url)` and render them as React nodes.
- *  External links open in a new tab with rel="noopener noreferrer" so they're
- *  safe and don't navigate away from the editorial page. The editorial-link
- *  class gives them the gold (AITECH: neon-cyan) hover underline that matches
- *  the rest of the site. This is intentionally a minimal markdown parser —
- *  only inline links are recognised; bold / italic / etc. are left as plain
- *  text. */
-function renderInlineMarkdown(text: string): React.ReactNode {
-  const parts: React.ReactNode[] = [];
-  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-  let key = 0;
-  while ((match = regex.exec(text)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push(text.slice(lastIndex, match.index));
-    }
-    const label = match[1];
-    const url = match[2];
-    parts.push(
-      <a
-        key={`mdlink-${key++}`}
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="editorial-link text-neon-cyan"
-      >
-        {label}
-      </a>
-    );
-    lastIndex = regex.lastIndex;
-  }
-  if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
-  }
-  return parts.length === 1 && typeof parts[0] === "string" ? text : parts;
-}
-
 function ParagraphBlock({ raw }: { raw: string }) {
   if (raw.startsWith("## ")) {
-    return <h2>{renderInlineMarkdown(raw.replace(/^##\s+/, ""))}</h2>;
+    return <h2>{raw.replace(/^##\s+/, "")}</h2>;
   }
   if (raw.startsWith("> ")) {
-    return <blockquote>{renderInlineMarkdown(raw.replace(/^>\s+/, ""))}</blockquote>;
+    return <blockquote>{raw.replace(/^>\s+/, "")}</blockquote>;
   }
-  return <p>{renderInlineMarkdown(raw)}</p>;
+  return <p>{raw}</p>;
 }
 
 export default function ArticleView({ slug }: { slug: string }) {

@@ -226,7 +226,7 @@ export const siteConfig = {
        *  Set to FALSE while the cron is still warming up so real RSS images
        *  show as they arrive; flip to TRUE once the index is dense with
        *  tool-specific thumbnails. */
-      preferToneTileOverStockCover: true
+      preferToneTileOverStockCover: false
     }
   },
 
