@@ -42,15 +42,21 @@ import type { Article } from "@/data/articles";
  *  readable. */
 function ArticleCover({ article, alt }: { article: Article; alt: string }) {
   const [errored, setErrored] = useState(false);
+  const { lang, dict } = useLanguage();
   const cat = getCategoryDef(article.category);
   const tile = cat?.coverPool?.[0]?.tone ?? article.cover.tone ?? "#11131c";
   const showTone = !article.cover.src || errored;
+
+  const taglineRaw = article.structured?.tagline?.[lang];
+  const coverTagline: string =
+    (Array.isArray(taglineRaw) ? taglineRaw[0] : taglineRaw) || alt || "";
+
   return (
     <div
       className="relative aspect-[16/9] overflow-hidden bg-neutral-900"
       style={{
         background: showTone
-          ? `linear-gradient(135deg, ${tile}, #05060a)`
+          ? `linear-gradient(160deg, ${tile} 0%, ${tile} 35%, #07101e 100%)`
           : tile
       }}
     >
@@ -66,13 +72,27 @@ function ArticleCover({ article, alt }: { article: Article; alt: string }) {
         />
       )}
       {showTone && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span
-            aria-hidden
-            className="logo-celine !p-0 text-[6rem] md:text-[8rem] font-extralight text-white/15 select-none"
-          >
-            {(alt ?? "?").charAt(0).toUpperCase()}
-          </span>
+        <div className="absolute inset-0 flex flex-col justify-between p-8 lg:p-14">
+          <div className="flex items-start justify-between gap-3">
+            <span className="font-mono text-[0.6875rem] tracking-[0.32em] uppercase text-ink/50">
+              {dict.categories[article.category]}
+            </span>
+            <span className="font-mono text-[0.6875rem] tracking-[0.32em] uppercase text-ink/40">
+              — {siteConfig.brand.name}
+            </span>
+          </div>
+          <p className="font-sans font-bold text-ink/95 text-[2rem] md:text-[2.6rem] lg:text-[3.2rem] leading-[1.04] tracking-[-0.015em] max-w-[18ch]">
+            {coverTagline}
+          </p>
+          <div className="flex items-end justify-between">
+            <span className="font-mono text-[0.6875rem] tracking-[0.32em] uppercase text-neon-cyan/65">
+              Vol. 01 — 2026
+            </span>
+            <span className="font-mono text-[0.6875rem] tracking-[0.22em] uppercase text-ink/40">
+              Issue
+            </span>
+          </div>
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-white/[0.04]" />
         </div>
       )}
     </div>

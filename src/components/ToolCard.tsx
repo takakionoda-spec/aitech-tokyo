@@ -76,6 +76,15 @@ export default function ToolCard({ article, priority = false }: Props) {
 
   const pillClass = NEON_BY_CATEGORY[article.category] ?? "pill--neon-cyan";
 
+  // Resolve a single string for the cover-tile centrepiece — falls back to
+  // the article title when the tagline structured field is missing. Handles
+  // both `LocalizedString` (string) and `LocalizedRichText` (string[]) shapes.
+  const taglineRaw = article.structured?.tagline?.[lang];
+  const coverTagline: string =
+    (Array.isArray(taglineRaw) ? taglineRaw[0] : taglineRaw) ||
+    article.title[lang] ||
+    "";
+
   // Glass / glow lives on the <article> so we can attach an AffiliateCTA
   // outside the navigational <Link> without breaking nested-anchor rules
   // (the CTA's own <a target="_blank" rel="sponsored ..."> would otherwise be
@@ -93,7 +102,7 @@ export default function ToolCard({ article, priority = false }: Props) {
           className="relative aspect-[4/3] overflow-hidden"
           style={{
             background: showTone
-              ? `linear-gradient(135deg, ${tile}, #05060a)`
+              ? `linear-gradient(160deg, ${tile} 0%, ${tile} 35%, var(--color-void) 100%)`
               : tile
           }}
         >
@@ -110,13 +119,29 @@ export default function ToolCard({ article, priority = false }: Props) {
             />
           )}
           {showTone && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span
-                aria-hidden
-                className="logo-celine !p-0 text-[5rem] md:text-[6rem] font-extralight text-white/15 select-none"
-              >
-                {(article.title[lang] ?? "?").charAt(0).toUpperCase()}
-              </span>
+            <div className="absolute inset-0 flex flex-col justify-between p-5 lg:p-6">
+              {/* Top row: category eyebrow + brand mark */}
+              <div className="flex items-start justify-between gap-3">
+                <span className="font-mono text-[0.5625rem] tracking-[0.28em] uppercase text-ink/45">
+                  {dict.categories[article.category]}
+                </span>
+                <span className="font-mono text-[0.5625rem] tracking-[0.28em] uppercase text-ink/35">
+                  — {siteConfig.brand.name.split(" ")[0]}
+                </span>
+              </div>
+              {/* Centrepiece: article tagline as cover-line typography */}
+              <p className="font-sans font-bold text-ink/90 text-[1.25rem] lg:text-[1.55rem] leading-[1.05] tracking-[-0.01em] line-clamp-5 max-w-[22ch]">
+                {coverTagline}
+              </p>
+              {/* Bottom row: subtle accent */}
+              <div className="flex items-end justify-end">
+                <span
+                  aria-hidden
+                  className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-neon-cyan/60"
+                >
+                  Vol. 01
+                </span>
+              </div>
             </div>
           )}
           {/* Inner gradient sheen */}
