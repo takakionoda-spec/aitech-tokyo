@@ -638,6 +638,59 @@ async function callLlm(item: RawItem): Promise<LlmOutput> {
   return callGemini(item);
 }
 
+/**
+ * Retry wrapper around `callLlm()`. Used by `--regenerate-recent` (and any
+ * future single-shot scripts) where a transient 503 / 429 from Gemini should
+ * not silently drop an article on the floor. The normal daily cron does NOT
+ * use this — that path is forgiving by design (a skipped item will be picked
+ * up again on the next run).
+ *
+ * Retries on:
+ *   - Gemini / OpenAI HTTP 500 / 502 / 503 / 504 (server-side spikes)
+ *   - HTTP 429 (rate limit)
+ *   - fetch-level network failures (ECONNRESET / ETIMEDOUT / "fetch failed")
+ * Does NOT retry on:
+ *   - HTTP 400 / 401 / 403 / 404 (bad request / auth / model not found)
+ *   - JSON parse errors (the model returned garbage — retrying won't help)
+ *
+ * Backoff: 3s, 8s, 20s between attempts. Max 4 attempts total.
+ */
+async function callLlmWithRetry(item: RawItem, maxAttempts = 4): Promise<LlmOutput> {
+  const backoffsMs = [3000, 8000, 20000];
+  let lastErr: unknown;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return await callLlm(item);
+    } catch (err) {
+      lastErr = err;
+      const msg = String(err);
+      const lower = msg.toLowerCase();
+      const isRetryable =
+        msg.includes("HTTP 503") ||
+        msg.includes("HTTP 502") ||
+        msg.includes("HTTP 504") ||
+        msg.includes("HTTP 500") ||
+        msg.includes("HTTP 429") ||
+        lower.includes("fetch failed") ||
+        lower.includes("econnreset") ||
+        lower.includes("etimedout") ||
+        lower.includes("socket hang up") ||
+        lower.includes("network");
+      if (!isRetryable || attempt === maxAttempts) {
+        throw err;
+      }
+      const waitMs = backoffsMs[attempt - 1] ?? 20000;
+      log(
+        "warn",
+        `LLM attempt ${attempt}/${maxAttempts} failed (retryable), waiting ${waitMs}ms`,
+        { reason: msg.slice(0, 140) }
+      );
+      await sleep(waitMs);
+    }
+  }
+  throw lastErr;
+}
+
 // ---------------------------------------------------------------
 // Retrofit-only LLM call — generates just the ARTEMIS TOKYO 視点
 // block for an article that already has good body copy. Used by
@@ -1271,7 +1324,7 @@ async function regenerateRecent(dryRun: boolean): Promise<void> {
         "info",
         `[regen ${n + 1}/${targets.length}] "${summarizeTitle(previous.title?.ja || previous.title?.en || previous.slug)}"  [${item.source}]`
       );
-      const llm = await callLlm(item);
+      const llm = await callLlmWithRetry(item);
       const others = rawExisting.filter((a) => a.slug !== previous.slug);
       // Local usedCovers set, scoped to this regeneration only.
       const usedCovers = new Set<string>();
