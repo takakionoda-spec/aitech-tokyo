@@ -1,5 +1,309 @@
 [
   {
+    "slug": "vendo-custom-features-within-your-saas",
+    "category": "workflow",
+    "issue": "Vol. 04",
+    "publishedAt": "2026-08-20T15:29:52.000Z",
+    "readingMinutes": 5,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
+    },
+    "title": {
+      "en": "Vendo: Custom Features Within Your SaaS",
+      "ja": "Vendo：SaaS内にカスタム機能を構築"
+    },
+    "dek": {
+      "en": "An open-source framework allows users to create bespoke dashboards, workflows, and automations directly inside their existing business software.",
+      "ja": "既存の業務ソフトウェア内で、カスタムダッシュボード、ワークフロー、自動化機能を直接作成できるオープンソースフレームワーク。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "August 20, 2026",
+      "ja": "2026年8月20日"
+    },
+    "tags": [
+      {
+        "en": "SaaS Customization",
+        "ja": "SaaSカスタマイズ"
+      },
+      {
+        "en": "Workflow Automation",
+        "ja": "ワークフロー自動化"
+      },
+      {
+        "en": "No-code/Low-code",
+        "ja": "ノーコード・ローコード"
+      }
+    ],
+    "body": {
+      "en": [
+        "Vendo is an open-source framework that allows users to create custom features, dashboards, and automated workflows directly within existing SaaS applications. Launched by Yousef and Nour, it aims to address the common problem of diverse customer needs that standard product roadmaps struggle to accommodate.",
+        "The system integrates by reading a host product's API surface, theme, and routes, enabling Vendo-generated applications to appear native and interact with existing data and functionalities. When a user describes a desired feature, Vendo’s custom harness generates a React component. This component is then compiled, type-checked, and rendered against real API responses.",
+        "A core technical distinction lies in Vendo's sandboxing mechanism. It uses QuickJS to run generated components in a virtual machine, isolated from the host product’s DOM, network, and clock. This setup ensures security and stability, returning a UI tree that the host renders using its own registered components.",
+        "Unlike other generative UI solutions that often confine components to chat interfaces or render apps within external assistants, Vendo creates durable, in-product applications. These custom features can be pinned, run on triggers, and shared across an organization, providing a more permanent extension to the core software.",
+        "> \"Vendo lives in your product and acts through your API as the signed-in user, so what it makes is durable: real apps users keep, pin, and run on triggers while they're away.\"",
+        "Current applications include users building tailored dashboards and reports, setting up recurring automations that can connect to external services, and B2B customers implementing specific business logic, such as adding extra fields to forms. The framework is entirely open-source under the Apache-2.0 license and can be self-hosted, with documentation available for those looking to embed it.",
+        "For a Tokyo-based professional, Vendo offers a means to personalize their core software tools. If their company's SaaS vendor were to integrate Vendo, it could mean custom reports in their CRM, unique automation sequences in their project management tool, or bespoke data visualizations, all without needing to export data or rely on external scripting. This shifts the power of customization from the vendor's roadmap to the end-user's immediate needs."
+      ],
+      "ja": [
+        "Vendoは、既存のSaaSアプリケーション内でカスタム機能、ダッシュボード、自動化ワークフローを直接作成できるオープンソースフレームワークである。YousefとNourによって立ち上げられたこのツールは、標準的な製品ロードマップでは対応しきれない、顧客の多様なニーズに応えることを目的としている。",
+        "このシステムは、ホスト製品のAPI、テーマ、ルーティングを読み込むことで統合される。これにより、Vendoで生成されたアプリケーションはネイティブな外観を持ち、既存のデータや機能と連携できるようになる。ユーザーが希望する機能を記述すると、VendoのカスタムハーネスがReactコンポーネントを生成する。このコンポーネントはコンパイルされ、型チェックが行われ、実際のAPI応答に対してレンダリングされる。",
+        "技術的な主要な差別化点として、Vendoのサンドボックスメカニズムが挙げられる。QuickJSを使用して、生成されたコンポーネントを仮想マシン内で実行し、ホスト製品のDOM、ネットワーク、クロックから隔離する。この設定により、セキュリティと安定性が確保され、ホストが自身の登録コンポーネントを使用してレンダリングするUIツリーが返される。",
+        "チャットインターフェースにコンポーネントを閉じ込めたり、外部アシスタント内でアプリをレンダリングしたりする他の生成UIソリューションとは異なり、Vendoは製品内に永続的なアプリケーションを作成する。これらのカスタム機能は、ピン留めしたり、トリガーで実行したり、組織内で共有したりすることができ、コアソフトウェアへのより恒久的な拡張を提供する。",
+        "> 「Vendoはあなたの製品内に存在し、ログインユーザーとしてAPIを通じて機能するため、作成されるものは永続的です。ユーザーが保持し、ピン留めし、離れている間にトリガーで実行できる実際のアプリであり、単にチャットに限定されたコンポーネントではありません。」",
+        "現在の用途としては、ユーザーがカスタマイズされたダッシュボードやレポートを作成したり、外部サービスと連携できる繰り返し自動化を設定したり、B2B顧客がフォームへの追加フィールドなどの特定のビジネスロジックを実装したりするケースがある。このフレームワークはApache-2.0ライセンスの下で完全にオープンソースであり、セルフホストも可能で、組み込みを検討する企業向けにドキュメントが提供されている。",
+        "東京のビジネスプロフェッショナルにとって、Vendoは主要なソフトウェアツールをパーソナライズする手段を提供する。もし彼らの会社のSaaSベンダーがVendoを統合すれば、CRMでのカスタムレポート、プロジェクト管理ツールでの独自の自動化シーケンス、または特定のデータ可視化が、データのエクスポートや外部スクリプトに頼ることなく実現できる可能性がある。これにより、カスタマイズの権限がベンダーのロードマップからエンドユーザーの直接的なニーズへと移行する。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "Vendoは、私たちが普段使っている業務ソフトウェア（例えばCRMやプロジェクト管理ツール）の中に、自分だけの新しい機能やダッシュボード、自動化の仕組みを「生成」できるツールです。これはまるで、あなたが「この顧客データから、特定の条件を満たすものだけを毎日リストアップしてSlackに送ってほしい」と頼んだら、そのソフトウェア自身がその機能を作り出して、ずっと使えるようにしてくれるようなものです。既存のソフトウェアのデータや見た目を活用するので、まるで最初からあった機能のように自然に動きます。",
+        "東京のビジネスパーソンにとって、これは特に業務効率化の大きな可能性を秘めています。例えば、銀行の法人向けポータルで、自社特有の財務レポートを自動生成したり、交通系アプリで、特定の経路の遅延情報をカスタマイズされた形式で受け取ったりすることが可能になるかもしれません。また、顧客サポートの現場では、顧客からのよくある問い合わせパターンに対応する小さな自動応答スクリプトを、現場の担当者が直接作成できるようになるでしょう。これは、既存のサービスがより個人のニーズに合わせて「変形」していく未来を示唆しています。",
+        "この技術が東京の業務に本格的に浸透するには、12〜24ヶ月かかるでしょう。主な要因は、国内のSaaSベンダーがVendoのようなフレームワークを自社製品に統合し、日本市場向けにローカライズされたサポートを提供することです。特に、日本語での自然言語による機能記述がどれだけ正確に動作するかが鍵となります。オープンソースであるため、一部の先進的な企業や開発チームが先行して導入する可能性はありますが、一般的なビジネスツールとして広がるには、既存のSaaSエコシステムへの組み込みが不可欠です。",
+        "日本国内で直接的に競合する製品はまだ少ないですが、近い方向性としては、freeeやMoney Forwardのような会計・人事SaaSが、API連携を通じて外部ツールとの自動化を強化している点が挙げられます。しかし、Vendoのように「製品内部に直接カスタムUIや機能を生成する」というアプローチは、まだ見られません。将来的には、これらの国内SaaSベンダーが、ユーザー自身がノーコードで機能を拡張できるようなAIツールを組み込むことで、Vendoが示す方向性に追随する可能性は十分にあります。"
+      ],
+      "ja": [
+        "Vendoは、私たちが日頃使っている業務ソフトウェア（例えば顧客管理システムやプロジェクト管理ツール）の中に、自分だけの新しい機能やダッシュボード、自動化の仕組みを「生成」できるツールです。これはまるで、あなたが「この顧客データから、特定の条件を満たすものだけを毎日リストアップしてSlackに送ってほしい」と頼んだら、そのソフトウェア自身がその機能を作り出して、ずっと使えるようにしてくれるようなものです。既存のソフトウェアのデータや見た目を活用するので、まるで最初からあった機能のように自然に動きます。",
+        "東京のビジネスパーソンにとって、これは特に業務効率化の大きな可能性を秘めています。例えば、銀行の法人向けポータルで、自社特有の財務レポートを自動生成したり、交通系アプリで、特定の経路の遅延情報をカスタマイズされた形式で受け取ったりすることが可能になるかもしれません。また、顧客サポートの現場では、顧客からのよくある問い合わせパターンに対応する小さな自動応答スクリプトを、現場の担当者が直接作成できるようになるでしょう。これは、既存のサービスがより個人のニーズに合わせて「変形」していく未来を示唆しています。",
+        "この技術が東京の業務に本格的に浸透するには、12〜24ヶ月かかるでしょう。主な要因は、国内のSaaSベンダーがVendoのようなフレームワークを自社製品に統合し、日本市場向けにローカライズされたサポートを提供することです。特に、日本語での自然言語による機能記述がどれだけ正確に動作するかが鍵となります。オープンソースであるため、一部の先進的な企業や開発チームが先行して導入する可能性はありますが、一般的なビジネスツールとして広がるには、既存のSaaSエコシステムへの組み込みが不可欠です。",
+        "日本国内で直接的に競合する製品はまだ少ないですが、近い方向性としては、freeeやMoney Forwardのような会計・人事SaaSが、API連携を通じて外部ツールとの自動化を強化している点が挙げられます。しかし、Vendoのように「製品内部に直接カスタムUIや機能を生成する」というアプローチは、まだ見られません。将来的には、これらの国内SaaSベンダーが、ユーザー自身がノーコードで機能を拡張できるようなAIツールを組み込むことで、Vendoが示す方向性に追随する可能性は十分にあります。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "Create custom features and automations inside your existing SaaS.",
+        "ja": "既存SaaSにカスタム機能や自動化を直接追加。"
+      },
+      "useCase": {
+        "en": "For a product manager in Tokyo who needs a specific report or workflow not offered by their standard SaaS, Vendo could allow them to build it directly within the application without coding expertise.",
+        "ja": "東京のプロダクトマネージャーが、標準SaaSにない特定のレポートやワークフローを必要とする場合、Vendoを使えばコーディング知識なしでアプリ内に直接構築できる。"
+      },
+      "vsCompetitor": {
+        "en": "Unlike generative UI tools like Vercel AI SDK or OpenAI Apps SDK that focus on chat-based components or external assistants, Vendo creates durable, in-product applications that integrate deeply with the host SaaS API.",
+        "ja": "Vercel AI SDKやOpenAI Apps SDKのようなチャットベースのコンポーネントや外部アシスタントに焦点を当てる生成UIツールと異なり、VendoはホストSaaS APIと深く統合された永続的なアプリを製品内に構築する。"
+      },
+      "tokyoTake": {
+        "en": "Vendo's open-source, in-product customization offers a compelling vision for tailored software, but its adoption in Tokyo will depend on SaaS vendors integrating it and robust Japanese language support for feature description.",
+        "ja": "Vendoの製品内カスタム機能は魅力的だが、東京での普及はSaaSベンダーの統合と、機能記述における日本語対応の質に左右されるだろう。"
+      }
+    },
+    "source": {
+      "name": "Hacker News Top",
+      "url": "https://github.com/runvendo/vendo"
+    },
+    "sourceGuid": "https://news.ycombinator.com/item?id=49376038",
+    "status": "published"
+  },
+  {
+    "slug": "linkdaze-an-ai-calendar-for-household-logistics-not-just-schedules",
+    "category": "workflow",
+    "issue": "Vol. 04",
+    "publishedAt": "2026-08-20T18:20:35.000Z",
+    "readingMinutes": 5,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
+    },
+    "title": {
+      "en": "Linkdaze: An AI Calendar for Household Logistics, Not Just Schedules",
+      "ja": "Linkdaze：スケジュールを超え、家庭運営をAIで管理するカレンダー"
+    },
+    "dek": {
+      "en": "An upcoming smart calendar application aims to offload the invisible labor of household management through AI, promising to streamline family coordination and tasks.",
+      "ja": "登場予定のスマートカレンダーアプリがAIを活用し、家庭運営における目に見えない労働の軽減を目指す。家族間の調整とタスク管理を効率化する可能性を秘める。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo, August 20, 2026",
+      "ja": "東京, 2026年8月20日"
+    },
+    "tags": [
+      {
+        "en": "AI Productivity",
+        "ja": "AI生産性"
+      },
+      {
+        "en": "Household Management",
+        "ja": "家庭管理"
+      },
+      {
+        "en": "Work-Life Balance",
+        "ja": "ワークライフバランス"
+      }
+    ],
+    "body": {
+      "en": [
+        "Linkdaze is an upcoming smart calendar application designed to manage the complexities of household logistics, moving beyond simple schedule tracking. Set to launch in late 2026, the tool aims to reduce the cognitive load associated with family coordination, integrating tasks, appointments, and shared responsibilities into a unified, intelligent system.",
+        "The application leverages AI to interpret natural language requests, helping users organize everything from grocery lists and chore assignments to school events and doctor visits. It seeks to automate the often invisible labor of home management, anticipating needs and suggesting optimal schedules for families.",
+        "This differs from conventional digital calendars, which primarily serve as static repositories for appointments. Linkdaze positions itself as an active household assistant, capable of learning family routines and preferences to offer proactive support. It is not merely a shared calendar; it is a shared brain for the home.",
+        "> \"The goal is to make the household run itself, not just show you what's happening.\"",
+        "While specific pricing details are not yet public, the service is expected to operate on a subscription model, common for productivity tools in the US market where Linkdaze is being developed. Its primary competition will include existing shared calendar apps like Google Calendar and Apple Calendar, as well as family organization tools such as Cozi and Notion, by offering a more deeply integrated, AI-driven experience.",
+        "For a business professional in Tokyo, the promise of Linkdaze lies in its potential to offload the mental burden of household management. By streamlining domestic operations, it could free up significant time and mental energy currently spent on coordinating family life, allowing for greater focus on professional demands. This could be particularly relevant in Tokyo, where balancing demanding careers with family responsibilities often presents unique challenges."
+      ],
+      "ja": [
+        "Linkdazeは、単なるスケジュール管理を超え、家庭内の複雑なロジスティクスを管理するために設計された、登場予定のスマートカレンダーアプリケーションである。2026年後半のローンチが予定されており、家族間の調整に伴う認知負荷を軽減し、タスク、アポイントメント、共有責任を統合されたインテリジェントなシステムにまとめることを目指す。",
+        "このアプリケーションはAIを活用し、自然言語でのリクエストを解釈する。これにより、買い物リストや家事の割り当てから、学校行事や病院の予約まで、あらゆる家庭内の整理を支援する。家庭運営における目に見えない労働を自動化し、ニーズを予測し、家族にとって最適なスケジュールを提案する。",
+        "従来のデジタルカレンダーが主に予定の静的な保管庫として機能するのに対し、Linkdazeは能動的な家庭アシスタントとして位置づけられる。家族のルーティンや好みを学習し、先回りしてサポートを提供できる。これは単なる共有カレンダーではなく、家庭のための共有知能であると言える。",
+        "> 「目標は、何が起こるかを示すだけでなく、家庭が自律的に機能するようにすることだ。」",
+        "具体的な価格はまだ公表されていないが、Linkdazeが開発されている米国市場の生産性ツールに多いサブスクリプションモデルでの提供が予想される。主な競合は、GoogleカレンダーやAppleカレンダーといった既存の共有カレンダーアプリに加え、Coziなどの家族向け整理ツール、そしてNotionといった汎用的なタスク管理ツールとなるだろう。Linkdazeは、より深く統合されたAI駆動の体験を提供することで差別化を図る。",
+        "東京のビジネスプロフェッショナルにとって、Linkdazeの可能性は、家庭管理の精神的負担を軽減する点にある。家事のオペレーションを効率化することで、現在家族生活の調整に費やされている時間と精神的エネルギーを大幅に解放し、仕事への集中を高めることができるかもしれない。これは、多忙なキャリアと家庭責任のバランスが特有の課題を提示する東京において、特に重要となる可能性がある。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "Imagine a personal assistant for your home, but digital and always available. Linkdaze is an upcoming smart calendar that uses artificial intelligence to manage everything from family appointments to who takes out the trash. It’s not just a a place to write things down; it actively learns your family's routines and helps coordinate tasks, making sure everyone knows what needs to happen without constant reminders. It aims to take the invisible work of running a household and make it smoother, almost like having an extra pair of hands that also thinks ahead.",
+        "For Tokyo readers, particularly those in dual-income households or managing multi-generational families, this type of AI-driven home management could significantly reduce daily stress. It could streamline the coordination of children's school activities, elderly care appointments, shared chores in smaller living spaces, and even navigating local community events. The benefit would be felt as a reduction in mental load, allowing professionals to dedicate more cognitive resources to their demanding careers without the constant background hum of domestic logistics.",
+        "While Linkdaze is slated for a late 2026 launch in the US, its practical impact in Tokyo would likely be 12-24 months after that, at minimum. The gating factor is not just language localization, but a deep understanding of Japanese household dynamics, school systems, local government services, and payment infrastructure. It would require a Japan-specific version, potentially developed through a local partnership, that integrates with common Japanese communication tools like LINE and understands the nuances of local cultural expectations around family roles and responsibilities.",
+        "Currently, no single Japanese product offers this exact level of AI-driven, proactive household management. However, services like LINE WORKS provide robust group communication and task management features that Japanese families often adapt for household coordination. For shared calendars, Google Calendar and Apple Calendar are widely used. PLAUD, with its focus on meeting transcription and AI summaries, shows a local appetite for AI-assisted productivity, but a direct household management AI with Linkdaze's scope is yet to emerge from Japanese developers. Localizing and integrating such a solution would be a significant undertaking."
+      ],
+      "ja": [
+        "家庭に、デジタルでいつでも利用できる専属アシスタントがいると想像してみてください。Linkdazeは、家族の予定からゴミ出しの担当まで、あらゆることを人工知能で管理する登場予定のスマートカレンダーです。単にメモをする場所ではなく、家族のルーティンを学習し、タスクの調整を助け、絶え間ないリマインダーなしに全員が何をすべきかを知る状態を目指します。家庭運営における目に見えない作業を円滑にし、まるで先読みするもう一組の手があるかのように機能することを目指しています。",
+        "東京の読者、特に共働き世帯や多世代同居の家族にとって、このようなAI駆動の家庭管理は日々のストレスを大幅に軽減する可能性があります。子供の学校行事、高齢者の介護予約、狭い居住空間での共有の家事、さらには地域のイベントへの参加といった調整作業を効率化できるでしょう。その恩恵は精神的な負担の軽減として感じられ、プロフェッショナルが家庭のロジスティクスという絶え間ない背景音なしに、多忙なキャリアにより多くの認知資源を割くことを可能にします。",
+        "Linkdazeは2026年後半に米国でのローンチが予定されていますが、東京での実用的な影響は、早くともその12〜24ヶ月後になるでしょう。障壁となるのは単なる言語のローカライズだけでなく、日本の家庭の力学、学校制度、地方自治体のサービス、そして決済インフラへの深い理解です。LINEのような日本の一般的なコミュニケーションツールとの連携や、家族の役割と責任に関する地域の文化的期待のニュアンスを理解した、日本に特化したバージョンが必要となるでしょう。これは、現地パートナーシップを通じて開発される可能性が高いです。",
+        "現在、LinkdazeのようなAI駆動で能動的な家庭管理を専門とする日本製品はまだありません。しかし、LINE WORKSのようなサービスは、日本の家族が家庭内の調整に利用することの多い、堅牢なグループコミュニケーションおよびタスク管理機能を提供しています。共有カレンダーとしては、GoogleカレンダーやAppleカレンダーが広く利用されています。会議の文字起こしとAI要約に焦点を当てたPLAUDは、AI支援の生産性に対する国内の関心を示していますが、Linkdazeのような広範な家庭管理AIは、日本の開発者からはまだ登場していません。このようなソリューションをローカライズし統合することは、大きな挑戦となるでしょう。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "An upcoming AI calendar to run your household, not just track dates.",
+        "ja": "家庭運営をAIで自動化する未来のカレンダー。"
+      },
+      "useCase": {
+        "en": "For a Tokyo-based dual-income professional seeking to reduce the mental load of household management, Linkdaze promises to automate family coordination and task distribution, freeing up focus for work.",
+        "ja": "共働きで家事の負担軽減を目指す東京のプロフェッショナルが、家族の調整やタスク配分を自動化し、仕事への集中力を高める。"
+      },
+      "vsCompetitor": {
+        "en": "Unlike Google Calendar or Apple Calendar which are static schedule trackers, or Cozi which is a manual organizer, Linkdaze aims to use AI to proactively manage and automate household logistics.",
+        "ja": "静的なスケジュール管理に留まるGoogleカレンダーやAppleカレンダー、手動管理のCoziとは異なり、LinkdazeはAIで家庭のロジスティクスを能動的に自動管理する。"
+      },
+      "tokyoTake": {
+        "en": "This US-centric tool, while promising, would need deep localization for Japanese family structures and local service integrations to genuinely impact Tokyo professionals.",
+        "ja": "米国発の本ツールは有望だが、日本の家族構成や地域サービスへの深いローカライズがなければ、東京のプロフェッショナルへの影響は限定的だろう。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/08/20/linkdazes-smart-calendar-is-built-to-run-a-household-not-just-track-a-schedule/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3155017",
+    "status": "published"
+  },
+  {
+    "slug": "grok-ai-grapples-with-incoherent-outputs-raising-reliability-questions",
+    "category": "llm-tools",
+    "issue": "Vol. 04",
+    "publishedAt": "2026-08-20T17:32:16.000Z",
+    "readingMinutes": 5,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1620712943543-26fab76e6f5d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0c"
+    },
+    "title": {
+      "en": "Grok AI Grapples with Incoherent Outputs, Raising Reliability Questions",
+      "ja": "Grok AI、支離滅裂な応答が課題に — 信頼性への懸念"
+    },
+    "dek": {
+      "en": "xAI's conversational AI, Grok, has reportedly been generating nonsensical responses, highlighting the critical importance of output consistency for practical applications.",
+      "ja": "xAIの対話型AI「Grok」が時に意味不明な応答を生成していると報じられた。実用における出力の一貫性の重要性を浮き彫りにする。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "TOKYO, August 20, 2026",
+      "ja": "東京, 2026年8月20日"
+    },
+    "tags": [
+      {
+        "en": "LLM",
+        "ja": "LLM"
+      },
+      {
+        "en": "Chatbot",
+        "ja": "チャットボット"
+      },
+      {
+        "en": "Reliability",
+        "ja": "信頼性"
+      },
+      {
+        "en": "xAI",
+        "ja": "xAI"
+      }
+    ],
+    "body": {
+      "en": [
+        "Grok, the conversational AI developed by xAI and integrated into the X platform, is reportedly experiencing issues with generating incoherent or 'gibberish' responses for users.",
+        "Launched by Elon Musk's AI venture, Grok was positioned as an alternative to leading models like OpenAI's ChatGPT and Anthropic's Claude, aiming to provide real-time information access via X. However, consistent reports indicate a fundamental challenge in maintaining predictable and coherent output.",
+        "This unreliability fundamentally undermines the utility of any AI system intended for professional use. For tasks requiring precision, such as drafting reports, summarizing complex information, or assisting in customer service, unpredictable outputs necessitate extensive human oversight and correction, negating efficiency gains.",
+        "While the exact technical cause of these 'gibberish' outputs is not publicly detailed, such behavior points to potential instability in the underlying model's inference or training data. Reliable performance is a baseline expectation for any AI tool seeking enterprise adoption.",
+        "> Users report the AI frequently devolves into incoherent text, making it unusable for serious tasks.",
+        "The competitive landscape for large language models is defined by not just raw intelligence or speed, but crucially by stability and trustworthiness. Models like GPT-4o and Claude 3.5 Opus, while not immune to errors, generally maintain a high degree of linguistic coherence, which Grok appears to struggle with in these instances.",
+        "For business professionals evaluating AI tools, Grok's reported inconsistencies present a significant hurdle. Its integration with X offers a unique data advantage, but if the output cannot be trusted, that advantage becomes moot for critical workflows.",
+        "The implications extend beyond terrestrial applications. As ambitions for AI expand into space exploration and off-world operations, the requirement for robust, predictable, and error-free communication becomes paramount. An AI that struggles with basic coherence on Earth would be a liability in environments where human intervention is costly or impossible."
+      ],
+      "ja": [
+        "xAIが開発し、Xプラットフォームに統合されている対話型AI「Grok」が、時に支離滅裂な、あるいは「意味不明な」応答を生成していると報じられた。",
+        "イーロン・マスク氏のAIベンチャーから発表されたGrokは、OpenAIのChatGPTやAnthropicのClaudeといった主要モデルの代替として位置づけられ、Xを通じてリアルタイムの情報アクセスを提供することを目指していた。しかし、一貫した報告は、予測可能で一貫性のある出力を維持するという根本的な課題を示唆している。",
+        "この信頼性の欠如は、プロフェッショナルな用途を意図したあらゆるAIシステムの有用性を根本的に損なう。報告書の作成、複雑な情報の要約、顧客サービス支援といった精度が求められるタスクにおいて、予測不能な出力は広範な人間の監視と修正を必要とし、効率化の利点を打ち消してしまう。",
+        "これらの「意味不明な」出力の正確な技術的要因は公には詳細にされていないが、このような挙動は基盤モデルの推論や学習データにおける潜在的な不安定性を示唆している。信頼性の高いパフォーマンスは、エンタープライズでの採用を目指すあらゆるAIツールにとっての基本的な期待値である。",
+        "> ユーザーは、AIが頻繁に支離滅裂なテキストに陥り、真剣なタスクには使えないと報告している。",
+        "大規模言語モデルの競争環境は、単なる知能や速度だけでなく、決定的に安定性と信頼性によって定義される。GPT-4oやClaude 3.5 Opusのようなモデルは、エラーがないわけではないものの、一般的に高い言語的整合性を維持しており、Grokはこれらの点で苦戦しているように見える。",
+        "AIツールを評価するビジネスプロフェッショナルにとって、Grokの報告された一貫性の欠如は大きな障壁となる。Xとの統合は独自のデータ上の利点を提供するが、出力が信頼できなければ、その利点は重要なワークフローにおいては無意味となる。",
+        "その影響は地球上のアプリケーションに留まらない。AIの野心が宇宙探査や地球外運用にまで拡大するにつれて、堅牢で予測可能、かつエラーのないコミュニケーションの要件は最重要となる。地球上での基本的な整合性にも苦労するAIは、人間の介入が高価であるか不可能な環境では負債となるだろう。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "The news that Grok, a high-profile AI from xAI, is generating 'gibberish' responses might seem like a distant issue for Tokyo readers, but it underscores a universal truth about AI: reliability is paramount. Imagine a sophisticated automated translation system suddenly reverting to nonsense in the middle of a critical business negotiation. This is not about a minor bug; it's about the core promise of an intelligent agent to communicate coherently.",
+        "For Tokyo's business landscape, where precision and clear communication are deeply valued, such inconsistencies would be a non-starter. Domains like financial reporting, legal documentation, or even customer support in a multilingual environment demand absolute accuracy. If an AI cannot be trusted to produce coherent Japanese, its utility in critical interfaces—from banking apps to government services or transit information—is severely limited. The risk of misunderstanding far outweighs any potential speed gain.",
+        "This kind of fundamental instability typically requires significant model retraining and rigorous quality assurance. Resolving 'gibberish' outputs could take 6 to 12 months, assuming xAI dedicates substantial resources to it. Until then, its practical application for Japanese business professionals remains negligible, as the cost of human verification would exceed any benefit. Availability in the Japanese App Store or a localized UI would be secondary concerns to core output stability.",
+        "In Japan, companies like ELYZA and Sakana AI, along with major players like NTT and SoftBank, are developing their own LLMs. Their approach often emphasizes stability, safety, and cultural nuance from the outset. While no Japanese counterpart has publicly faced this exact 'gibberish' issue, the focus on reliable output from domestic developers reflects an understanding of local market demands for dependable AI, particularly in enterprise and public sector applications."
+      ],
+      "ja": [
+        "xAIの注目AIであるGrokが「意味不明な」応答を生成しているというニュースは、東京の読者にとっては遠い話に聞こえるかもしれませんが、AIに関する普遍的な真実を浮き彫りにしています。それは、信頼性が最も重要であるという点です。重要な商談中に、高度な自動翻訳システムが突然支離滅裂な内容に戻ってしまう状況を想像してみてください。これは軽微なバグではなく、インテリジェントなエージェントが首尾一貫してコミュニケーションするという核心的な約束に関わる問題です。",
+        "精度と明確なコミュニケーションが深く重視される東京のビジネス環境において、このような一貫性の欠如は受け入れられません。金融報告、法的文書、あるいは多言語環境での顧客サポートといった分野では、絶対的な正確さが求められます。AIが首尾一貫した日本語を生成すると信用できない場合、銀行アプリから行政サービス、交通情報に至るまで、重要なインターフェースでのその有用性は著しく制限されます。誤解のリスクは、潜在的な速度向上をはるかに上回ります。",
+        "このような根本的な不安定性は、通常、モデルの再学習と厳格な品質保証にかなりの時間を要します。「意味不明な」出力の解決には、xAIがこれに十分なリソースを投入すると仮定しても、6ヶ月から12ヶ月かかる可能性があります。それまでは、日本人ビジネスプロフェッショナルにとっての実用的な応用はほとんどなく、人間の検証コストがメリットを上回るでしょう。日本語のApp Storeでの提供やUIのローカライズは、コアとなる出力の安定性に比べれば二の次の懸念事項です。",
+        "日本では、ELYZAやSakana AIといった企業が、NTTやソフトバンクなどの大手企業とともに独自のLLMを開発しています。彼らのアプローチは、最初から安定性、安全性、文化的なニュアンスを重視することがよくあります。日本のカウンターパートで、この「意味不明な」問題が公に発生した例はありませんが、国内開発者が信頼性の高い出力を重視していることは、特に企業や公共部門のアプリケーションにおける信頼できるAIに対する市場の要求を理解していることを示しています。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "Grok, xAI's chatbot, struggles with incoherent outputs.",
+        "ja": "xAIのGrok、意味不明な出力に課題。"
+      },
+      "useCase": {
+        "en": "For any professional considering AI for critical communication or data processing tasks, Grok's current reliability issues mean it cannot be trusted to reduce human oversight or ensure accurate information flow.",
+        "ja": "重要なコミュニケーションやデータ処理にAI導入を検討するプロフェッショナルにとって、Grokの現在の信頼性問題は、人間の監視削減や正確な情報フロー確保に利用できないことを意味する。"
+      },
+      "vsCompetitor": {
+        "en": "Unlike more established models such as OpenAI's ChatGPT or Anthropic's Claude, which generally maintain high output coherence, Grok's reported 'gibberish' responses indicate a fundamental reliability gap that makes it less suitable for professional applications requiring consistent quality.",
+        "ja": "OpenAIのChatGPTやAnthropicのClaudeなど、より確立されたモデルが高い出力一貫性を保つ一方、Grokの「意味不明な」応答は、安定した品質を求めるプロフェッショナルな用途には不向きな根本的な信頼性ギャップを示す。"
+      },
+      "tokyoTake": {
+        "en": "Grok's reported instability makes it impractical for Tokyo professionals who prioritize accuracy in a multilingual business environment. Japanese language support, even if available, would be compromised by unreliable outputs, pushing local businesses towards more stable domestic or established global alternatives that prioritize consistent quality.",
+        "ja": "Grokの不安定性は、多言語ビジネス環境で精度を重視する東京のプロフェッショナルにとって実用的ではありません。仮に日本語対応があっても、信頼性の低い出力では意味がなく、地元企業は一貫した品質を優先する、より安定した国内または既存のグローバルな代替品を選ぶでしょう。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/08/20/grok-keeps-sending-gibberish-responses-to-users/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3154977",
+    "status": "published"
+  },
+  {
     "slug": "frugal-tokens-a-local-llm-api-cost-analyzer-for-developers",
     "category": "dev-tools",
     "issue": "Vol. 04",
@@ -827,8 +1131,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0b0b0d"
     },
     "title": {
       "en": "Anthropic Extends Claude's Code Generation Limits for Developers",
@@ -1348,8 +1652,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Groq Shifts Focus to AI Inference Cloud Services",
@@ -1560,8 +1864,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0f12"
+      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "Nvidia Bolsters AI Infrastructure with SoftBank Data Center Investment",
@@ -1662,8 +1966,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0b0b0d"
+      "src": "https://images.unsplash.com/photo-1620712943543-26fab76e6f5d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0c"
     },
     "title": {
       "en": "Lorekit Introduces Persistent Memory for AI Agents",
@@ -1876,8 +2180,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Tasklet.ai Seeks Design Engineering Lead, Hinting at AI for Complex Operations",
@@ -2192,8 +2496,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101010"
     },
     "title": {
       "en": "Anthropic Details Claude’s Invisible Content Watermarks",
@@ -2508,7 +2812,7 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0d0d0f"
     },
     "title": {
@@ -2614,8 +2918,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "AI Interaction as Leadership: Directing the Digital Workforce",
@@ -2714,8 +3018,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-26fab76e6f5d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0c"
+      "src": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0d0f"
     },
     "title": {
       "en": "Open-Source AI Agent Prioritizes Budget, Sources, and Local Data",
@@ -2820,8 +3124,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "Google to Permit Removal of AI Image Watermarks",
@@ -2924,8 +3228,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#08080a"
     },
     "title": {
       "en": "Claude's Code Sessions: Maximizing AI in Developer Workflows",
@@ -3029,8 +3333,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Meta AI: An Ubiquitous Assistant or a New Data Frontier?",
@@ -3135,8 +3439,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101010"
+      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "Byhand.ai: AI Generates Personalized Handwritten Notes at Scale",
@@ -3241,8 +3545,8 @@
     "readingMinutes": 7,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Kog's GPU Optimization Targets Inference Efficiency",
@@ -3343,8 +3647,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
     },
     "title": {
       "en": "Cerebras Accelerates OpenAI's Next-Gen LLM Training",
@@ -3449,8 +3753,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0f12"
     },
     "title": {
       "en": "OpenAI's Ultrafast Mode for GPT 5.6 Sol: The Drive for Instantaneous AI",
@@ -3555,8 +3859,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "Google Releases Gemini 3.7 Flash API for High-Volume, Low-Latency AI Tasks",
@@ -3763,8 +4067,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Mistral Launches OCR-4-1 for Document Digitization",
@@ -4081,8 +4385,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "DeepSeek-V4-Pro: A New Contender in the LLM Arena",
@@ -4285,8 +4589,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0e10"
+      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101011"
     },
     "title": {
       "en": "Grok 4.6 Now Accessible on OpenRouter",
@@ -4389,8 +4693,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101010"
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Thrive Holdings Unveils Enterprise AI Platform for Business Workflow Optimization",
@@ -4487,8 +4791,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0f12"
     },
     "title": {
       "en": "Google's Go for AI: Infrastructure, Not Models",
@@ -4587,8 +4891,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "ChatGPT Desktop App Now Available for Linux Users",
@@ -4687,8 +4991,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "Keet Generates Custom Learning Courses with AI-Powered Video and Games",
@@ -4787,8 +5091,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101011"
     },
     "title": {
       "en": "Google Gemini App Reaches Billion Users, Solidifying AI Assistant Role",
@@ -4889,8 +5193,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "OpenAI's Ethics Head Departs Amid Safety Concerns",
@@ -4991,8 +5295,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0f12"
+      "src": "https://images.unsplash.com/photo-1620712943543-26fab76e6f5d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0c"
     },
     "title": {
       "en": "OpenAI COO Brad Lightcap Departs for New Venture",
@@ -5095,8 +5399,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0e10"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Anthropic Explores Riemann Zeta Function with AI",
@@ -5199,8 +5503,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101010"
     },
     "title": {
       "en": "Stoa Launches Marketplace for GPUs and AI Servers",
@@ -5305,8 +5609,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101010"
+      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "OpenAI Strategist Envisions AI Labs as Nation-State Peers",
@@ -5400,8 +5704,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Historian Jill Lepore Challenges Silicon Valley's AI Vision",
@@ -5504,8 +5808,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "The Paradox of AI Safety Testing",
@@ -5606,8 +5910,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101010"
     },
     "title": {
       "en": "The Hidden Cost of AI: Amazon's New Data Center and Its Carbon Footprint",
@@ -5710,8 +6014,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0e10"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "OpenAI Acquires NextSlide, Signals Move into AI Presentation Tools",
@@ -5816,8 +6120,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0e10"
+      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "Charting OpenAI's Rapid Ascent",
@@ -5916,8 +6220,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "OpenAI Delays Astra Model, Citing Security Concerns",
@@ -6018,7 +6322,7 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0c0c0e"
     },
     "title": {
@@ -6124,8 +6428,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Rippling Introduces AI-Driven Employee ROI Analytics",
@@ -6222,8 +6526,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0f12"
+      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0b0b0d"
     },
     "title": {
       "en": "Oracle Bans AI-Generated Code from OpenJDK",
@@ -6326,8 +6630,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#08080a"
     },
     "title": {
       "en": "Cloudflare's Kitesurf: A Browser for AI Agents",
@@ -6432,8 +6736,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#08080a"
+      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "OpenAI Positions its Models as Core to National Cyber Defense",
@@ -6538,8 +6842,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "Airbnb Accelerates Feature Shipping with Internal AI",
@@ -6642,8 +6946,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "Jill Lepore on the \"Artificial State\": A Historian's Warning for AI's Future",
@@ -6746,8 +7050,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "Meta Fined Heavily in Child Safety Case: A Precedent for Platform Accountability",
@@ -6848,8 +7152,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Quantum Chemistry Claims Challenged, LLM Aids Audit",
@@ -7058,8 +7362,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "AMD Powers Autonomous AI Agents for the Space Economy",
@@ -7164,8 +7468,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0e10"
+      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "ChatGPT Free Tier Now Offers Unlimited Text Chats",
@@ -7262,8 +7566,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101012"
+      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#08080a"
     },
     "title": {
       "en": "Artificial Analysis Launches Agentic Index for AI Agent Benchmarking",
@@ -7362,8 +7666,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Naïve Automates Business Setup, Reduces Administrative Overhead",
@@ -7464,8 +7768,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0b0b0d"
     },
     "title": {
       "en": "Meta Unveils Muse Code and Muse Spark 1.2 for AI-Assisted Development",
@@ -7572,8 +7876,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101011"
+      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0f12"
     },
     "title": {
       "en": "A New AI Frontier: Google's Top Researchers Form New Venture",
@@ -7676,8 +7980,8 @@
     "readingMinutes": 7,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0b0b0d"
+      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Beyond Pattern Matching: A Technical Critique of LLM Architectures",
@@ -7882,8 +8186,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101010"
+      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Atlassian Rovo's Data Handling Raises Enterprise Security Concerns",
@@ -7970,316 +8274,6 @@
       "url": "https://www.promptarmor.com/resources/atlassian-rovo-exfiltrates-data"
     },
     "sourceGuid": "https://news.ycombinator.com/item?id=49185983",
-    "status": "published"
-  },
-  {
-    "slug": "hark-previews-browser-agent-for-automated-web-tasks",
-    "category": "workflow",
-    "issue": "Vol. 04",
-    "publishedAt": "2026-08-05T15:46:27.000Z",
-    "readingMinutes": 6,
-    "feature": false,
-    "cover": {
-      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
-    },
-    "title": {
-      "en": "Hark Previews Browser Agent for Automated Web Tasks",
-      "ja": "Harkがブラウザ操作自動化エージェントをプレビュー"
-    },
-    "dek": {
-      "en": "A new AI agent from Hark promises to automate multi-step web tasks directly within the browser, responding to natural language commands.",
-      "ja": "Harkがプレビューした新たなAIエージェントは、自然言語の指示に基づき、ブラウザ内で多段階のウェブタスクを自動実行することを目指す。"
-    },
-    "author": {
-      "en": "AITECH TOKYO Editors",
-      "ja": "AITECH TOKYO 編集部"
-    },
-    "location": {
-      "en": "TOKYO, August 5, 2026",
-      "ja": "東京、2026年8月5日"
-    },
-    "tags": [
-      {
-        "en": "AI agents",
-        "ja": "AIエージェント"
-      },
-      {
-        "en": "Browser automation",
-        "ja": "ブラウザ自動化"
-      },
-      {
-        "en": "Productivity tools",
-        "ja": "生産性ツール"
-      },
-      {
-        "en": "Workflow automation",
-        "ja": "ワークフロー自動化"
-      }
-    ],
-    "body": {
-      "en": [
-        "Hark has previewed a new browser use agent designed to automate multi-step tasks directly within a web browser. This tool aims to interpret natural language commands and execute complex workflows across various websites, mimicking human interaction.",
-        "The agent functions by understanding user instructions, navigating web pages, filling forms, extracting data, and clicking elements without requiring explicit programming or scripting. It operates as an intelligent overlay that observes and acts within the browser environment.",
-        "For a professional, Hark could streamline repetitive administrative duties. Examples include compiling market research data from multiple sources, managing online inventory, or processing customer inquiries that span several web applications. The promise is to free up time currently spent on manual web navigation.",
-        "> Hark aims to offload repetitive web tasks, understanding instructions like 'Find the cheapest flight to Osaka next month and add it to my calendar.'",
-        "While similar in ambition to robotic process automation (RPA) tools, Hark distinguishes itself by operating more intuitively within the browser itself, responding to conversational prompts rather than requiring structured process definitions. It likely leverages advanced large language models to parse user intent and adapt to variations in web page layouts.",
-        "The tool, currently in preview, suggests a future where routine digital chores become largely autonomous. Its development by Hark, a US-based firm, points to a growing trend in AI towards agents that can perform actions beyond simple content generation. Pricing details and general availability have not yet been disclosed, but its potential for automating browser-based workflows offers a glimpse into evolving professional tools."
-      ],
-      "ja": [
-        "Harkが、ウェブブラウザ内で多段階のタスクを自動化する新しいブラウザ利用エージェントのプレビューを公開した。このツールは、自然言語の指示を解釈し、人間の操作を模倣しながら、複数のウェブサイトにわたる複雑なワークフローを実行することを目指している。",
-        "このエージェントは、ユーザーの指示を理解し、ウェブページをナビゲートし、フォームに入力し、データを抽出し、要素をクリックする。明示的なプログラミングやスクリプトを必要とせず、ブラウザ環境内で観察し、行動するインテリジェントなオーバーレイとして機能する。",
-        "専門家にとって、Harkは反復的な管理業務を効率化できる可能性がある。例えば、複数の情報源から市場調査データを収集したり、オンライン在庫を管理したり、複数のウェブアプリケーションにまたがる顧客からの問い合わせを処理したりといった作業が考えられる。手作業によるウェブナビゲーションに費やされている時間を解放することが期待される。",
-        "> Harkは「来月大阪行きの最安航空券を見つけ、カレンダーに追加して」といった指示を理解し、反復的なウェブタスクを肩代わりすることを目指す。",
-        "ロボティック・プロセス・オートメーション（RPA）ツールと野心は似ているものの、Harkはより直感的にブラウザ内で動作し、構造化されたプロセス定義を必要とせず、会話型のプロンプトに応答する点で異なる。ユーザーの意図を解析し、ウェブページのレイアウトの変化に適応するために、高度な大規模言語モデルを活用していると見られる。",
-        "現在プレビュー段階にあるこのツールは、日常的なデジタル作業が大幅に自律化される未来を示唆する。米国を拠点とするHarkによるこの開発は、AIが単なるコンテンツ生成を超え、具体的なアクションを実行できるエージェントへと進化するトレンドを指し示している。価格や一般提供時期についてはまだ明らかにされていないが、ブラウザベースのワークフロー自動化におけるその可能性は、進化するプロフェッショナルツールの未来を垣間見せる。"
-      ]
-    },
-    "tokyoView": {
-      "en": [
-        "Hark, a US company, has announced a new type of artificial intelligence that acts like a personal assistant living inside your web browser. Imagine giving simple instructions like \"find the best price for this item on three different shopping sites and put it in a spreadsheet,\" and the AI then opens the tabs, navigates the sites, copies the information, and pastes it for you, just as a human would. It's an automated helper for all those repetitive clicks and data entries you do online.",
-        "For Tokyo readers, this technology could significantly simplify interactions with local online services. Think about navigating complex government application portals, comparing prices on Japanese e-commerce sites like Rakuten or Amazon Japan, or even filling out detailed forms for travel or reservations in Japanese. It could make online tasks faster and less frustrating, especially for those who deal with high volumes of web-based administrative work.",
-        "A practical impact for Tokyo users is likely 12–24 months away. The primary gating factor will be the agent's ability to reliably understand and interact with the nuances of Japanese web design and language, including specific kanji and cultural contexts. This will require dedicated fine-tuning for the Japanese market and potentially local partnerships to ensure compatibility with widely used domestic platforms.",
-        "While no direct Japanese counterpart offering a general-purpose browser agent with this specific approach has been widely announced, some domestic RPA providers like NTT Data's WinActor already address process automation for enterprise clients. However, Hark's natural language, browser-native approach represents a different user experience. For individual users, existing browser extensions for specific tasks or even integrated AI features in browsers like Microsoft Edge (Copilot) offer limited, but similar, automation capabilities in Japanese."
-      ],
-      "ja": [
-        "米国のHark社が、ウェブブラウザの中に住むパーソナルアシスタントのような新しい人工知能を発表しました。例えば、「この商品の最安値を3つの異なるショッピングサイトで見つけてスプレッドシートに入れて」といった簡単な指示を出すだけで、AIがタブを開き、サイトを移動し、情報をコピーして貼り付ける、人間が行うような一連の作業を自動でこなします。これは、オンラインで行う反復的なクリックやデータ入力作業を肩代わりしてくれる自動ヘルパーです。",
-        "東京の読者にとって、この技術は地域のオンラインサービスとのやり取りを大幅に簡素化する可能性があります。複雑な政府の申請ポータルサイトの操作、楽天やAmazon Japanのような日本のECサイトでの価格比較、あるいは旅行や予約のための詳細な日本語フォームの入力などが考えられます。ウェブベースの事務作業量が多い方にとっては、オンラインタスクをより速く、ストレスなくこなせるようになるかもしれません。",
-        "東京のユーザーにとって実用的な影響が出るのは、おそらく12〜24ヶ月後でしょう。主なボトルネックは、エージェントが日本語のウェブデザインや言語の機微、特定の漢字や文化的背景を確実に理解し、操作できるかどうかです。日本の市場に特化したファインチューニングと、広く使われている国内プラットフォームとの互換性を確保するための現地パートナーシップが必要になるでしょう。",
-        "このような汎用ブラウザエージェントを提供する直接的な日本企業はまだ広く発表されていませんが、NTTデータのWinActorのような国内RPAプロバイダーは、すでに企業向けにプロセス自動化を提供しています。しかし、Harkの自然言語によるブラウザネイティブなアプローチは、異なるユーザー体験を提供します。個人ユーザー向けには、特定のタスクに対応する既存のブラウザ拡張機能や、Microsoft Edge（Copilot）のようなブラウザに統合されたAI機能が、限定的ではあるものの、同様の自動化機能を日本語で提供しています。"
-      ]
-    },
-    "structured": {
-      "tagline": {
-        "en": "Browser agent automates web tasks from natural language.",
-        "ja": "ブラウザ作業を自然言語で自動化するエージェント。"
-      },
-      "useCase": {
-        "en": "For an ops manager in Tokyo needing to regularly update product listings across various e-commerce platforms, Hark could automate data entry and verification, freeing up hours of manual work.",
-        "ja": "東京の運用マネージャーが複数のECプラットフォームで定期的に商品リストを更新する必要がある場合、Harkはデータ入力と検証を自動化し、手作業の時間を大幅に削減できる。"
-      },
-      "vsCompetitor": {
-        "en": "This competes with traditional RPA tools like UiPath or Automation Anywhere, but offers a more user-friendly, natural language interface directly within the browser, reducing the need for complex scripting.",
-        "ja": "UiPathやAutomation Anywhereのような従来のRPAツールと競合するが、よりユーザーフレンドリーな自然言語インターフェースをブラウザ内で直接提供し、複雑なスクリプト作成の必要性を減らす。"
-      },
-      "tokyoTake": {
-        "en": "While promising for automating web tasks, its utility for Tokyo professionals hinges on robust Japanese language understanding and seamless integration with Japan-specific web services and complex form layouts, which often differ significantly from Western counterparts.",
-        "ja": "ウェブタスクの自動化には期待が持てるが、東京のプロフェッショナルにとっての有用性は、堅牢な日本語理解と、欧米とは大きく異なる日本独自のウェブサービスや複雑なフォームレイアウトへのシームレスな対応にかかっている。"
-      }
-    },
-    "source": {
-      "name": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/08/05/hark-previews-its-browser-use-agent-for-completing-tasks/"
-    },
-    "sourceGuid": "https://techcrunch.com/?p=3149995",
-    "status": "published"
-  },
-  {
-    "slug": "edotenv-quant-trading-workflows-as-self-improving-ai-training-environments",
-    "category": "dev-tools",
-    "issue": "Vol. 04",
-    "publishedAt": "2026-08-04T18:36:02.000Z",
-    "readingMinutes": 6,
-    "feature": true,
-    "cover": {
-      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101012"
-    },
-    "title": {
-      "en": "EdotEnv: Quant Trading Workflows as Self-Improving AI Training Environments",
-      "ja": "EdotEnv: 量子金融ワークフローを活用した自己進化型AI学習環境"
-    },
-    "dek": {
-      "en": "EdotEnv offers dynamic, real-world quant trading environments for training and evaluating advanced AI agents, addressing the challenge of saturating benchmarks.",
-      "ja": "EdotEnvは、飽和する既存ベンチマークの課題に対応するため、動的な実世界量子金融ワークフローをAIエージェントの訓練・評価環境として提供する。"
-    },
-    "author": {
-      "en": "AITECH TOKYO Editors",
-      "ja": "AITECH TOKYO 編集部"
-    },
-    "location": {
-      "en": "TOKYO",
-      "ja": "東京"
-    },
-    "tags": [
-      {
-        "en": "AI Training",
-        "ja": "AI訓練"
-      },
-      {
-        "en": "Reinforcement Learning",
-        "ja": "強化学習"
-      },
-      {
-        "en": "Quantitative Trading",
-        "ja": "クオンツトレーディング"
-      },
-      {
-        "en": "Benchmarks",
-        "ja": "ベンチマーク"
-      }
-    ],
-    "body": {
-      "en": [
-        "EdotEnv is a platform providing self-improving reinforcement learning (RL) environments, specifically designed around quantitative trading workflows, for training and evaluating advanced AI agents.",
-        "The core premise addresses a growing issue in AI research: traditional benchmarks often saturate quickly as models become more capable, rendering them less useful for meaningful comparison. EdotEnv posits that real-world markets, which continuously evolve and become more efficient, offer an ideal, ever-challenging testing ground for AI.",
-        "The platform transforms complex professional quant workflows into reliable training environments. This involves tasks such as building predictive features and models, designing optimal portfolios, backtesting strategies, and continuously adapting to changing market regimes. Each step is supported by self-built tools within the environment.",
-        "For instance, an agent tasked with predictive feature building receives cleaned market data for a specific period, utilizes a backtesting tool to validate ideas, and an execution tool to trade strategies with new features on unseen data. The reward system is designed to isolate and enhance the agent's feature-building skills.",
-        "Initial observations from running state-of-the-art models in these environments indicate that agents tend to struggle with deep, iterative research, often preferring broad, shallow searches. Furthermore, higher-level reasoning does not consistently translate to improved performance, and agents may disengage when losing money rather than adapting smarter strategies.",
-        "> \"Useful benchmarks should increase in difficulty as models advance.\"",
-        "EdotEnv aims to teach transferable research skills—like long-horizon planning and continual learning—rather than merely task-specific answers. The environments utilize real-world data, naturally incorporating noise and trade-offs, with verifiable and immediate rewards that do not require external LLM judges or human experts.",
-        "A sample task repository for feature engineering has been open-sourced. EdotEnv plans to commercialize these continuously improving environments for AI labs, researchers, and enterprises focused on developing agents with advanced ML modeling capabilities, continual learning, or general quant research interests."
-      ],
-      "ja": [
-        "EdotEnvは、飽和する既存ベンチマークの課題に対応するため、動的な実世界量子金融ワークフローをAIエージェントの訓練・評価環境として提供するプラットフォームである。",
-        "AI研究において、モデルの能力向上に伴い従来のベンチマークが急速に飽和し、モデル間の有意義な比較が難しくなるという課題がある。EdotEnvは、絶えず進化し効率化していく実世界の市場こそが、AIにとって理想的な、常に挑戦的なテスト環境となると提唱する。",
-        "このプラットフォームは、複雑な専門的クオンツワークフローを信頼性の高い訓練環境に変換する。これには、予測機能やモデルの構築、最適なポートフォリオ設計、戦略のバックテスト、市場レジームへの継続的な適応といったタスクが含まれ、各ステップは環境内の独自ツールによってサポートされる。",
-        "例えば、予測機能構築のタスクでは、エージェントは特定の期間のクリーンな市場データを受け取り、バックテストツールでアイデアを検証し、実行ツールを用いて未見のデータで新しい機能を持つ戦略を取引する。報酬システムは、エージェントの機能構築スキルを分離し、向上させるように設計されている。",
-        "最先端モデルをこれらの環境で実行した初期の観察では、エージェントが深く反復的な研究に苦労し、広範で浅い探索を好む傾向が見られる。さらに、高度な推論が必ずしもパフォーマンス向上に繋がらず、損失時に賢い戦略に適応するのではなく、取引を停止してしまうケースも確認されている。",
-        "> 「有用なベンチマークは、モデルが進歩するにつれて難易度が増すはずだ。」",
-        "EdotEnvは、タスク固有の解答ではなく、長期計画や継続学習といった移転可能な研究スキルを教えることを目指している。この環境は実世界データを使用し、ノイズやトレードオフを自然に組み込み、外部のLLM判定者や人間の専門家を必要としない検証可能で即時的な報酬を提供する。",
-        "特徴量エンジニアリングのサンプルタスクリポジトリはオープンソース化されている。EdotEnvは、高度なMLモデリング能力、継続学習、または一般的なクオンツ研究に関心を持つAIラボ、研究者、企業向けに、これらの自己進化型環境を継続的に提供する計画だ。"
-      ]
-    },
-    "tokyoView": {
-      "en": [
-        "EdotEnvの提案は、AIモデルの評価方法そのものに疑問を投げかけるものです。これまで、AIの性能は特定のデータセットで測られてきましたが、現実世界では状況が常に変化します。EdotEnvは、量子金融市場という、まさにその「変化し続ける」環境をAIの訓練場として使うことで、より実用的な知能を育もうとしています。例えるなら、一度きりのテストではなく、刻々と状況が変わる実際のビジネス現場でAIがどれだけ適応できるかを試すようなものです。",
-        "東京の読者にとって、この種の技術が近い将来影響を与える可能性のある領域は、金融サービス、サプライチェーン管理、あるいは複雑な都市計画や災害対応シミュレーションなどでしょう。AIが市場の変動や予期せぬ事態にリアルタイムで適応し、より堅牢な意思決定を下せるようになることで、これらのドメインでのサービスはより高速かつ効率的になるかもしれません。人間では処理しきれない膨大なデータを瞬時に分析し、最適な戦略を提案するAIの登場は、業務の質を大きく向上させる可能性があります。",
-        "この技術が東京のビジネスシーンに本格的に浸透するには、3年から5年程度の時間が必要と見られます。主な要因は、国内の金融機関や大手企業が、このような先進的なAI訓練環境への大規模な投資を決断し、実際の業務プロセスに組み込むためのR&D（研究開発）を進める必要があるためです。また、金融分野特有の規制対応や、日本語に特化したデータセットでのさらなる検証も求められるでしょう。",
-        "日本国内では、東京大学の松尾研究室やPreferred Networks（PFN）、経済産業省が推進するGENIACプログラムなどが、先進的なAI研究やエージェント開発に取り組んでいます。EdotEnvのような直接的な「自己進化型金融市場シミュレーション環境」を提供する企業はまだ見られませんが、これらの研究機関や企業が、より実践的で動的なAI評価・訓練手法を模索する中で、EdotEnvのコンセプトに類するアプローチを取り入れる可能性は十分にあります。"
-      ],
-      "ja": [
-        "EdotEnvの提案は、AIモデルの評価方法そのものに疑問を投げかけるものです。これまで、AIの性能は特定のデータセットで測られてきましたが、現実世界では状況が常に変化します。EdotEnvは、量子金融市場という、まさにその「変化し続ける」環境をAIの訓練場として使うことで、より実用的な知能を育もうとしています。例えるなら、一度きりのテストではなく、刻々と状況が変わる実際のビジネス現場でAIがどれだけ適応できるかを試すようなものです。",
-        "東京の読者にとって、この種の技術が近い将来影響を与える可能性のある領域は、金融サービス、サプライチェーン管理、あるいは複雑な都市計画や災害対応シミュレーションなどでしょう。AIが市場の変動や予期せぬ事態にリアルタイムで適応し、より堅牢な意思決定を下せるようになることで、これらのドメインでのサービスはより高速かつ効率的になるかもしれません。人間では処理しきれない膨大なデータを瞬時に分析し、最適な戦略を提案するAIの登場は、業務の質を大きく向上させる可能性があります。",
-        "この技術が東京のビジネスシーンに本格的に浸透するには、3年から5年程度の時間が必要と見られます。主な要因は、国内の金融機関や大手企業が、このような先進的なAI訓練環境への大規模な投資を決断し、実際の業務プロセスに組み込むためのR&D（研究開発）を進める必要があるためです。また、金融分野特有の規制対応や、日本語に特化したデータセットでのさらなる検証も求められるでしょう。",
-        "日本国内では、東京大学の松尾研究室やPreferred Networks（PFN）、経済産業省が推進するGENIACプログラムなどが、先進的なAI研究やエージェント開発に取り組んでいます。EdotEnvのような直接的な「自己進化型金融市場シミュレーション環境」を提供する企業はまだ見られませんが、これらの研究機関や企業が、より実践的で動的なAI評価・訓練手法を模索する中で、EdotEnvのコンセプトに類するアプローチを取り入れる可能性は十分にあります。"
-      ]
-    },
-    "structured": {
-      "tagline": {
-        "en": "Quant trading environments for training advanced AI agents.",
-        "ja": "AIエージェント訓練用の量子金融環境。"
-      },
-      "useCase": {
-        "en": "For AI researchers or large enterprise labs developing advanced agents, EdotEnv offers a dynamic, real-world-data-driven environment to benchmark and train agents in complex decision-making and continuous learning.",
-        "ja": "先進エージェント開発を行うAI研究者や大企業ラボ向けに、EdotEnvは複雑な意思決定と継続学習のための動的で実データに基づく訓練・評価環境を提供する。"
-      },
-      "vsCompetitor": {
-        "en": "Unlike static, fixed-dataset benchmarks that quickly saturate, EdotEnv provides an evolving, real-market-data-driven environment for continuous agent training and evaluation, akin to a real-world research lab.",
-        "ja": "すぐに飽和する静的な固定データセットベンチマークとは異なり、EdotEnvは実世界の研究ラボのように、継続的なエージェント訓練・評価のための進化する実市場データ駆動型環境を提供する。"
-      },
-      "tokyoTake": {
-        "en": "This is a sophisticated dev tool for AI labs, not an end-user product. While the concept of dynamic benchmarks is crucial, adoption in Tokyo will depend on major Japanese research institutions or financial firms investing in this specific approach for their agent R&D, likely within 3-5 years.",
-        "ja": "これはエンドユーザー向けではなく、AIラボ向けの高度な開発ツールです。動的なベンチマークという概念は重要ですが、東京での採用は、主要な日本の研究機関や金融企業がこの特定のアプローチに投資し、エージェントR&Dに組み込むかどうかにかかっており、実現には3〜5年かかるでしょう。"
-      }
-    },
-    "source": {
-      "name": "Hacker News Top",
-      "url": "https://edotenv.com/"
-    },
-    "sourceGuid": "https://news.ycombinator.com/item?id=49172936",
-    "status": "published"
-  },
-  {
-    "slug": "anthropic-secures-ai-compute-capacity-with-volta-deal",
-    "category": "dev-tools",
-    "issue": "Vol. 04",
-    "publishedAt": "2026-08-04T19:48:40.000Z",
-    "readingMinutes": 5,
-    "feature": true,
-    "cover": {
-      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
-    },
-    "title": {
-      "en": "Anthropic Secures AI Compute Capacity with Volta Deal",
-      "ja": "Anthropic、Voltaとの契約でAI計算能力を確保"
-    },
-    "dek": {
-      "en": "Anthropic, developer of the Claude large language model, has entered a significant agreement with AI cloud provider Volta to secure dedicated infrastructure for its advanced model development and deployment.",
-      "ja": "大規模言語モデルClaudeの開発元であるAnthropicが、AIクラウドプロバイダーVoltaと大規模な契約を締結し、高度なモデル開発と展開のための専用インフラを確保した。"
-    },
-    "author": {
-      "en": "AITECH TOKYO Editors",
-      "ja": "AITECH TOKYO 編集部"
-    },
-    "location": {
-      "en": "Tokyo, August 4, 2026",
-      "ja": "東京, 2026年8月4日"
-    },
-    "tags": [
-      {
-        "en": "AI Infrastructure",
-        "ja": "AIインフラ"
-      },
-      {
-        "en": "Cloud Computing",
-        "ja": "クラウドコンピューティング"
-      },
-      {
-        "en": "LLM Development",
-        "ja": "LLM開発"
-      }
-    ],
-    "body": {
-      "en": [
-        "Anthropicは、大規模言語モデルClaudeを開発する企業であり、AIクラウドスタートアップのVoltaとの間で、計算インフラに関する戦略的な契約を締結した。",
-        "Voltaは、GPUクラスター、最適化されたネットワーク、そしてAIワークロードに特化したソフトウェアスタックを提供する専門クラウドサービスである。この契約により、AnthropicはClaudeの次世代モデルの研究開発、トレーニング、そして推論を大規模に実行するための安定した基盤を得る。",
-        "このようなインフラストラクチャは、最新のLLMを効率的に構築し、市場に投入するために不可欠である。Anthropicは、自社データセンターの構築・運用に伴う莫大な資本投資と運用上の複雑さを回避し、Voltaの専門知識を活用することを選択した。",
-        "これは、クラウドコンピューティングの初期段階で、企業が自社サーバーからAWSのようなサービスに移行した動きと類似している。AI開発企業は、モデルの複雑さとデータ量の増加に伴い、汎用クラウドプロバイダーだけでは対応しきれない専門的な計算リソースを求めるようになっている。",
-        "既存の競合としては、Google CloudのTPU、AWSのTrainium/Inferentia、AzureのAI最適化VMといった主要クラウドプロバイダーのAI特化型サービスに加え、CoreWeaveやLambda LabsといったAI専用インフラプロバイダーが挙げられる。Voltaは、この高成長市場における専門性と規模で差別化を図る。",
-        "東京のビジネスプロフェッショナルにとって、このニュースは間接的な影響を持つ。グローバルなAIモデル開発の加速は、将来的に、より高性能で低コストなAIサービスが日本市場にも提供される可能性を高める。具体的には、翻訳、データ分析、コンテンツ生成ツールなどの精度と速度が向上することが期待される。",
-        "> This partnership underscores the critical role of specialized AI infrastructure in scaling advanced model development.",
-        "最終的に、地球規模でのAI能力の拡張は、その応用範囲を宇宙空間にまで広げる。軌道上でのデータ処理、月面基地の自律運用、深宇宙探査におけるリアルタイム意思決定支援など、地球外での活動におけるAIの役割は、このような基盤技術の進化によって支えられるだろう。"
-      ],
-      "ja": [
-        "大規模言語モデル「Claude」の開発元であるAnthropicは、AIクラウドスタートアップのVoltaと計算インフラに関する戦略的な契約を締結した。",
-        "Voltaは、GPUクラスター、最適化されたネットワーク、AIワークロードに特化したソフトウェアスタックを提供する専門クラウドサービスだ。この契約により、AnthropicはClaudeの次世代モデルの研究開発、トレーニング、そして推論を大規模に実行するための安定した基盤を確保する。",
-        "このようなインフラストラクチャは、最新のLLMを効率的に構築し、市場に投入するために不可欠である。Anthropicは、自社データセンターの構築・運用に伴う莫大な資本投資と運用上の複雑さを回避し、Voltaの専門知識を活用することを選択した。",
-        "これは、クラウドコンピューティングの初期段階で、企業が自社サーバーからAWSのようなサービスに移行した動きと類似している。AI開発企業は、モデルの複雑さとデータ量の増加に伴い、汎用クラウドプロバイダーだけでは対応しきれない専門的な計算リソースを求めるようになっている。",
-        "既存の競合としては、Google CloudのTPU、AWSのTrainium/Inferentia、AzureのAI最適化VMといった主要クラウドプロバイダーのAI特化型サービスに加え、CoreWeaveやLambda LabsといったAI専用インフラプロバイダーが挙げられる。Voltaは、この高成長市場における専門性と規模で差別化を図る。",
-        "東京のビジネスプロフェッショナルにとって、このニュースは間接的な影響を持つ。グローバルなAIモデル開発の加速は、将来的に、より高性能で低コストなAIサービスが日本市場にも提供される可能性を高める。具体的には、翻訳、データ分析、コンテンツ生成ツールなどの精度と速度が向上することが期待される。",
-        "「このパートナーシップは、高度なモデル開発をスケールさせる上で、専門的なAIインフラストラクチャが果たす極めて重要な役割を浮き彫りにする。」",
-        "最終的に、地球規模でのAI能力の拡張は、その応用範囲を宇宙空間にまで広げる。軌道上でのデータ処理、月面基地の自律運用、深宇宙探査におけるリアルタイム意思決定支援など、地球外での活動におけるAIの役割は、このような基盤技術の進化によって支えられるだろう。"
-      ]
-    },
-    "tokyoView": {
-      "en": [
-        "VoltaとAnthropicの契約は、AIモデル開発に必要な膨大な計算能力を、専門のクラウドサービスが提供するという動きを明確に示しています。これは、自社で高性能なスーパーコンピュータを持つ代わりに、専門業者から必要な時に必要なだけ計算リソースを借りるようなものです。AnthropicのようなAI開発企業は、インフラの管理ではなく、AIモデル自体の開発に集中できるようになります。",
-        "この動向が東京の読者に与える影響は、主に間接的です。グローバルなAIモデルがより効率的に開発・運用されることで、将来的に日本市場で利用できるAIサービス、例えば高精度な日本語翻訳、データ分析、コンテンツ生成ツールなどが、より高性能かつ低コストで提供される可能性が高まります。企業がAIを活用した新しいサービスを開発する際の基盤が強化されると考えることができます。",
-        "このような変化が東京のビジネス環境に具体的に現れるのは、12〜24ヶ月程度の時間軸でしょう。これは、海外で開発された最先端のAIモデルが、日本語に特化したチューニングを受け、日本の法規制や商慣習に合わせた形でサービスとして展開されるまでの期間を考慮したものです。また、国内企業が同様の専門インフラを構築・活用する動きも並行して進む必要があります。",
-        "日本国内では、Preferred Networks (PFN) が自社でスーパーコンピュータ「MN-3」を運用し、高性能なAI開発を推進しています。また、NTTやソフトバンクといった大手通信事業者も、AIモデル開発向けの計算インフラへの投資を強化しており、政府のGENIACプログラムも国産AIインフラの整備を目指しています。これらの動きは、Voltaが提供するような専門性の高い計算リソースを国内で確保しようとする試みと重なります。"
-      ],
-      "ja": [
-        "VoltaとAnthropicの契約は、AIモデル開発に必要な膨大な計算能力を、専門のクラウドサービスが提供するという動きを明確に示しています。これは、自社で高性能なスーパーコンピュータを持つ代わりに、専門業者から必要な時に必要なだけ計算リソースを借りるようなものです。AnthropicのようなAI開発企業は、インフラの管理ではなく、AIモデル自体の開発に集中できるようになります。",
-        "この動向が東京で暮らす読者に与える影響は、主に間接的です。グローバルなAIモデルがより効率的に開発・運用されることで、将来的に日本市場で利用できるAIサービス、例えば高精度な日本語翻訳、データ分析、コンテンツ生成ツールなどが、より高性能かつ低コストで提供される可能性が高まります。企業がAIを活用した新しいサービスを開発する際の基盤が強化されると考えることができます。",
-        "このような変化が東京のビジネス環境に具体的に現れるのは、12〜24ヶ月程度の時間軸でしょう。これは、海外で開発された最先端のAIモデルが、日本語に特化したチューニングを受け、日本の法規制や商慣習に合わせた形でサービスとして展開されるまでの期間を考慮したものです。また、国内企業が同様の専門インフラを構築・活用する動きも並行して進む必要があります。",
-        "日本国内では、Preferred Networks (PFN) が自社でスーパーコンピュータ「MN-3」を運用し、高性能なAI開発を推進しています。また、NTTやソフトバンクといった大手通信事業者も、AIモデル開発向けの計算インフラへの投資を強化しており、政府のGENIACプログラムも国産AIインフラの整備を目指しています。これらの動きは、Voltaが提供するような専門性の高い計算リソースを国内で確保しようとする試みと重なります。"
-      ]
-    },
-    "structured": {
-      "tagline": {
-        "en": "Volta provides specialized AI cloud infrastructure for large model development.",
-        "ja": "Voltaは大規模モデル開発向けAIクラウドインフラを提供。"
-      },
-      "useCase": {
-        "en": "For an AI startup CTO or lead engineer, Volta offers scalable, optimized GPU compute to accelerate training and deployment of large language models like Claude.",
-        "ja": "AIスタートアップのCTOやリードエンジニアが、Claudeのような大規模言語モデルのトレーニングとデプロイを加速するため、スケーラブルで最適化されたGPU計算能力を提供する。"
-      },
-      "vsCompetitor": {
-        "en": "Volta competes with specialized AI infrastructure providers like CoreWeave and the AI-optimized offerings of major clouds (AWS, Azure, Google Cloud), differentiating through dedicated focus and potentially better cost-efficiency for massive AI workloads.",
-        "ja": "VoltaはCoreWeaveのようなAI特化型インフラプロバイダーや、主要クラウド（AWS、Azure、Google Cloud）のAI最適化サービスと競合し、大規模AIワークロードに特化した専門性とコスト効率で差別化を図る。"
-      },
-      "tokyoTake": {
-        "en": "This deal secures Anthropic's compute, indirectly influencing future AI services in Japan. While Volta itself may not offer direct services in Japan immediately, the improved efficiency in global AI development means better, potentially cheaper, AI tools will eventually reach Tokyo professionals, likely within 12-24 months as Japanese-specific models are refined and integrated.",
-        "ja": "この契約はAnthropicの計算能力を確保し、日本の将来のAIサービスに間接的な影響を与える。Voltaが直ちに日本でサービスを提供するわけではないが、グローバルなAI開発効率の向上は、より高性能で安価なAIツールが最終的に東京のプロフェッショナルに届くことを意味する。これは日本語モデルの洗練と統合が進む12〜24ヶ月以内には実現するだろう。"
-      }
-    },
-    "source": {
-      "name": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/08/04/anthropic-signs-10-billion-deal-with-ai-cloud-startup-volta/"
-    },
-    "sourceGuid": "https://techcrunch.com/?p=3149770",
     "status": "published"
   }
 ]
