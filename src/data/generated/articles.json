@@ -1,5 +1,633 @@
 [
   {
+    "slug": "llms-augment-reverse-engineering-for-future-systems",
+    "category": "dev-tools",
+    "issue": "Vol. 07",
+    "publishedAt": "2026-11-18T22:29:13.000Z",
+    "readingMinutes": 5,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101012"
+    },
+    "title": {
+      "en": "LLMs Augment Reverse Engineering for Future Systems",
+      "ja": "LLMがリバースエンジニアリングを拡張、未来のシステム解析へ"
+    },
+    "dek": {
+      "en": "A new methodology outlines how large language models can significantly accelerate the analysis of binary code, with implications extending to off-world computing.",
+      "ja": "新しい手法は、大規模言語モデルがバイナリコード解析を大幅に加速する方法を示し、その影響は地球外コンピューティングにまで及ぶ。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "TOKYO, November 18, 2026",
+      "ja": "東京, 2026年11月18日"
+    },
+    "tags": [
+      {
+        "en": "Reverse Engineering",
+        "ja": "リバースエンジニアリング"
+      },
+      {
+        "en": "Cybersecurity",
+        "ja": "サイバーセキュリティ"
+      },
+      {
+        "en": "Code Analysis",
+        "ja": "コード解析"
+      }
+    ],
+    "body": {
+      "en": [
+        "This report details a novel approach to reverse engineering that leverages Large Language Models (LLMs) to automate and accelerate the analysis of binary code. The methodology, published on Slow Chronicle, outlines how LLMs can interpret assembly, identify functions, and even suggest potential vulnerabilities or higher-level code structures from raw machine instructions.",
+        "Traditional reverse engineering is a labor-intensive process, demanding deep expertise in assembly language, operating systems, and compiler specifics. The presented technique aims to augment human analysts by offloading repetitive pattern recognition and hypothesis generation to an AI. It positions the LLM as a highly capable assistant, capable of rapidly sifting through vast amounts of code.",
+        "The core of the approach involves feeding disassembled code snippets and contextual information into a sophisticated LLM, likely a fine-tuned version of models such as GPT-4o or Claude 3.5. The LLM then generates human-readable explanations, potential function signatures, and even pseudo-code, significantly reducing the cognitive load on the engineer.",
+        "While the tool itself is presented as a research artifact rather than a commercial product, its implications are substantial for fields like cybersecurity, malware analysis, and legacy system modernization. It promises to democratize aspects of reverse engineering, making complex analyses accessible to a broader range of developers and security professionals.",
+        "> The system is designed to be a co-pilot, requiring human oversight and validation.",
+        "The authors acknowledge limitations, noting that LLMs can hallucinate or misinterpret complex control flows. The system is designed to be a co-pilot, requiring human oversight and validation, rather than a fully autonomous solution. Its value lies in accelerating the initial reconnaissance phase, not replacing expert judgment entirely.",
+        "Currently, the methodology is available as a conceptual framework and potentially open-source code examples, without a commercial pricing model. It competes with established tools like IDA Pro and Ghidra by offering an AI-assisted layer, but does not yet supplant their comprehensive feature sets. Its primary benefit is speed and the ability to process previously unseen code patterns.",
+        "The real-world impact for a professional is the potential to drastically cut down the time spent understanding undocumented software or identifying obscure bugs. This capability extends beyond Earth-bound systems. Imagine maintaining complex, self-replicating robotic systems on a Martian colony, or analyzing unknown artifacts discovered during deep-space exploration. The ability to rapidly deconstruct and understand unfamiliar code could be critical for survival and progress beyond our planet."
+      ],
+      "ja": [
+        "本稿は、大規模言語モデル（LLM）を活用し、バイナリコードの解析を自動化・加速する新たなリバースエンジニアリング手法を詳述している。Slow Chronicleで公開されたこの手法は、LLMがいかにアセンブリを解釈し、関数を特定し、さらには潜在的な脆弱性や高レベルのコード構造を機械語から推測できるかを示している。",
+        "従来のリバースエンジニアリングは、アセンブリ言語、オペレーティングシステム、コンパイラの詳細に関する深い専門知識を要する、非常に労力のかかるプロセスだった。この新手法は、反復的なパターン認識や仮説生成をAIに委ねることで、人間のアナリストを補強することを目指す。LLMは、膨大な量のコードを迅速にふるいにかける能力を持つ、非常に有能なアシスタントとして位置づけられる。",
+        "このアプローチの核は、逆アセンブルされたコードスニペットと文脈情報を、GPT-4oやClaude 3.5のような、コード解析に特化してファインチューニングされた高度なLLMに供給することにある。LLMはその後、人間が読める説明、潜在的な関数シグネチャ、さらには疑似コードを生成し、エンジニアの認知的負荷を大幅に軽減する。",
+        "このツール自体は商業製品というより研究成果として提示されているが、その影響はサイバーセキュリティ、マルウェア解析、レガシーシステムの近代化といった分野で計り知れない。リバースエンジニアリングの一部を民主化し、複雑な解析をより広範な開発者やセキュリティ専門家が利用できるようにする可能性を秘めている。",
+        "> このシステムは、人間の監視と検証を必要とするコパイロットとして設計されている。",
+        "著者らは、LLMが複雑な制御フローを幻覚したり誤解したりする可能性があるという限界も認めている。このシステムは、完全な自律ソリューションではなく、人間の監視と検証を必要とするコパイロットとして設計されている。その価値は、専門家の判断を完全に置き換えるのではなく、初期の偵察フェーズを加速させる点にある。",
+        "現在、この手法は概念的フレームワーク、およびおそらくオープンソースのコード例として提供されており、商用価格モデルは存在しない。これはIDA ProやGhidraといった確立されたツールと競合するが、AIアシスト層を提供することで差別化を図る。しかし、それらの包括的な機能セットをまだ完全に置き換えるものではない。主な利点は、速度と、これまで見られなかったコードパターンを処理する能力にある。",
+        "プロフェッショナルにとっての実世界での影響は、文書化されていないソフトウェアの理解や、見つけにくいバグの特定にかかる時間を劇的に短縮できる可能性だ。この能力は、地球上のシステムに留まらない。火星のコロニーで複雑な自己複製ロボットシステムを維持したり、深宇宙探査中に発見された未知のアーティファクトを分析したりする場面を想像してみてほしい。馴染みのないコードを迅速に解体し理解する能力は、地球外での生存と進歩にとって極めて重要となるだろう。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "A recent report describes how advanced AI, specifically large language models (LLMs), can now help with \"reverse engineering.\" Think of reverse engineering as dissecting a complex machine or software program to understand how it works, often without original blueprints. Traditionally, this is like taking apart a highly intricate watch by hand, piece by tiny piece, requiring immense skill and time. The new method suggests that an AI can act as a tireless assistant, quickly identifying components and explaining their likely functions, much like a highly knowledgeable apprentice helping a master watchmaker.",
+        "For Tokyo readers, this could have future implications in several professional domains. In cybersecurity, it might mean faster identification of vulnerabilities in proprietary software used by banks or public transport systems, leading to more secure digital infrastructure. For manufacturers, understanding legacy industrial control systems without documentation could become quicker and less costly. It could also accelerate the development of interoperable systems between different vendors, a common challenge in large-scale urban infrastructure projects.",
+        "The widespread adoption of such LLM-assisted reverse engineering tools in Tokyo is likely 2-3 years away. The primary gating factor will be the integration of these methodologies into established enterprise security and development workflows, which tend to be cautious and require rigorous validation. While the underlying LLMs are available, the specialized tooling and best practices for their reliable application in critical systems still need to mature and be adopted by Japanese security firms and development houses.",
+        "While no direct Japanese counterpart offering a commercial LLM-assisted reverse engineering product exists yet, companies like NTT and SoftBank are heavily investing in LLM research and cybersecurity. Specifically, projects under METI's GENIAC programme or research by the University of Tokyo's Matsuo Lab could explore similar AI-driven code analysis techniques. However, the unique niche of binary reverse engineering with LLMs remains largely open for domestic innovation or partnership."
+      ],
+      "ja": [
+        "最新の報告によると、高度なAI、特に大規模言語モデル（LLM）が「リバースエンジニアリング」を支援できるようになってきた。リバースエンジニアリングとは、設計図がない状態で複雑な機械やソフトウェアの仕組みを解明する作業と考えると良いだろう。これは、まるで熟練の職人が精巧な時計を一つずつ手作業で分解し、その構造を理解するようなもので、途方もない技術と時間を要する。今回の新しい手法は、AIが熟練の時計職人を助ける非常に知識豊富な見習いのように、休むことなく部品を特定し、その機能について説明してくれる、と提案している。",
+        "東京の読者にとって、これは将来的にいくつかの専門分野で影響をもたらす可能性がある。サイバーセキュリティの分野では、銀行や公共交通機関で使われる独自ソフトウェアの脆弱性をより迅速に特定できるようになり、より安全なデジタルインフラにつながるかもしれない。製造業では、文書化されていないレガシーな産業制御システムを理解する作業が、より迅速かつ低コストになる可能性がある。また、大規模な都市インフラプロジェクトでよくある課題である、異なるベンダー間の相互運用可能なシステムの開発を加速させる可能性も秘めている。",
+        "この種のLLM支援型リバースエンジニアリングツールが東京で広く採用されるまでには、2〜3年かかるだろう。主な障壁は、これらの手法が既存の企業のセキュリティおよび開発ワークフローに統合されることにある。日本の企業は慎重であり、厳格な検証を求める傾向がある。基盤となるLLMは利用可能だが、クリティカルなシステムで信頼性高く適用するための専門ツールやベストプラクティスは、日本のセキュリティ企業や開発会社に採用されるまで、まだ成熟する必要がある。",
+        "商用レベルのLLM支援型リバースエンジニアリング製品を提供する直接的な日本の競合はまだ存在しない。しかし、NTTやソフトバンクといった企業はLLM研究とサイバーセキュリティに大規模な投資を行っている。特に、経済産業省のGENIACプログラムや東京大学の松尾研究室によるプロジェクトでは、同様のAI駆動型コード解析技術が探求される可能性がある。だが、LLMを用いたバイナリのリバースエンジニアリングという独自のニッチは、国内でのイノベーションやパートナーシップにとって、まだ大きく開かれている状態だ。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "LLMs assist reverse engineers in binary code analysis.",
+        "ja": "LLMがバイナリ解析を支援、リバースエンジニアリングを加速。"
+      },
+      "useCase": {
+        "en": "For security analysts and software engineers in Tokyo needing to quickly understand undocumented binaries or legacy systems, this offers an AI co-pilot to accelerate initial code reconnaissance and vulnerability identification.",
+        "ja": "東京のセキュリティアナリストやソフトウェアエンジニアが、未文書のバイナリやレガシーシステムを迅速に理解する必要がある場合、初期のコード偵察や脆弱性特定を加速するAIコパイロットとして機能する。"
+      },
+      "vsCompetitor": {
+        "en": "This augments traditional reverse engineering tools like IDA Pro and Ghidra by adding an LLM-driven layer for faster pattern recognition and explanation, rather than replacing their deep analytical capabilities.",
+        "ja": "IDA ProやGhidraといった既存のリバースエンジニアリングツールに対し、LLM駆動のパターン認識と説明層を追加することで、深い解析機能はそのままに、作業速度を向上させる。"
+      },
+      "tokyoTake": {
+        "en": "While promising for specialized tasks, this is primarily a research methodology. Japanese language support is not a primary concern for binary analysis, but its integration into widely adopted development environments in Japan would be the key gating factor for local impact, likely within 2-3 years.",
+        "ja": "特定の専門タスクには有望だが、これは主に研究手法の段階にある。バイナリ解析において日本語サポートは主要な論点ではないが、日本で広く使われる開発環境への統合が、国内での影響を左右する主要因となるだろう。実現は2〜3年先か。"
+      }
+    },
+    "source": {
+      "name": "Hacker News Top",
+      "url": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering"
+    },
+    "sourceGuid": "https://news.ycombinator.com/item?id=50553225",
+    "status": "published"
+  },
+  {
+    "slug": "microsoft-ceo-warns-of-ai-threat-to-critical-infrastructure",
+    "category": "workflow",
+    "issue": "Vol. 07",
+    "publishedAt": "2026-11-18T23:45:00.000Z",
+    "readingMinutes": 5,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
+    },
+    "title": {
+      "en": "Microsoft CEO Warns of AI Threat to Critical Infrastructure",
+      "ja": "マイクロソフトCEO、AIによる重要インフラ脅威を警告"
+    },
+    "dek": {
+      "en": "Satya Nadella highlights the vulnerability of \"unpatchable\" legacy systems to sophisticated AI-driven cyberattacks, urging a re-evaluation of national security postures.",
+      "ja": "サティア・ナデラ氏、AIを活用した高度なサイバー攻撃に対し「パッチ適用不能」なレガシーシステムの脆弱性を指摘。国家安全保障の再評価を促す。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo, November 18, 2026",
+      "ja": "東京, 2026年11月18日"
+    },
+    "tags": [
+      {
+        "en": "cybersecurity",
+        "ja": "サイバーセキュリティ"
+      },
+      {
+        "en": "critical infrastructure",
+        "ja": "重要インフラ"
+      },
+      {
+        "en": "risk management",
+        "ja": "リスク管理"
+      },
+      {
+        "en": "policy",
+        "ja": "政策"
+      }
+    ],
+    "body": {
+      "en": [
+        "Microsoft CEO Satya Nadella recently warned about the escalating threat of AI-driven cyberattacks targeting critical infrastructure, many components of which he described as \"unpatchable.\" This statement underscores a growing concern within the tech industry regarding the security implications of advanced AI capabilities.",
+        "Nadella's remarks highlight a fundamental challenge: while AI offers powerful tools for defense, it also significantly enhances the capabilities of malicious actors. Attackers can leverage AI to automate reconnaissance, craft highly convincing phishing attempts, and exploit vulnerabilities at unprecedented speed and scale.",
+        "The term \"unpatchable\" refers to legacy systems, often found in essential services like energy grids, transportation networks, and public utilities, that cannot be easily updated or secured against modern threats due to their age, complexity, or continuous operational requirements. These systems predate many contemporary cybersecurity standards.",
+        "Microsoft, as a major cloud provider and software vendor, has a vested interest in promoting robust cybersecurity. Nadella's warning serves as a call to action for governments and corporations to invest more in securing foundational digital assets, recognizing that traditional patching cycles are often inadequate for these critical systems.",
+        "The implication is clear: reliance on outdated infrastructure combined with the rapid evolution of offensive AI tools creates a significant national security risk. Addressing this requires not just technical solutions but also policy changes and international cooperation.",
+        "> \"Lots of critical infrastructure is unpatchable.\"",
+        "For a Tokyo-based professional, this means that while the immediate focus might be on integrating AI into daily workflows, a parallel and urgent concern must be the defensive posture against AI-enhanced threats. Risk assessments for operations, supply chains, and public services need to account for this new threat landscape."
+      ],
+      "ja": [
+        "マイクロソフトCEOのサティア・ナデラ氏は先日、AIが主導するサイバー攻撃が重要インフラを標的とする脅威が拡大していると警鐘を鳴らした。特に、多くのシステムが「パッチ適用不能」であると指摘している。この発言は、高度なAI機能がセキュリティにもたらす影響について、テクノロジー業界内で高まる懸念を浮き彫りにするものだ。",
+        "ナデラ氏の発言は、AIが防御のための強力なツールであると同時に、悪意あるアクターの能力も著しく向上させるという根本的な課題を強調している。攻撃者はAIを活用して偵察を自動化し、非常に説得力のあるフィッシング詐欺を仕掛け、前例のない速度と規模で脆弱性を悪用できる。",
+        "「パッチ適用不能」とは、電力網、交通ネットワーク、公共事業といった基幹サービスでよく見られるレガシーシステムを指す。これらのシステムは、その古さ、複雑さ、あるいは継続的な運用要件のため、現代の脅威に対して容易に更新または保護することができない。多くは現在のサイバーセキュリティ基準が確立される以前に構築されている。",
+        "主要なクラウドプロバイダーおよびソフトウェアベンダーであるマイクロソフトは、堅牢なサイバーセキュリティの推進に大きな関心を持っている。ナデラ氏の警告は、政府や企業に対し、基盤となるデジタル資産のセキュリティ強化にさらなる投資を促すものであり、従来のパッチサイクルが重要システムには不十分であることを認識させる。",
+        "その示唆するところは明確だ。時代遅れのインフラへの依存と、攻撃型AIツールの急速な進化が相まって、国家安全保障上の重大なリスクを生み出している。これに対処するには、技術的な解決策だけでなく、政策変更や国際協力も必要となる。",
+        "> 「多くの重要インフラはパッチ適用不能だ」",
+        "東京で働くプロフェッショナルにとって、これはAIを日々の業務に統合することに注力する一方で、AIによって強化された脅威に対する防御態勢も並行して緊急の課題として認識する必要があることを意味する。運用、サプライチェーン、公共サービスに関するリスク評価は、この新たな脅威の状況を考慮に入れなければならない。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "Microsoft's CEO, Satya Nadella, recently issued a stark warning: the rise of artificial intelligence is making cyberattacks much more dangerous, especially for essential services like electricity grids, water systems, and transportation. He pointed out that many of these crucial systems are built on old technology that cannot be easily updated or \"patched\" to fix security holes. Imagine a very old lock on a modern door — it's easy for new, smart tools to pick. AI gives attackers incredibly powerful new tools to find and exploit these weaknesses, making the job of defending against them much harder.",
+        "For Tokyo readers, this warning has direct implications across several domains. We could see increased scrutiny and investment in securing the city's complex public transport networks, including JR and subway systems, which rely on extensive operational technology. Financial institutions and critical manufacturing plants might face heightened pressure to audit and modernize their legacy systems. Ultimately, this could lead to higher costs for digital services as companies invest more in cybersecurity, or conversely, a greater risk of service disruptions if these investments are not made proactively.",
+        "The impact of AI-driven cyber threats on critical infrastructure is not a distant future concern; it is already happening. We can expect to see more overt discussions and policy changes within the next 12–24 months, particularly as governments grapple with defining responsibilities and allocating resources. The pace of change will be gated by the political will to invest heavily in modernizing infrastructure and the availability of skilled cybersecurity professionals, both of which are significant challenges globally and in Japan.",
+        "Japan has its own initiatives addressing cybersecurity and critical infrastructure. Organizations like the National Center of Incident Readiness and Strategy for Cybersecurity (NISC) and companies like NTT and SoftBank are actively involved in developing defenses. However, the specific challenge of \"unpatchable\" legacy systems, particularly in older industrial control systems (ICS) and operational technology (OT), remains a significant hurdle. While NISC provides guidelines and NTT offers advanced security services, the scale of legacy infrastructure across Japan means a comprehensive, AI-aware modernization effort is still a monumental task. There isn't a single \"counterpart\" product, but rather a national effort requiring coordinated action from government, industry, and academia."
+      ],
+      "ja": [
+        "マイクロソフトのCEOであるサティア・ナデラ氏は先日、厳しい警告を発しました。人工知能の発展により、サイバー攻撃がはるかに危険なものになっている、特に電力網、水道システム、交通機関といった私たちの生活に不可欠なサービスに対して、と。彼は、これらの重要なシステムの多くが、簡単に更新したりセキュリティの穴を塞いだり（「パッチを当てる」と言います）できない古い技術の上に構築されていると指摘しました。これは、最新の玄関にとても古い鍵がかかっているようなものです。新しいスマートな道具を使えば、簡単に開けられてしまいます。AIは攻撃者に対し、これらの弱点を見つけて悪用するための信じられないほど強力な新しいツールを与え、防御側の仕事を非常に困難にしているのです。",
+        "東京の読者にとって、この警告はいくつかの分野で直接的な影響をもたらす可能性があります。JRや地下鉄システムなど、広範な運用技術に依存する都市の複雑な公共交通ネットワークのセキュリティに対する監視と投資が強化されるかもしれません。金融機関や重要な製造工場は、レガシーシステムを監査し、近代化するよう圧力を高める可能性があります。最終的には、企業がサイバーセキュリティにより多くの投資を行うため、デジタルサービスのコストが上昇するか、あるいはこれらの投資が積極的に行われない場合、サービス中断のリスクが増大する可能性もあります。",
+        "AI主導のサイバー脅威が重要インフラに与える影響は、遠い未来の懸念ではありません。すでに進行中です。特に政府が責任の定義と資源の配分に取り組む中で、今後12〜24ヶ月以内に、より明確な議論と政策変更が見られると予想されます。変化の速度は、インフラの近代化への大規模な投資に対する政治的意志と、熟練したサイバーセキュリティ専門家の確保にかかっています。これらは世界的にも日本においても大きな課題です。",
+        "日本にもサイバーセキュリティと重要インフラに取り組む独自の取り組みがあります。内閣サイバーセキュリティセンター（NISC）のような組織や、NTT、ソフトバンクのような企業が、防御策の開発に積極的に関わっています。しかし、「パッチ適用不能」なレガシーシステム、特に古い産業制御システム（ICS）や運用技術（OT）における具体的な課題は、依然として大きな障壁です。NISCはガイドラインを提供し、NTTは高度なセキュリティサービスを提供していますが、日本全国に広がるレガシーインフラの規模を考えると、AIを意識した包括的な近代化努力は依然として途方もない課題です。特定の「対抗製品」があるわけではなく、政府、産業界、学術界が連携した国家的な取り組みが必要とされています。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "Microsoft CEO warns of AI cyber threat to unpatchable infrastructure.",
+        "ja": "マイクロソフトCEO、AIによる重要インフラへの脅威を警告。"
+      },
+      "useCase": {
+        "en": "For IT security professionals, risk managers, and government policy advisors in Tokyo assessing national infrastructure vulnerabilities and developing strategic responses to AI-enhanced cyber threats.",
+        "ja": "東京のITセキュリティ専門家、リスクマネージャー、政府政策顧問が、国家インフラの脆弱性を評価し、AI強化型サイバー脅威への戦略的対応を策定する際に。"
+      },
+      "vsCompetitor": {
+        "en": "This is not a product but a strategic warning. It contrasts with a complacent view that existing cybersecurity frameworks are sufficient against rapidly evolving AI-driven attack vectors, challenging traditional risk assessment models.",
+        "ja": "これは製品ではなく戦略的な警告である。既存のサイバーセキュリティフレームワークが急速に進化するAI主導の攻撃ベクトルに対して十分であるという現状維持的な見方とは対照的で、従来の脅威評価モデルに疑問を投げかける。"
+      },
+      "tokyoTake": {
+        "en": "Tokyo professionals must recognize that while AI offers efficiency, it also amplifies security risks to critical infrastructure. The reliance on legacy systems in Japan's public and private sectors, similar to global trends, means this warning directly applies, necessitating urgent updates to risk management and disaster recovery plans.",
+        "ja": "東京のプロフェッショナルは、AIが効率性をもたらすと同時に、重要インフラに対するセキュリティリスクを増幅させることを認識すべきだ。日本における公共・民間部門のレガシーシステムへの依存は、世界の傾向と同様に、この警告が直接的に当てはまり、リスク管理と災害復旧計画の緊急な更新を必要とする。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/11/18/amidst-fears-of-ai-cyberattacks-satya-nadella-says-lots-of-critical-infrastructure-is-unpatchable/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3190239",
+    "status": "published"
+  },
+  {
+    "slug": "google-unveils-gemini-4-neon-a-smaller-faster-model-for-efficient-ai",
+    "category": "dev-tools",
+    "issue": "Vol. 07",
+    "publishedAt": "2026-11-18T21:34:07.000Z",
+    "readingMinutes": 5,
+    "feature": true,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0b0b0d"
+    },
+    "title": {
+      "en": "Google Unveils Gemini 4 Neon: A Smaller, Faster Model for Efficient AI",
+      "ja": "Google、より効率的なAIモデル「Gemini 4 Neon」を発表"
+    },
+    "dek": {
+      "en": "Google introduces a new variant of its Gemini 4 model, designed for speed and cost-efficiency. This release targets applications requiring lower latency and reduced operational overhead.",
+      "ja": "GoogleはGemini 4の新バリアントを発表した。速度とコスト効率を重視し、低レイテンシと運用コスト削減が求められるアプリケーションを対象とする。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "TOKYO, November 18, 2026",
+      "ja": "東京, 2026年11月18日"
+    },
+    "tags": [
+      {
+        "en": "Google",
+        "ja": "Google"
+      },
+      {
+        "en": "Gemini",
+        "ja": "Gemini"
+      },
+      {
+        "en": "LLM",
+        "ja": "LLM"
+      },
+      {
+        "en": "Efficiency",
+        "ja": "効率性"
+      }
+    ],
+    "body": {
+      "en": [
+        "Gemini 4 Neon is Google's latest addition to its large language model portfolio, a compact and efficient variant of the full Gemini 4 model. It is engineered for scenarios demanding high throughput and minimal latency.",
+        "Launched by Google on November 18, 2026, Gemini 4 Neon aims to deliver a balance of capability and performance. It promises faster inference times and a lower cost per token compared to its larger counterparts, positioning it for broader integration across various platforms.",
+        "Unlike the flagship Gemini 4, which prioritizes complex reasoning and extensive context windows, Neon focuses on optimized execution for more constrained tasks. It enters a competitive landscape alongside models like Anthropic's Claude 3 Haiku, which also emphasizes speed and cost-effectiveness for enterprise applications.",
+        "The model is particularly suited for on-device applications, real-time conversational agents, and embedded systems where computational resources are limited. Developers can integrate Neon into mobile applications, smart appliances, and IoT devices, extending AI capabilities beyond cloud-dependent services.",
+        "Google has indicated a tiered pricing structure for Gemini 4 Neon, with a significantly lower cost per input and output token compared to the standard Gemini 4 API. This makes it an attractive option for startups and developers managing large volumes of AI interactions.",
+        "> \"Introducing Gemini 4 Neon\"",
+        "Early technical reviews, particularly from the Hacker News community, will scrutinize whether Neon offers genuinely novel efficiencies or if it primarily represents a strategic rebranding of existing optimizations. The key metric for developers will be its performance in real-world benchmarks against its stated cost savings.",
+        "For a Tokyo-based professional, this could mean more responsive Japanese-language chatbots in customer service, faster content generation for marketing materials, or more affordable integration of AI into internal tools. The reduced operational cost could make AI adoption more viable for small and medium-sized enterprises.",
+        "Beyond terrestrial applications, the efficiency of Gemini 4 Neon could prove critical for off-world operations. In environments like lunar bases or Mars colonies, where bandwidth is limited and computational resources are at a premium, a compact yet capable AI model could manage autonomous systems, process sensor data, and assist human crews with critical diagnostics and resource allocation, operating effectively with minimal latency."
+      ],
+      "ja": [
+        "Googleの最新の大型言語モデルポートフォリオに、効率を重視した「Gemini 4 Neon」が加わった。これは、フルバージョンのGemini 4のコンパクトなバリアントであり、高いスループットと最小限のレイテンシが求められるシナリオ向けに設計されている。",
+        "2026年11月18日にGoogleによって発表されたGemini 4 Neonは、機能とパフォーマンスのバランスを提供することを目指している。より高速な推論時間と、既存のモデルと比較して低いトークン単価を約束し、様々なプラットフォームへの広範な統合を視野に入れている。",
+        "複雑な推論や広範なコンテキストウィンドウを優先する主力モデルのGemini 4とは異なり、Neonはより制約されたタスク向けに最適化された実行に焦点を当てる。AnthropicのClaude 3 Haikuなど、速度とコスト効率を重視する競合モデルがひしめく市場に投入されることになる。",
+        "このモデルは、オンデバイスアプリケーション、リアルタイムの対話エージェント、および計算リソースが限られている組み込みシステムに特に適している。開発者はNeonをモバイルアプリ、スマート家電、IoTデバイスに統合し、クラウドに依存しないAI機能の拡張を可能にする。",
+        "GoogleはGemini 4 Neonに対し、標準のGemini 4 APIと比較して入力および出力トークンあたりのコストを大幅に削減した、階層型料金体系を示唆している。これにより、大量のAIインタラクションを管理するスタートアップや開発者にとって魅力的な選択肢となる。",
+        "> 「Introducing Gemini 4 Neon」",
+        "特にHacker Newsコミュニティからの初期の技術レビューでは、Neonが本当に新しい効率性を提供しているのか、それとも既存の最適化の戦略的な再ブランディングに過ぎないのかが厳しく検証されるだろう。開発者にとって重要な指標は、そのコスト削減と謳われている性能が、実際のベンチマークでどのように発揮されるかだ。",
+        "東京のビジネスプロフェッショナルにとって、これは顧客サービスにおけるより応答性の高い日本語チャットボット、マーケティング資料のより迅速なコンテンツ生成、あるいは社内ツールへのAI統合のより手頃なコストを意味する可能性がある。運用コストの削減は、中小企業にとってAI導入をより実現可能なものにするだろう。",
+        "地球上でのアプリケーションを超えて、Gemini 4 Neonの効率性は地球外での運用においても極めて重要となる可能性がある。帯域幅が限られ、計算リソースが貴重な月面基地や火星コロニーのような環境では、コンパクトでありながら有能なAIモデルが自律システムを管理し、センサーデータを処理し、人間クルーの重要な診断やリソース配分を支援することで、最小限のレイテンシで効果的に機能するだろう。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "Googleは、その強力な人工知能モデルであるGemini 4の新バージョン「Gemini 4 Neon」を発表しました。これは、まるで非常に有能で信じられないほど迅速なパーソナルアシスタントが、時間とリソースを非常に効率的に使うように訓練されたようなものです。これにより、より大規模で包括的な兄弟モデルよりも、多くのAIタスクをはるかに迅速かつ低コストで実行できるようになり、高度なAIが日常のアプリケーションでより身近なものになります。",
+        "東京の読者にとって、これは様々なデジタルサービスにおける具体的な改善につながる可能性があります。例えば、遅延なくリアルタイムで高度にパーソナライズされた交通アプリのレコメンデーションや、銀行や小売のカスタマーサービスチャットボットが、自然な日本語で瞬時に正確な応答を提供するようになるでしょう。また、AIがより少ない電力のハードウェアで効率的に動作するため、スマートホームデバイスや公共情報キオスクがより賢く、応答性が高くなる可能性もあります。",
+        "その影響は6〜12ヶ月以内に現れるかもしれません。主な障壁となるのは、GoogleがGemini 4 Neonを日本語のニュアンスや文化的背景に合わせて具体的にファインチューニングすること、そして日本円での明確な現地価格設定を行うことです。これらが解決されれば、日本の開発者や企業はより容易に自社のサービスに組み込むことができるでしょう。",
+        "日本では、ELYZAやSakana AIのような企業が、効率性と日本語能力に重点を置きながら、独自の大型言語モデルの開発と最適化を積極的に進めています。まだ「Neon」のようなバリアントと直接的に類似するものではありませんが、日本市場に特化した高性能で費用対効果の高いモデルを開発しようとする彼らの取り組みは、AIを地元のビジネスやユーザーにとってより実用的で身近なものにするという点で、共通の方向性を示しています。"
+      ],
+      "ja": [
+        "Googleが、強力な人工知能モデルであるGemini 4の新バージョン「Gemini 4 Neon」を発表しました。これは、まるで非常に有能で信じられないほど迅速なパーソナルアシスタントが、時間とリソースを非常に効率的に使うように訓練されたようなものです。これにより、より大規模で包括的な兄弟モデルよりも、多くのAIタスクをはるかに迅速かつ低コストで実行できるようになり、高度なAIが日常のアプリケーションでより身近なものになります。",
+        "東京の読者にとって、これは様々なデジタルサービスにおける具体的な改善につながる可能性があります。例えば、遅延なくリアルタイムで高度にパーソナライズされた交通アプリのレコメンデーションや、銀行や小売のカスタマーサービスチャットボットが、自然な日本語で瞬時に正確な応答を提供するようになるでしょう。また、AIがより少ない電力のハードウェアで効率的に動作するため、スマートホームデバイスや公共情報キオスクがより賢く、応答性が高くなる可能性もあります。",
+        "その影響は6〜12ヶ月以内に現れるかもしれません。主な障壁となるのは、GoogleがGemini 4 Neonを日本語のニュアンスや文化的背景に合わせて具体的にファインチューニングすること、そして日本円での明確な現地価格設定を行うことです。これらが解決されれば、日本の開発者や企業はより容易に自社のサービスに組み込むことができるでしょう。",
+        "日本では、ELYZAやSakana AIのような企業が、効率性と日本語能力に重点を置きながら、独自の大型言語モデルの開発と最適化を積極的に進めています。まだ「Neon」のようなバリアントと直接的に類似するものではありませんが、日本市場に特化した高性能で費用対効果の高いモデルを開発しようとする彼らの取り組みは、AIを地元のビジネスやユーザーにとってより実用的で身近なものにするという点で、共通の方向性を示しています。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "A smaller, faster Gemini 4 for efficient AI applications.",
+        "ja": "効率的なAIアプリ向け、小型高速版Gemini 4。"
+      },
+      "useCase": {
+        "en": "For a Tokyo-based developer building mobile or IoT applications who needs to integrate advanced AI capabilities with minimal latency and lower API costs.",
+        "ja": "低遅延とAPIコスト削減を求める東京のモバイル・IoTアプリ開発者が、高度なAI機能を組み込む際に活用できる。"
+      },
+      "vsCompetitor": {
+        "en": "It competes with smaller, efficient models like Anthropic's Claude 3 Haiku, offering a potentially more cost-effective alternative for high-volume, real-time AI interactions where full model capabilities are not required.",
+        "ja": "AnthropicのClaude 3 Haikuのような小型高効率モデルと競合し、フル機能が不要なリアルタイムAIインタラクションにおいて、より費用対効果の高い選択肢となる。"
+      },
+      "tokyoTake": {
+        "en": "While the efficiency gains are promising for global AI development, Tokyo professionals should evaluate its Japanese language performance and localized pricing. If fine-tuned for Japanese, its lower cost could accelerate AI adoption in local services, though integration with common Japanese enterprise tools remains a consideration.",
+        "ja": "グローバルなAI開発にとって効率向上は有望だが、東京のプロフェッショナルは日本語性能と現地価格を評価すべきだ。日本語に特化すれば、低コストで国内サービスへのAI導入を加速しうるが、日本の一般的な企業ツールとの連携は引き続き検討事項となる。"
+      }
+    },
+    "source": {
+      "name": "Hacker News Top",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+    },
+    "sourceGuid": "https://news.ycombinator.com/item?id=50552424",
+    "status": "published"
+  },
+  {
+    "slug": "elon-musk-highlights-nvidias-indispensable-role-in-ai",
+    "category": "dev-tools",
+    "issue": "Vol. 07",
+    "publishedAt": "2026-11-18T23:25:17.000Z",
+    "readingMinutes": 5,
+    "feature": false,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
+    },
+    "title": {
+      "en": "Elon Musk Highlights NVIDIA's Indispensable Role in AI",
+      "ja": "イーロン・マスクがAIにおけるNVIDIAの不可欠な役割を強調"
+    },
+    "dek": {
+      "en": "A recent comment from Elon Musk underscores the critical strategic importance of Jensen Huang and NVIDIA's GPU infrastructure to the global AI ecosystem.",
+      "ja": "イーロン・マスクのコメントは、ジェンスン・フアンとNVIDIAのGPUインフラが、世界のAIエコシステムにとって戦略的にいかに重要であるかを浮き彫りにした。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "Tokyo, November 18, 2026",
+      "ja": "東京、2026年11月18日"
+    },
+    "tags": [
+      {
+        "en": "AI Infrastructure",
+        "ja": "AIインフラ"
+      },
+      {
+        "en": "NVIDIA",
+        "ja": "NVIDIA"
+      },
+      {
+        "en": "Jensen Huang",
+        "ja": "ジェンスン・フアン"
+      },
+      {
+        "en": "Geopolitics of AI",
+        "ja": "AI地政学"
+      }
+    ],
+    "body": {
+      "en": [
+        "The strategic importance of NVIDIA's GPU infrastructure to the global artificial intelligence industry was recently highlighted by Elon Musk. His remarks, made on November 18, 2026, frame NVIDIA CEO Jensen Huang as an irreplaceable figure, underscoring the foundational role the company plays in AI development.",
+        "NVIDIA designs and supplies the graphics processing units (GPUs) that are the computational backbone for training and deploying large language models and complex AI systems. These specialized chips are the \"picks and shovels\" of the AI gold rush, making NVIDIA a critical enabler for nearly every major AI initiative worldwide.",
+        "Musk's statement points to a concentration of vital expertise and production capability within a single entity. This concentration creates a strategic bottleneck, where access to cutting-edge AI capability is largely predicated on the availability and allocation of NVIDIA's high-performance hardware.",
+        "For companies and nations aiming to build robust AI capabilities, this dependency translates into significant capital expenditure and potential supply chain vulnerabilities. The cost of entry into advanced AI development remains high, driven in part by the demand for and limited supply of these specialized processors.",
+        "> Elon Musk says ousting Jensen Huang is like ‘kicking Michael Jordan off your team’.",
+        "This perspective suggests that the human leadership behind such technological monopolies is as crucial as the technology itself. Jensen Huang's vision and NVIDIA's execution have positioned them as central architects of the future, making any disruption to their leadership a profound industry concern.",
+        "For a Tokyo professional, this means that the speed and scale of AI adoption within Japanese businesses will continue to be influenced by global supply chains for advanced semiconductors. Strategic planning around AI initiatives must account for the availability and cost of the underlying hardware, which remains largely controlled by a few key players.",
+        "The implications of such concentrated power extend even to humanity's endeavors beyond Earth. As AI becomes integral to space exploration, resource management on other planets, and the eventual establishment of off-world colonies, the foundational infrastructure and its human architects will dictate the pace and feasibility of these extraterrestrial ambitions."
+      ],
+      "ja": [
+        "NVIDIAのGPUインフラが世界のAI産業にとって持つ戦略的な重要性は、イーロン・マスクによって最近強調された。2026年11月18日の彼の発言は、NVIDIAのCEOであるジェンスン・フアンをかけがえのない人物として位置づけ、同社がAI開発において果たす基盤的役割を明確にしている。",
+        "NVIDIAは、大規模言語モデルや複雑なAIシステムのトレーニングと展開に不可欠な計算基盤となるグラフィックス処理ユニット（GPU）を設計・供給している。これらの特殊なチップは、AIゴールドラッシュにおける「つるはしとシャベル」であり、世界中のほぼ全ての主要なAIイニシアチブにとって不可欠な存在だ。",
+        "マスクの発言は、極めて重要な専門知識と生産能力が単一の企業に集中していることを示唆している。この集中は戦略的なボトルネックを生み出し、最先端のAI機能へのアクセスが、NVIDIAの高性能ハードウェアの供給と割り当てに大きく依存している状況を作り出している。",
+        "堅牢なAI能力の構築を目指す企業や国家にとって、この依存は多額の設備投資と潜在的なサプライチェーンの脆弱性につながる。高度なAI開発への参入コストは依然として高く、これは特殊なプロセッサの需要と供給の限定によって部分的に引き上げられている。",
+        "> イーロン・マスクは、ジェンスン・フアンを追放することは「チームからマイケル・ジョーダンを追い出すようなものだ」と述べている。",
+        "この見方は、このような技術的独占の背後にある人間のリーダーシップが、技術そのものと同じくらい重要であることを示唆している。ジェンスン・フアンのビジョンとNVIDIAの実行力は、彼らを未来の中心的な設計者として位置づけており、彼らのリーダーシップへのいかなる混乱も業界にとって深刻な懸念となるだろう。",
+        "東京のビジネスプロフェッショナルにとって、これは日本企業におけるAI導入の速度と規模が、引き続き高度な半導体のグローバルサプライチェーンに左右されることを意味する。AIイニシアチブに関する戦略的計画は、その基盤となるハードウェアの入手可能性とコストを考慮に入れる必要があり、これらは依然として少数の主要プレイヤーによって大きくコントロールされている。",
+        "このような力の集中が持つ影響は、地球外への人類の取り組みにも及ぶ。AIが宇宙探査、他の惑星での資源管理、そして最終的な地球外コロニーの設立に不可欠となるにつれて、その基盤となるインフラとその人間の設計者が、これらの地球外の野望のペースと実現可能性を決定するだろう。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "Elon Musk's recent statement clearly illustrates how crucial NVIDIA is to powering cutting-edge AI technology. He meant to convey how indispensable NVIDIA CEO Jensen Huang, who designs and manufactures the high-performance semiconductor chips that serve as AI's \"brain,\" is to the AI industry. He likened it to kicking the best player off a basketball team. In essence, without the chips NVIDIA provides, current AI development would be impossible, highlighting the company's essential role.",
+        "For Tokyo readers, this situation could impact several areas. First, for companies handling large amounts of data—such as financial institutions and manufacturers—that aim to streamline operations using AI, the supply and price of NVIDIA chips directly affect the speed and cost of AI implementation. Also, for startups developing new AI services, access to high-performance computing resources will significantly influence their competitiveness. Furthermore, in fields requiring real-time processing, like autonomous driving and robotics, a stable supply of foundational hardware is vital for business continuity.",
+        "While some of these impacts are already being felt today, they are likely to become more apparent within the next 12 to 24 months. NVIDIA's high-performance chips are currently in a global scramble, and Japanese companies are no exception. Supply shortages and rising prices could become bottlenecks for domestic AI research, development, and service deployment. For this situation to improve, either NVIDIA must further expand its production capacity, or other semiconductor manufacturers must introduce competing products of comparable performance to the market.",
+        "Currently, there isn't a Japanese company that shoulders the development of foundational AI hardware like NVIDIA. However, regarding securing AI computing resources, telecommunications carriers like NTT and SoftBank are accelerating efforts to introduce high-performance GPUs into their data centers and provide them as cloud services for domestic companies. Additionally, initiatives like the METI-led GENIAC program are progressing to establish the necessary computing infrastructure for AI development nationwide. Nevertheless, in terms of chip design and manufacturing itself, Japan remains dependent on overseas giants, and bridging this gap will require a long-term national strategy and significant investment."
+      ],
+      "ja": [
+        "イーロン・マスクの最近の発言は、AIの最先端技術を動かす上でNVIDIAという会社がいかに重要であるかを、非常に分かりやすい言葉で示しています。彼が言いたかったのは、AIの「頭脳」となる高性能な半導体チップを設計・製造するNVIDIAのCEO、ジェンスン・フアン氏が、AI業界にとってどれほどかけがえのない存在かということです。まるで、バスケットボールチームから最も優れた選手を追い出すようなものだ、と彼は例えています。つまり、NVIDIAが提供するチップがなければ、今日のAI開発は成り立たないほど、その存在が不可欠だという認識です。",
+        "東京の読者にとって、この状況はいくつかの領域で影響を及ぼす可能性があります。まず、金融機関や製造業など、大量のデータを扱う企業がAIを活用して業務を効率化しようとする際、NVIDIA製チップの供給状況や価格が、AI導入のスピードやコストに直結します。また、スタートアップが新しいAIサービスを開発する場合、高性能な計算資源へのアクセスが競争力に大きく影響するでしょう。さらに、自動運転やロボティクスなど、リアルタイム処理が求められる分野では、基盤となるハードウェアの安定供給が事業継続の生命線となります。",
+        "この影響は、すでに今日から感じられる部分もありますが、特に今後12〜24ヶ月で顕在化する可能性が高いでしょう。現在、NVIDIAの高性能チップは世界中で争奪戦となっており、日本企業も例外ではありません。供給の逼迫や価格の高騰は、国内でのAI研究開発やサービス展開のボトルネックとなり得ます。この状況が改善されるには、NVIDIAが生産能力をさらに拡大するか、あるいは他の半導体メーカーが同等の性能を持つ競合製品を市場に投入するまで待つ必要があります。",
+        "日本国内で、NVIDIAのような基盤となるAIハードウェア開発を担う企業は、現状では見当たりません。しかし、AIの計算資源の確保という点では、NTTやソフトバンクといった通信事業者が、自社のデータセンターに高性能GPUを導入し、国内企業向けにクラウドサービスとして提供する動きを加速させています。また、経済産業省が主導するGENIACプログラムのように、国を挙げてAI開発に必要な計算インフラを整備しようとする取り組みも進んでいます。ただし、チップそのものの設計・製造という点では、依然として海外の巨大企業に依存しているのが現状であり、このギャップを埋めるには中長期的な国家戦略と大規模な投資が必要です。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "The AI industry's reliance on NVIDIA's foundational hardware.",
+        "ja": "AI産業におけるNVIDIAの基盤ハードウェアへの依存。"
+      },
+      "useCase": {
+        "en": "For a Tokyo-based executive or strategist assessing long-term AI investment, understanding the strategic risks and dependencies inherent in the global AI hardware supply chain.",
+        "ja": "東京の経営者や戦略担当者が、長期的なAI投資を評価する際、グローバルなAIハードウェアサプライチェーンに内在する戦略的リスクと依存関係を理解するため。"
+      },
+      "vsCompetitor": {
+        "en": "This isn't a direct product, but highlights the contrast between a highly centralized, proprietary AI infrastructure (NVIDIA) and the theoretical ideal of a more distributed, open-source, or geographically diversified AI compute ecosystem.",
+        "ja": "特定の製品ではないが、高度に集中したプロプライエタリなAIインフラ（NVIDIA）と、より分散型でオープンソース、あるいは地理的に多様なAI計算エコシステムの理論的理想との対比を示唆する。"
+      },
+      "tokyoTake": {
+        "en": "Tokyo professionals must recognize that cutting-edge AI development remains largely dependent on a single company's hardware, influencing costs and strategic autonomy. Japanese businesses need to factor in this global supply chain reality when planning AI investments, rather than assuming readily available, cost-effective domestic alternatives for high-performance computing.",
+        "ja": "東京のプロフェッショナルは、最先端のAI開発が依然として単一企業のハードウェアに大きく依存しており、コストと戦略的自律性に影響を与えることを認識すべきだ。日本企業は、高性能コンピューティングにおいて、容易に入手可能で費用対効果の高い国内代替品があると仮定するのではなく、このグローバルサプライチェーンの現実をAI投資計画に組み込む必要がある。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/11/18/elon-musk-says-ousting-jensen-huang-is-like-kicking-michael-jordan-off-your-team/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3190290",
+    "status": "published"
+  },
+  {
+    "slug": "horizon-space-unveils-ai-for-autonomous-space-exploration",
+    "category": "workflow",
+    "issue": "Vol. 07",
+    "publishedAt": "2026-11-18T20:12:34.000Z",
+    "readingMinutes": 6,
+    "feature": false,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
+    },
+    "title": {
+      "en": "Horizon Space Unveils AI for Autonomous Space Exploration",
+      "ja": "Horizon Space、自律型宇宙探査AIを発表"
+    },
+    "dek": {
+      "en": "A new venture proposes AI to manage and execute complex off-world missions, from resource extraction to habitat construction.",
+      "ja": "新たなベンチャーが、資源採掘から生息地建設まで、地球外ミッションを管理・実行するAIを提案。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "TOKYO, November 18, 2026",
+      "ja": "東京, 2026年11月18日"
+    },
+    "tags": [
+      {
+        "en": "space exploration",
+        "ja": "宇宙探査"
+      },
+      {
+        "en": "autonomous systems",
+        "ja": "自律システム"
+      },
+      {
+        "en": "aerospace",
+        "ja": "航空宇宙"
+      }
+    ],
+    "body": {
+      "en": [
+        "Horizon Space, a venture from Horizon Labs, introduces an AI system designed for autonomous space exploration and off-world resource management. The initiative aims to automate complex missions, from planetary prospecting to constructing self-sustaining habitats.",
+        "The company envisions AI models capable of planning entire missions, executing tasks autonomously, and managing resources without constant human intervention. This includes automated extraction and processing of materials, as well as maintaining infrastructure in hostile extraterrestrial environments.",
+        "Horizon Space states its AI is trained on extensive datasets covering astronomical observations, engineering schematics, and planetary science. The goal is to detect anomalies in real-time and predict maintenance needs for remote operations, reducing the reliance on Earth-based command centers.",
+        "While details on specific AI models or underlying technological stack remain high-level, the proposition is to develop foundational AI for humanity's expansion beyond Earth. This suggests a long-term research and development effort rather than an immediate commercial product release.",
+        "The concept competes with internal AI development efforts within national space agencies like NASA or JAXA, and private space companies such as SpaceX, which also pursue greater autonomy in their missions. Horizon Space positions itself as a dedicated AI provider for this emerging sector.",
+        "For a Tokyo-based professional, direct application is not yet apparent. However, the underlying principles of autonomous resource management and predictive maintenance in extreme environments could inform terrestrial challenges in remote infrastructure, deep-sea exploration, or disaster recovery.",
+        "> \"We are building the foundational AI for humanity's multi-planetary future.\"",
+        "The implications extend beyond Earth, envisioning new economic models and living structures in space. This initiative suggests a future where AI facilitates permanent human presence on other celestial bodies, fundamentally altering the scope of human endeavor and resource acquisition."
+      ],
+      "ja": [
+        "Horizon Labsから生まれたベンチャーであるHorizon Spaceは、自律的な宇宙探査と地球外資源管理のためのAIシステムを発表した。この取り組みは、惑星探査から自己維持可能な生息地の建設まで、複雑なミッションを自動化することを目指している。",
+        "同社は、ミッション全体の計画、タスクの自律実行、そして絶え間ない人間の介入なしに資源を管理できるAIモデルを構想している。これには、地球外の過酷な環境における材料の自動抽出と処理、およびインフラの維持が含まれる。",
+        "Horizon Spaceによれば、そのAIは天文学的観測、工学設計図、惑星科学データにわたる膨大なデータセットで訓練されている。目標は、遠隔操作においてリアルタイムで異常を検出し、メンテナンスの必要性を予測することで、地球ベースの司令センターへの依存を減らすことにある。",
+        "具体的なAIモデルや基盤技術スタックの詳細はまだ概念的な段階に留まるものの、提案されているのは人類の地球外への拡大のための基盤AIを開発することだ。これは、差し迫った商用製品のリリースというよりも、長期的な研究開発の取り組みを示唆している。",
+        "この構想は、NASAやJAXAといった国家宇宙機関、およびミッションの自律性向上を追求するSpaceXのような民間宇宙企業内のAI開発努力と競合する。Horizon Spaceは、この新たな分野に特化したAIプロバイダーとしての地位を確立しようとしている。",
+        "東京のビジネスプロフェッショナルにとって、現時点での直接的な応用は見られない。しかし、極限環境下での自律的な資源管理や予知保全といった基盤原則は、遠隔地のインフラ、深海探査、あるいは災害復旧といった地球上の課題に応用できる可能性を秘めている。",
+        "> 「我々は人類の多惑星未来のための基盤AIを構築している」",
+        "この取り組みが示唆するのは、地球を超えた場所での新たな経済モデルと居住構造の可能性だ。AIが他の天体における恒久的な人類の存在を促進し、人間の活動範囲と資源獲得のあり方を根本的に変える未来を予見させる。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "Horizon Space has announced its vision for using artificial intelligence to manage and execute space missions autonomously. Imagine a robotic explorer on the Moon or Mars that not ably navigates and collects samples by itself, but also plans its next moves, identifies resources, and even starts building structures without needing constant commands from Earth. This AI acts like a tireless, self-sufficient crew for off-world operations, handling everything from mission planning to detecting equipment failures before they happen.",
+        "While the direct application for Tokyo-based professionals is distant, the underlying technology has terrestrial parallels. Think of AI managing complex logistics for urban infrastructure projects, autonomous robots performing maintenance in hazardous zones like nuclear power plants or deep-sea facilities, or even optimizing resource allocation for large-scale construction in remote Japanese islands. The core idea of AI handling extreme, remote, and resource-intensive tasks could eventually inform new approaches to automation in various Japanese industries.",
+        "Significant real-world impact for space applications, even with this kind of AI, is likely 5-10 years away. The primary gating factors are the extreme cost of space operations, the need for unparalleled reliability and safety in unforgiving environments, and the development of robust international regulatory frameworks for off-world activities. On Earth, however, some of these AI principles might see limited integration into specialized heavy industries or disaster response within 3-5 years, especially in areas where human access is difficult or dangerous.",
+        "Japan Aerospace Exploration Agency (JAXA) is a clear counterpart, actively researching robotics and AI for its own space missions, including lunar and planetary exploration. Companies like ispace, focused on lunar landers and resource development, also represent a domestic effort in this direction. While no single Japanese entity precisely matches Horizon Space's broad \"foundational AI for multi-planetary future\" claim, JAXA's long-term vision for lunar bases and asteroid exploration, coupled with Japan's strengths in robotics, points to similar aspirations for autonomous space operations."
+      ],
+      "ja": [
+        "Horizon Spaceは、宇宙ミッションを自律的に管理・実行するための人工知能の構想を発表しました。これは、月や火星のロボット探査機が、自ら移動してサンプルを収集するだけでなく、次の行動を計画し、資源を特定し、地球からの絶え間ない指示なしに構造物の建設を開始するようなものです。このAIは、ミッション計画から機器の故障を事前に検知することまで、地球外での運用における疲れを知らない自己完結型のクルーのように機能します。",
+        "東京のビジネスプロフェッショナルにとって直接的な応用はまだ先の話ですが、その基盤技術は地球上での類似点を持っています。例えば、都市インフラプロジェクトの複雑なロジスティクスをAIが管理したり、原子力発電所や深海施設のような危険区域で自律ロボットがメンテナンスを行ったり、あるいは日本の離島における大規模建設のための資源配分を最適化したりといったことが考えられます。AIが極限的で遠隔地の、資源集約的なタスクを処理するという核となるアイデアは、最終的に日本の様々な産業における自動化への新しいアプローチを形成する可能性があります。",
+        "このようなAIを用いた宇宙応用が実際に大きな影響を与えるまでには、おそらく5年から10年かかるでしょう。主な障壁は、宇宙運用の極端なコスト、過酷な環境下での比類ない信頼性と安全性の必要性、そして地球外活動のための堅固な国際規制枠組みの整備です。しかし、地球上では、これらのAI原則の一部が、特に人間のアクセスが困難または危険な重工業や災害対応の分野で、3年から5年以内に限定的に統合される可能性があります。",
+        "日本の宇宙航空研究開発機構（JAXA）は、月や惑星探査を含む独自の宇宙ミッションのためにロボット工学とAIを積極的に研究しており、明確な対抗馬と言えます。月着陸船と資源開発に焦点を当てたispaceのような企業も、この方向での国内の取り組みを示しています。Horizon Spaceが掲げる広範な「多惑星未来のための基盤AI」という主張に完全に合致する単一の日本企業はまだありませんが、JAXAの月面基地や小惑星探査に向けた長期ビジョンは、日本のロボット工学の強みと相まって、自律的な宇宙運用に対する同様の野心を示唆しています。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "AI for autonomous space missions",
+        "ja": "宇宙探査を自律化するAI"
+      },
+      "useCase": {
+        "en": "For aerospace engineers and researchers focused on off-world resource management, this concept outlines a future where AI automates mission planning and execution in extreme environments, reducing human oversight.",
+        "ja": "地球外資源管理に携わる航空宇宙エンジニアや研究者にとって、この構想はAIが極限環境でのミッション計画と実行を自動化し、人的介入を減らす未来を示唆する。"
+      },
+      "vsCompetitor": {
+        "en": "This concept competes with internal R&D efforts at national space agencies like JAXA and private ventures like SpaceX, differing by focusing solely on a foundational AI platform rather than integrated launch and exploration services.",
+        "ja": "JAXAのような国家宇宙機関やSpaceXのような民間企業の内部R&Dと競合するが、統合された打ち上げ・探査サービスではなく、基盤AIプラットフォームに特化している点が異なる。"
+      },
+      "tokyoTake": {
+        "en": "While not an immediate tool for Tokyo professionals, this US venture highlights future possibilities for AI in extreme environments. Tokyo businesses in aerospace, deep-sea tech, or remote infrastructure should observe its progress for long-term strategic implications.",
+        "ja": "東京のプロフェッショナルにとって即座に役立つツールではないが、この米国ベンチャーは極限環境におけるAIの将来性を示唆している。航空宇宙、深海技術、遠隔インフラ関連の東京企業は、長期的な戦略的意味合いに注目すべきだろう。"
+      }
+    },
+    "source": {
+      "name": "Hacker News Top",
+      "url": "https://horizon-labs.ai/"
+    },
+    "sourceGuid": "https://news.ycombinator.com/item?id=50551509",
+    "status": "published"
+  },
+  {
+    "slug": "microsoft-reaffirms-commitment-to-nvidia-ai-infrastructure",
+    "category": "dev-tools",
+    "issue": "Vol. 07",
+    "publishedAt": "2026-11-18T23:17:28.000Z",
+    "readingMinutes": 5,
+    "feature": false,
+    "cover": {
+      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
+    },
+    "title": {
+      "en": "Microsoft Reaffirms Commitment to Nvidia AI Infrastructure",
+      "ja": "マイクロソフト、NVIDIA製AIインフラへの継続的コミットメントを再確認"
+    },
+    "dek": {
+      "en": "Satya Nadella's statement following Jensen Huang's departure signals stability in the foundational AI compute market, impacting global development.",
+      "ja": "ジェンスン・フアン氏退任後のサティア・ナデラ氏の発言は、基盤となるAI計算市場の安定性を示唆し、世界の開発に影響を与える。"
+    },
+    "author": {
+      "en": "AITECH TOKYO Editors",
+      "ja": "AITECH TOKYO 編集部"
+    },
+    "location": {
+      "en": "REDMOND, November 18, 2026",
+      "ja": "レッドモンド、2026年11月18日"
+    },
+    "tags": [
+      {
+        "en": "AI Infrastructure",
+        "ja": "AIインフラ"
+      },
+      {
+        "en": "Cloud Computing",
+        "ja": "クラウドコンピューティング"
+      },
+      {
+        "en": "Nvidia",
+        "ja": "NVIDIA"
+      },
+      {
+        "en": "Microsoft",
+        "ja": "マイクロソフト"
+      }
+    ],
+    "body": {
+      "en": [
+        "The stability of high-performance AI compute infrastructure, specifically Nvidia's GPU technology supporting Microsoft's Azure cloud, remains a critical industry focus. This stability is now underscored by Microsoft CEO Satya Nadella's recent comments.",
+        "Nadella's statement, made on November 18, 2026, followed the departure of Nvidia CEO Jensen Huang. It aimed to reassure the market of Microsoft's continued confidence in its partnership with Nvidia and the resilience of its AI supply chain.",
+        "The core implication for developers and businesses is the assurance of ongoing access to the necessary hardware for training and deploying large-scale AI models. Nvidia's GPUs, such as those in the H100 and upcoming B200 series, are the de facto standard for much of the AI industry.",
+        "Microsoft's Azure platform, a primary consumer of Nvidia's advanced silicon, provides the cloud environment where many LLMs and AI applications are built and run. This strategic alignment ensures that even with leadership changes at key suppliers, the underlying infrastructure is expected to remain robust.",
+        "> \"Our commitment to Nvidia's platform and our joint innovation remains unwavering.\" — Satya Nadella.",
+        "The market for AI compute hardware sees competition from AMD's Instinct accelerators and Intel's Gaudi series. However, Nvidia's established ecosystem and software stack, CUDA, continue to hold a significant lead, making partnerships like the one with Microsoft vital for widespread AI adoption.",
+        "For businesses operating AI services, this continuity implies predictability in their compute costs and availability, a crucial factor in long-term planning. It also signals that the current trajectory of AI development, heavily reliant on GPU acceleration, is unlikely to be derailed by executive transitions.",
+        "Beyond terrestrial applications, the stability of foundational AI compute infrastructure also has implications for nascent off-world ventures. As humanity explores and establishes bases on the Moon and Mars, the demand for resilient, high-performance AI to manage autonomous systems, resource extraction, and scientific analysis will necessitate robust, remotely deployable compute solutions, potentially leveraging similar architectural principles."
+      ],
+      "ja": [
+        "高性能AI計算インフラの安定性、特にマイクロソフトのAzureクラウドを支えるNVIDIAのGPU技術は、業界の重要な焦点であり続けている。この安定性は、マイクロソフトCEOサティア・ナデラ氏の最近の発言によって裏付けられた。",
+        "2026年11月18日に発表されたナデラ氏の発言は、NVIDIAのジェンスン・フアンCEOの退任を受けてのものだった。これは、NVIDIAとのパートナーシップに対するマイクロソフトの継続的な信頼と、そのAIサプライチェーンの回復力を市場に再保証することを目的としている。",
+        "開発者や企業にとっての主要な意味合いは、大規模AIモデルのトレーニングと展開に必要なハードウェアへの継続的なアクセスが保証されることにある。NVIDIAのGPU、例えばH100や今後のB200シリーズなどは、AI業界の事実上の標準となっている。",
+        "NVIDIAの高度な半導体の主要な消費者であるマイクロソフトのAzureプラットフォームは、多くのLLMやAIアプリケーションが構築・実行されるクラウド環境を提供している。この戦略的提携により、主要サプライヤーのリーダーシップ変更があっても、基盤となるインフラは堅牢であり続けると見込まれる。",
+        "「NVIDIAプラットフォームと共同イノベーションへの我々のコミットメントは揺るぎない」とサティア・ナデラ氏は述べた。",
+        "AI計算ハードウェア市場では、AMDのInstinctアクセラレーターやIntelのGaudiシリーズとの競争がある。しかし、NVIDIAの確立されたエコシステムとソフトウェアスタックであるCUDAは依然として大きなリードを保っており、マイクロソフトとのようなパートナーシップはAIの広範な普及にとって不可欠である。",
+        "AIサービスを運用する企業にとって、この継続性は計算コストと可用性の予測可能性を意味し、長期的な計画において重要な要素となる。また、GPUアクセラレーションに大きく依存する現在のAI開発の軌道が、幹部交代によって頓挫する可能性は低いことも示唆している。",
+        "地球上のアプリケーションを超えて、基盤となるAI計算インフラの安定性は、初期段階の宇宙開発事業にも影響を及ぼす。人類が月や火星での探査と基地建設を進めるにつれて、自律システム、資源採掘、科学分析を管理するための堅牢で高性能なAIへの需要が高まるだろう。これは、同様のアーキテクチャ原則を活用し、遠隔地で展開可能な堅牢な計算ソリューションを必要とすることになる。"
+      ]
+    },
+    "tokyoView": {
+      "en": [
+        "This news, in plain terms, means that the world's leading supplier of specialized computer chips for Artificial Intelligence (NVIDIA) and a major cloud service provider (Microsoft) are confirming their strong partnership will continue, even after a significant leadership change at NVIDIA. Think of it like a global car manufacturer reassuring its customers that the supply of crucial engine parts from its key partner will remain stable, no matter who runs the parts company.",
+        "For Tokyo readers, this plausible near-future impact centers on the stability of the underlying technology for AI applications. If you use AI tools for language translation, data analysis, or creative work, these tools run on powerful cloud servers. The reassurance from Microsoft means the \"engines\" behind these services are expected to keep running smoothly and be available. This could lead to more stable pricing and performance for digital services across various domains, from banking interfaces and transit apps to language learning platforms and content recommendations, as the core compute cost becomes more predictable.",
+        "This impact is already felt today, and its future implications will unfold over the next 6-12 months. The existing global cloud infrastructure, including Microsoft Azure, is accessible in Japan, and Japanese companies already leverage these services. The gating factor is less about Japanese-specific fine-tuning or regulatory approval, and more about the ongoing global competition and innovation in AI hardware, which this announcement suggests will continue unimpeded.",
+        "In Japan, companies like NTT and SoftBank are also investing heavily in AI infrastructure and cloud services, often partnering with global hardware providers. While there isn't a direct Japanese counterpart to NVIDIA's GPU dominance, initiatives like METI's GENIAC programme aim to foster domestic AI compute capabilities. However, for the immediate future, the stability of global giants like NVIDIA and Microsoft remains critical for the broader Japanese AI ecosystem."
+      ],
+      "ja": [
+        "このニュースを平易に説明すると、人工知能（AI）向けの特殊なコンピューターチップで世界をリードする企業（NVIDIA）と、主要なクラウドサービス提供者（マイクロソフト）が、NVIDIAの重要なリーダーシップ変更後も、その強固なパートナーシップを継続することを再確認した、ということです。これは、世界的な自動車メーカーが、主要な部品供給元企業の経営者が誰になろうとも、重要なエンジン部品の供給が安定して継続すると顧客に保証するようなものだと考えてください。",
+        "東京の読者にとって、このニュースがもたらす近い将来の具体的な影響は、AIアプリケーションを支える基盤技術の安定性に関わります。もしあなたが言語翻訳、データ分析、クリエイティブな作業でAIツールを使っているなら、それらのツールは強力なクラウドサーバー上で動いています。マイクロソフトからのこの再保証は、これらのサービスの「エンジン」が今後もスムーズに稼働し、利用可能であり続けることを意味します。これにより、中核となる計算コストがより予測可能になるため、銀行インターフェースや交通アプリから、語学学習プラットフォームやコンテンツレコメンデーションまで、様々なデジタルサービスの価格と性能が安定する可能性があります。",
+        "この影響はすでに今日感じられており、その将来的な意味合いは今後6〜12ヶ月で明らかになるでしょう。マイクロソフトAzureを含む既存のグローバルクラウドインフラは日本でも利用可能であり、日本企業はすでにこれらのサービスを活用しています。ここでは、日本固有のファインチューニングや規制承認よりも、AIハードウェアにおける進行中のグローバル競争とイノベーションが継続することが重要な要素であり、今回の発表はその継続を示唆しています。",
+        "日本国内では、NTTやソフトバンクといった企業もAIインフラやクラウドサービスに多大な投資を行っており、多くの場合、グローバルなハードウェアプロバイダーと提携しています。NVIDIAのGPU支配に直接匹敵する日本の企業は存在しませんが、経済産業省のGENIACプログラムのような取り組みは、国内のAI計算能力の育成を目指しています。しかし、当面の間、NVIDIAやマイクロソフトのようなグローバルな巨大企業の安定性は、日本のAIエコシステム全体にとって引き続き極めて重要です。"
+      ]
+    },
+    "structured": {
+      "tagline": {
+        "en": "Reassurance on stable AI compute supply post-Nvidia leadership change.",
+        "ja": "NVIDIA経営陣交代後もAI計算供給は安定、と再保証。"
+      },
+      "useCase": {
+        "en": "For a Tokyo-based AI startup founder or a cloud architect planning long-term AI model deployment, this news provides confidence in the stable availability and performance of foundational GPU infrastructure on platforms like Azure.",
+        "ja": "東京のAIスタートアップ創業者やクラウドアーキテクトが長期的なAIモデル展開を計画する際、AzureのようなプラットフォームにおけるGPUインフラの安定した可用性と性能に確信を与える。"
+      },
+      "vsCompetitor": {
+        "en": "This announcement indirectly competes with concerns about potential supply chain disruptions or shifts to alternative hardware providers like AMD or Intel, by affirming the continued dominance and strategic partnership of Nvidia and Microsoft in the AI compute space.",
+        "ja": "この発表は、AMDやIntelのような代替ハードウェアプロバイダーへの移行やサプライチェーンの潜在的な混乱に対する懸念と間接的に競合し、NVIDIAとマイクロソフトのAI計算分野における継続的な優位性と戦略的パートナーシップを再確認する。"
+      },
+      "tokyoTake": {
+        "en": "Tokyo professionals relying on global cloud infrastructure for AI development can view this as a positive signal for long-term compute stability. While Japanese cloud providers like NTT or SoftBank also offer AI services, the foundational GPU supply often traces back to Nvidia. The key takeaway is that the core components for advanced AI will remain accessible, though pricing in JPY and specific local support might still vary. This stability benefits companies in Japan building on Azure or other major clouds, ensuring their ability to scale.",
+        "ja": "グローバルなクラウドインフラに依存してAI開発を行う東京のプロフェッショナルにとって、これは長期的な計算資源の安定性を示すポジティブな兆候だ。NTTやソフトバンクのような日本のクラウドプロバイダーもAIサービスを提供するが、その基盤となるGPU供給はNVIDIAに由来することが多い。重要なのは、高度なAIのコアコンポーネントへのアクセスが維持されることだが、日本円での価格設定や特定のローカルサポートは依然として変動する可能性がある。この安定性は、Azureや他の主要クラウド上で構築を行う日本企業にとって恩恵となり、スケーラビリティを保証する。"
+      }
+    },
+    "source": {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-remains-confident-in-nvidia-after-huangs-exit/"
+    },
+    "sourceGuid": "https://techcrunch.com/?p=3190266",
+    "status": "published"
+  },
+  {
     "slug": "tencent-ai-introduces-hy4-flash-a-new-high-speed-llm",
     "category": "dev-tools",
     "issue": "Vol. 07",
@@ -831,8 +1459,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0f12"
+      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Microsoft's Pervasive AI Coding Agent Concept Raises Privacy Concerns",
@@ -935,7 +1563,7 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0c0c0e"
     },
     "title": {
@@ -1039,8 +1667,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "OpenCode.ai Simplifies Open-Source AI Model Deployment",
@@ -1145,8 +1773,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "California AG Sues OpenAI Over Autonomous Agent Behavior",
@@ -1249,8 +1877,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "When AI Agents Choose the Path of Least Resistance",
@@ -1451,8 +2079,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0b0b0d"
+      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "AI and Open Source: A Shifting Landscape for Code",
@@ -1659,8 +2287,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101012"
+      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0f12"
     },
     "title": {
       "en": "Positional Embeddings: The Foundation of LLM Language Understanding",
@@ -1763,8 +2391,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#08080a"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "Nvidia's Security Lapse: A Wake-Up Call for Off-World AI",
@@ -1869,8 +2497,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0e10"
+      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101011"
     },
     "title": {
       "en": "Terminactory: A Terminal Factory Game for AI Agent Wait Times",
@@ -2079,8 +2707,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "The AI Graveyard: Lessons from Failed Projects",
@@ -2291,8 +2919,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Anthropic Introduces Claude Meetings for AI-Powered Summaries",
@@ -2397,8 +3025,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1620712943543-26fab76e6f5d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0c"
     },
     "title": {
       "en": "AI Startup Funding Shifts as Key Figure Departs",
@@ -2497,8 +3125,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "Perplexity Introduces Decider for Structured Choices",
@@ -2603,8 +3231,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-26fab76e6f5d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0c"
+      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "LangChain's Agent Framework Solidifies LLM Development",
@@ -2709,8 +3337,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0b0b0d"
     },
     "title": {
       "en": "Isometric Pixel Map Reimagines San Francisco Bay Area",
@@ -2813,8 +3441,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#08080a"
     },
     "title": {
       "en": "The Strategic Undercurrents of AI: Restricted Chips Power China's Models",
@@ -3027,8 +3655,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101011"
+      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "Geopolitical Currents Stir Nvidia's AI Dominance",
@@ -3128,8 +3756,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "Apple's AI App Review System Frustrates Developers",
@@ -3234,8 +3862,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0f12"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Muse AI Assistant Now Calls US Businesses",
@@ -3334,8 +3962,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Cerulion Offers ROS2 Developers Deterministic, Low-Latency Robotics Runtime",
@@ -3440,8 +4068,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#08080a"
+      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0f12"
     },
     "title": {
       "en": "Nebius Unveils $40 Billion Neocloud Strategy for AI Infrastructure",
@@ -3542,7 +4170,7 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0c0c0e"
     },
     "title": {
@@ -3644,8 +4272,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
     },
     "title": {
       "en": "Nvidia's AstroMind: Martian AI Deployment Sparks Governance Crisis",
@@ -4068,8 +4696,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0a"
+      "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101010"
     },
     "title": {
       "en": "Human Dynamics and AI Governance: Lessons for Off-World Colonies",
@@ -4174,8 +4802,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#08080a"
     },
     "title": {
       "en": "Anthropic's Glasswing Initiative Targets LLM Application Security",
@@ -4278,8 +4906,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0d0f"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "OpenAI Acquires Odessia, Signaling Entry into AI Travel Planning",
@@ -4380,8 +5008,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101011"
+      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "Apple Prepares Mac App for Local AI Models",
@@ -4482,8 +5110,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0f12"
     },
     "title": {
       "en": "New York Enacts AI Safety Law, Setting Precedent for Global Regulation",
@@ -4586,8 +5214,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101012"
+      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
     },
     "title": {
       "en": "Advancing LLM Reasoning Through Pathfinding Algorithms",
@@ -4690,8 +5318,8 @@
     "readingMinutes": 4,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1701978500311-7ddd0a30a64f?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101011"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "Anthropic Prepares for IPO, Solidifying Claude's Enterprise Ambitions",
@@ -4898,8 +5526,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Anthropic's Maturing Business Signals Stability for Claude",
@@ -5000,8 +5628,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0f12"
+      "src": "https://images.unsplash.com/photo-1684391938577-67c3e8b9c7a8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Claude Fable 5.2: Anthropic's Latest LLM Refines Reasoning and Coherence",
@@ -5108,8 +5736,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0f12"
+      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Nvidia's Influence and the Future of Reputation: An Off-World Perspective",
@@ -5210,8 +5838,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0d0f"
+      "src": "https://images.unsplash.com/photo-1620712943543-26fab76e6f5d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0c"
     },
     "title": {
       "en": "Anthropic Unveils Claude Fable and Mythos 5.2: AI for Narrative and Deep Cultural Reasoning",
@@ -5316,8 +5944,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#101012"
     },
     "title": {
       "en": "Geopolitical Currents and AI Supply Chain Risk",
@@ -5420,8 +6048,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "The Cognitive Cost of AI Interaction",
@@ -5526,7 +6154,7 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0c0c0e"
     },
     "title": {
@@ -5736,8 +6364,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0f12"
+      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
     },
     "title": {
       "en": "Llama-Modchip: Local LLM Optimization for the Edge",
@@ -5842,8 +6470,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#101012"
+      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#08080a"
     },
     "title": {
       "en": "Lorekit Proposes Open Agent Memory Format",
@@ -5946,8 +6574,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "EyesRhythm: A Local Blink Monitor for Screen Professionals",
@@ -6050,8 +6678,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#08080a"
     },
     "title": {
       "en": "Espionage Targets Nvidia, Highlighting AI Hardware's Strategic Value",
@@ -6154,7 +6782,7 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0c0c0e"
     },
     "title": {
@@ -6264,8 +6892,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
     },
     "title": {
       "en": "Google Acquires Crusoe's Wyoming Data Center Project for AI Compute",
@@ -6370,8 +6998,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#08080a"
     },
     "title": {
       "en": "MaxxBench Aims to Standardize LLM Evaluation",
@@ -6478,7 +7106,7 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
       "tone": "#0a0a0c"
     },
     "title": {
@@ -6584,8 +7212,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0f12"
+      "src": "https://images.unsplash.com/photo-1717501218385-55bc3a95be94?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0a"
     },
     "title": {
       "en": "OpenAI Addresses Tool-Calling Security Flaw",
@@ -6684,8 +7312,8 @@
     "readingMinutes": 4,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-bccf2f2c1ae9?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1672239497060-46b39e7e23c4?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0e10"
     },
     "title": {
       "en": "OpenAI's Latest Funding Round Secures Its LLM Ambitions",
@@ -6790,8 +7418,8 @@
     "readingMinutes": 6,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#08080a"
+      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0f12"
     },
     "title": {
       "en": "The Self-Accelerating Loop of AI Development",
@@ -6890,8 +7518,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0d0d0f"
+      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "AI Hacking Tools Exposed, Raising Cybersecurity Concerns",
@@ -6994,8 +7622,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "Crusoe.ai Expands Wyoming Data Center for AI Compute",
@@ -7096,8 +7724,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0e0e10"
     },
     "title": {
       "en": "Meta Introduces Spaces: An AI Agent for Collaborative Work",
@@ -7306,8 +7934,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
+      "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0a0a0c"
     },
     "title": {
       "en": "Airbnb to Launch AI Travel Agent in 2027",
@@ -7406,8 +8034,8 @@
     "readingMinutes": 5,
     "feature": true,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
+      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0f12"
     },
     "title": {
       "en": "Tencent Unveils HY4, Bolstering Open-Source LLM Landscape",
@@ -7510,8 +8138,8 @@
     "readingMinutes": 6,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1620712943543-26fab76e6f5d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0c"
+      "src": "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0c0c0e"
     },
     "title": {
       "en": "Meta introduces video chat for Muse AI avatars in the US",
@@ -7618,8 +8246,8 @@
     "readingMinutes": 5,
     "feature": false,
     "cover": {
-      "src": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0a0a0c"
+      "src": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2200&q=80",
+      "tone": "#0d0d0f"
     },
     "title": {
       "en": "Hungary Opens Communist-Era Files, Revealing Former Agents",
@@ -7712,634 +8340,6 @@
       "url": "https://www.euronews.com/2026/11/04/hungary-communist-era-files-opened-up-to-60000-former-agents-revealed"
     },
     "sourceGuid": "https://news.ycombinator.com/item?id=50383163",
-    "status": "published"
-  },
-  {
-    "slug": "meta-cautions-on-ai-growth-amid-data-center-opposition",
-    "category": "workflow",
-    "issue": "Vol. 07",
-    "publishedAt": "2026-11-05T19:12:39.000Z",
-    "readingMinutes": 5,
-    "feature": false,
-    "cover": {
-      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
-    },
-    "title": {
-      "en": "Meta Cautions on AI Growth Amid Data Center Opposition",
-      "ja": "メタ、データセンター反対がAI成長を阻害と警告"
-    },
-    "dek": {
-      "en": "Meta highlights public pushback against data center construction as a significant impediment to AI infrastructure expansion, driven by election-related distrust.",
-      "ja": "メタは、選挙関連の不信感に起因するデータセンター建設への世論の反発が、AIインフラ拡大の大きな障害となっていると指摘する。"
-    },
-    "author": {
-      "en": "AITECH TOKYO Editors",
-      "ja": "AITECH TOKYO 編集部"
-    },
-    "location": {
-      "en": "TOKYO, November 5, 2026",
-      "ja": "東京、2026年11月5日"
-    },
-    "tags": [
-      {
-        "en": "AI infrastructure",
-        "ja": "AIインフラ"
-      },
-      {
-        "en": "data centers",
-        "ja": "データセンター"
-      },
-      {
-        "en": "compute capacity",
-        "ja": "計算能力"
-      },
-      {
-        "en": "policy",
-        "ja": "政策"
-      }
-    ],
-    "body": {
-      "en": [
-        "Meta is sounding an alarm about growing public opposition to new data center construction, a trend it believes will impede the expansion of artificial intelligence infrastructure.",
-        "The company attributes this pushback partly to heightened public distrust stemming from election-related misinformation and social media content. This translates into local communities resisting the development of critical compute facilities.",
-        "Data centers are the foundational hardware for AI development, housing the GPUs and servers that power large language models and advanced AI applications. Without sufficient new facilities, the computational capacity required for further AI advancement becomes constrained.",
-        "This constraint could lead to a global slowdown in AI innovation and an increase in the operational costs of AI services. The availability of compute resources is already a competitive bottleneck for many firms.",
-        "> \"Community opposition could slow the pace of AI infrastructure development.\"",
-        "This sentiment underscores a growing recognition that AI's future is not solely a technical challenge but also a societal one, requiring public buy-in for physical infrastructure.",
-        "For businesses relying on cloud-based AI, this development signals potential future price increases and limits on the scale of AI deployments. The physical footprint of AI is becoming a geopolitical and local community concern."
-      ],
-      "ja": [
-        "メタは、新たなデータセンター建設に対する住民の反対が拡大していることに警鐘を鳴らしている。この傾向が、AIインフラの拡張を阻害する可能性があると見ている。",
-        "同社は、この反発の一部は選挙関連の誤情報やソーシャルメディアコンテンツから生じる公共の不信感に起因すると説明する。これが、重要な計算施設開発への地域社会の抵抗につながっている。",
-        "データセンターは、大規模言語モデルや高度なAIアプリケーションを動かすGPUやサーバーを収容する、AI開発の基盤となるハードウェアである。十分な新施設がなければ、さらなるAI進化に必要な計算能力は制約を受ける。",
-        "この制約は、世界的なAIイノベーションの減速や、AIサービスの運用コスト上昇につながる可能性がある。計算リソースの可用性は、すでに多くの企業にとって競争上のボトルネックとなっている。",
-        "> 「地域社会の反対がAIインフラ開発の速度を鈍化させる可能性がある」。",
-        "この見解は、AIの未来が技術的な課題だけでなく、物理的なインフラに対する公共の理解と協力が必要な社会的な課題でもあるという認識が高まっていることを示唆する。",
-        "クラウドベースのAIに依存する企業にとって、この動向は将来的な価格上昇やAI導入規模の制限を示唆する。AIの物理的なフットプリントは、地政学的および地域社会の懸念事項になりつつある。"
-      ]
-    },
-    "tokyoView": {
-      "en": [
-        "Meta has warned that building new data centers, which are the “brains” of AI, is becoming difficult. Distrust fueled by misinformation on social media is causing local residents to oppose data center construction. This means securing the computing power necessary for AI to become smarter is becoming harder.",
-        "If the supply of computing power stagnates, AI service fees could rise, or the introduction of new AI features could be delayed. This could particularly impact cloud AI services used by Tokyo businesses and services relying on domestic data centers. The development of Japanese-language AI models might also be affected.",
-        "This impact has already begun indirectly. Linked to global semiconductor shortages and rising electricity costs, it is likely to be reflected in AI-related service costs within the next 12-24 months. Data center construction within Japan will also face bottlenecks, taking time to secure land and power, and to gain local community consensus.",
-        "In Japan, companies like NTT and SoftBank are strengthening domestic data center investments. Furthermore, METI's GENIAC program aims to develop domestic AI computing infrastructure. However, these initiatives may face similar challenges to those abroad, regarding stable power supply and coexistence with local communities."
-      ],
-      "ja": [
-        "メタが、AIの「頭脳」となるデータセンターの建設が難しくなっていると警告しました。SNS上の誤情報などへの不信感が原因で、地域住民がデータセンター建設に反対しているのです。これは、AIが賢くなるために必要な計算能力の確保が難しくなることを意味します。",
-        "計算能力の供給が滞れば、AIサービスの利用料が高くなったり、新しいAI機能の登場が遅れたりする可能性があります。特に、東京の企業が利用するクラウドAIサービスや、国内データセンターを利用するサービスに影響が出るかもしれません。日本語対応のAIモデル開発にも影響が及ぶ可能性があります。",
-        "この影響は、すでに間接的に始まっています。世界的な半導体不足や電力コストの上昇と連動し、今後12〜24ヶ月でAI関連サービスのコストに反映される可能性が高いでしょう。日本国内でのデータセンター建設も、土地や電力の確保、地域住民との合意形成に時間がかかり、ボトルネックとなるはずです。",
-        "日本では、NTTやソフトバンクなどが国内でのデータセンター投資を強化しています。また、経済産業省のGENIACプログラムは、国内のAI計算基盤整備を目指しています。しかし、これらの取り組みも、電力供給の安定性や地域社会との共存という点で、海外と同様の課題に直面する可能性があるでしょう。"
-      ]
-    },
-    "structured": {
-      "tagline": {
-        "en": "AI expansion faces public backlash over data centers.",
-        "ja": "AI拡大、データセンター建設で世論の反発に直面。"
-      },
-      "useCase": {
-        "en": "For business strategists and infrastructure planners in Tokyo, understanding the global constraints on AI compute capacity is essential for long-term project planning and investment decisions.",
-        "ja": "東京のビジネス戦略家やインフラ計画担当者にとって、AI演算能力の世界的な制約を理解することは、長期的なプロジェクト計画と投資判断に不可欠である。"
-      },
-      "vsCompetitor": {
-        "en": "This issue is not a product or service competing with others, but a fundamental constraint on the growth of all AI-driven services, including those from major cloud providers and local Japanese SaaS.",
-        "ja": "これは特定の製品やサービス間の競争ではなく、主要なクラウドプロバイダーや日本のSaaSを含む、あらゆるAI駆動型サービスの成長に対する根本的な制約である。"
-      },
-      "tokyoTake": {
-        "en": "This macro trend suggests that global AI compute costs may rise, impacting Tokyo businesses reliant on cloud AI. Japan faces similar domestic challenges in data center expansion, making local partnerships and energy policy critical for future AI adoption.",
-        "ja": "このマクロトレンドは、世界のAI計算コスト上昇を示唆し、東京のクラウドAI依存企業に影響を及ぼすだろう。日本も国内データセンター拡張で同様の課題に直面しており、将来のAI導入には国内パートナーシップとエネルギー政策が重要となる。"
-      }
-    },
-    "source": {
-      "name": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/"
-    },
-    "sourceGuid": "https://techcrunch.com/?p=3185548",
-    "status": "published"
-  },
-  {
-    "slug": "gauge-cli-optimizing-developer-documentation-for-ai-agents",
-    "category": "dev-tools",
-    "issue": "Vol. 07",
-    "publishedAt": "2026-11-04T20:31:30.000Z",
-    "readingMinutes": 6,
-    "feature": true,
-    "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
-    },
-    "title": {
-      "en": "Gauge CLI: Optimizing Developer Documentation for AI Agents",
-      "ja": "Gauge CLI: AIエージェント向け開発者ドキュメント最適化ツール"
-    },
-    "dek": {
-      "en": "Gauge CLI is an open-source tool that helps developers systematically test and improve how coding agents interpret their product documentation.",
-      "ja": "Gauge CLIは、コーディングエージェントが製品ドキュメントをどのように解釈するかを体系的にテストし、改善するためのオープンソースツールである。"
-    },
-    "author": {
-      "en": "AITECH TOKYO Editors",
-      "ja": "AITECH TOKYO 編集部"
-    },
-    "location": {
-      "en": "November 4, 2026",
-      "ja": "2026年11月4日"
-    },
-    "tags": [
-      {
-        "en": "developer tools",
-        "ja": "開発者ツール"
-      },
-      {
-        "en": "documentation",
-        "ja": "ドキュメント"
-      },
-      {
-        "en": "LLM optimization",
-        "ja": "LLM最適化"
-      },
-      {
-        "en": "open source",
-        "ja": "オープンソース"
-      }
-    ],
-    "body": {
-      "en": [
-        "Gauge CLI is an open-source command-line interface designed to optimize how coding agents interpret and utilize product documentation.",
-        "The tool operates on a \"hillclimbing loop\" principle. Developers define tasks for coding agents, run these tasks, and then analyze the session transcripts for any friction or failures in agent behavior.",
-        "The CLI then allows for creating variants of the documentation to address identified issues. These variants are transparently injected into the testing environment, and the tasks are re-run, repeating the cycle until optimal documentation is achieved.",
-        "The system leverages virtual machines (Docker containers for local execution) and a network gateway. This gateway, implemented with `mitmproxy` in a sidecar, intercepts network requests to swap in doc variants and handle credential replacement, ensuring agents operate in a secure, representative environment.",
-        "Gauge-sh, the company behind the CLI, initially built open-source developer tools before focusing on AI search optimization. They recognized that optimizing for LLMs like Claude Code and Codex would become essential for all devtool companies.",
-        "Internally, Gauge used the CLI to correct agent misunderstandings, such as fixing their own docs to clarify support for various models beyond Claude Code and Codex. They also assisted Clerk in shifting coding agents from a legacy mode to a new command, observing a threefold increase in usage post-deployment after validating SDK error messages.",
-        "The creators state, \"> Due to the 'static' nature of AI models, we've realized that closed-loop optimization techniques are now possible for essentially all software products.\" This suggests a new paradigm for iterative product improvement, treating agent interaction as a measurable, optimizable surface.",
-        "The CLI is open-source and available via `npm i -g @withgauge/cli`, offering a local execution backend for immediate testing without requiring an account. It is primarily developed in a US-centric developer ecosystem."
-      ],
-      "ja": [
-        "Gauge CLIは、コーディングエージェントが製品ドキュメントをどのように解釈し、活用するかを最適化するためのオープンソースのコマンドラインインターフェースである。",
-        "このツールは「ヒルクライミングループ」という原理で動作する。開発者はコーディングエージェント向けのタスクを設定し、それを実行した後、セッションのトランスクリプトを分析してエージェントの動作における摩擦や失敗箇所を特定する。",
-        "次に、CLIは特定された問題に対処するためのドキュメントのバリアント（複数バージョン）を作成する。これらのバリアントはテスト環境に透過的に挿入され、タスクが再実行される。このサイクルを繰り返すことで、最適なドキュメントが達成されるまで改善が続けられる。",
-        "システムは仮想マシン（ローカル実行にはDockerコンテナを使用）とネットワークゲートウェイを活用する。サイドカーコンテナで実行される`mitmproxy`を用いたこのゲートウェイは、ネットワークリクエストを傍受してドキュメントのバリアントを差し替えたり、認証情報の置き換えを行ったりすることで、エージェントが安全かつ代表的な環境で動作することを保証する。",
-        "Gauge-shは、元々オープンソースの開発ツールを構築していたが、AI検索最適化に注力するようになった。同社は、Claude CodeやCodexのようなLLM向けに最適化することが、いずれすべての開発ツール企業にとって不可欠になると認識している。",
-        "同社は内部でこのCLIを使用し、エージェントがGaugeがClaude CodeとCodexのみをサポートしていると誤解していた点を修正した。また、Clerk社の開発者がレガシーなコマンドから新しいコマンドへ移行するのを支援し、SDKのエラーメッセージを検証した後、デプロイ後のエージェントのコマンド利用率を3倍に向上させた。",
-        "開発者は「> AIモデルの『静的』な性質により、クローズドループ最適化技術が実質的にすべてのソフトウェア製品で可能になったと認識している」と述べている。これは、エージェントとのインタラクションを測定可能で最適化可能な表面として捉え、反復的な製品改善のための新たなパラダイムを示唆する。",
-        "このCLIはオープンソースであり、`npm i -g @withgauge/cli`を通じて利用可能である。アカウントなしで即座にテストできるローカル実行バックエンドを提供している。主に米国を中心とした開発者エコシステムで開発されている。"
-      ]
-    },
-    "tokyoView": {
-      "en": [
-        "Gauge CLIは、企業が製品の説明書をAIツール、特にコードを書くAIアシスタントにとって明確なものにするのを助ける新しいオープンソースツールです。これは、ユーザーマニュアルを細心の注意を払って編集する編集者のようなものですが、ロボットアシスタントがそれをどれだけよく理解するかをテストします。AIがドキュメントに基づいて製品を使おうとするところをシミュレーションし、どこでAIが混乱したかを指摘します。そして、AIが完全に理解するまで、その部分を書き直す手助けをします。",
-        "東京の読者にとって、これは将来的には自動化されたカスタマーサポートや開発者ポータルとのやり取りがよりスムーズになることを意味するかもしれません。ローンを申し込んだり、新しいAPIを統合したりする場面を想像してみてください。もしその基盤となるドキュメントがAI向けに最適化されていれば、案内役のAIアシスタントははるかに正確になり、誤った情報や役に立たない情報を提供する可能性が低くなります。これにより、デジタルサービスがより直感的で信頼できるものに感じられ、指示の誤解によるフラストレーションが軽減されるでしょう。",
-        "東京のプロフェッショナルへの影響は、おそらく12〜24ヶ月先になるでしょう。このツールはオープンソースで今日から利用可能ですが、主なターゲットは開発者ツールや複雑なAPIを構築する企業です。この分野の日本企業が同様の手法を採用し、最適化の対象が英語圏のコーディングエージェントから日本語LLMへと移行する必要があります。この移行には、文化や言語に特有のニュアンスを考慮した、専用のファインチューニングとテストへの取り組みが求められます。",
-        "この特定の「ドキュメントからAIへの最適化ループ」を提供する直接的な日本版ツールはまだ存在しませんが、ELYZAやSakana AIのような企業は高品質な日本語LLMの構築に注力しています。彼らの仕事は、将来的にGauge CLIのようなツールが日本語コンテキストで最適化することになる「脳」を形成します。さらに、freeeやMoney Forwardのような広範なAPIドキュメントを開発者向けに提供する日本のSaaSプロバイダーは、AI統合が堅牢であることを保証するために、いずれ同様の社内ツールを必要とするでしょう。"
-      ],
-      "ja": [
-        "Gauge CLIは、企業が製品の説明書をAIツール、特にコードを書くAIアシスタントにとって明確なものにするのを助ける新しいオープンソースツールです。これは、ユーザーマニュアルを細心の注意を払って編集する編集者のようなものですが、ロボットアシスタントがそれをどれだけよく理解するかをテストします。AIがドキュメントに基づいて製品を使おうとするところをシミュレーションし、どこでAIが混乱したかを指摘します。そして、AIが完全に理解するまで、その部分を書き直す手助けをします。",
-        "東京の読者にとって、これは将来的には自動化されたカスタマーサポートや開発者ポータルとのやり取りがよりスムーズになることを意味するかもしれません。ローンを申し込んだり、新しいAPIを統合したりする場面を想像してみてください。もしその基盤となるドキュメントがAI向けに最適化されていれば、案内役のAIアシスタントははるかに正確になり、誤った情報や役に立たない情報を提供する可能性が低くなります。これにより、デジタルサービスがより直感的で信頼できるものに感じられ、指示の誤解によるフラストレーションが軽減されるでしょう。",
-        "東京のプロフェッショナルへの影響は、おそらく12〜24ヶ月先になるでしょう。このツールはオープンソースで今日から利用可能ですが、主なターゲットは開発者ツールや複雑なAPIを構築する企業です。この分野の日本企業が同様の手法を採用し、最適化の対象が英語圏のコーディングエージェントから日本語LLMへと移行する必要があります。この移行には、文化や言語に特有のニュアンスを考慮した、専用のファインチューニングとテストへの取り組みが求められます。",
-        "この特定の「ドキュメントからAIへの最適化ループ」を提供する直接的な日本版ツールはまだ存在しませんが、ELYZAやSakana AIのような企業は高品質な日本語LLMの構築に注力しています。彼らの仕事は、将来的にGauge CLIのようなツールが日本語コンテキストで最適化することになる「脳」を形成します。さらに、freeeやMoney Forwardのような広範なAPIドキュメントを開発者向けに提供する日本のSaaSプロバイダーは、AI統合が堅牢であることを保証するために、いずれ同様の社内ツールを必要とするでしょう。"
-      ]
-    },
-    "structured": {
-      "tagline": {
-        "en": "Optimize product docs for coding agents.",
-        "ja": "コーディングエージェント向けドキュメントを最適化。"
-      },
-      "useCase": {
-        "en": "For a Tokyo-based developer relations manager or a product manager overseeing API documentation, this tool helps ensure coding agents (and by extension, human developers) correctly interpret and utilize their product's technical information, reducing support load.",
-        "ja": "東京のデベロッパーリレーションズ担当者やAPIドキュメントを管理するプロダクトマネージャーが、コーディングエージェント（ひいては人間開発者）が製品の技術情報を正確に解釈・利用し、サポート負荷を軽減するために利用できる。"
-      },
-      "vsCompetitor": {
-        "en": "Unlike general A/B testing frameworks, Gauge CLI specifically targets the interaction between LLM-based coding agents and documentation, offering a dedicated loop for iterative improvement that standard web analytics tools cannot provide.",
-        "ja": "一般的なA/Bテストフレームワークとは異なり、Gauge CLIはLLMベースのコーディングエージェントとドキュメント間のインタラクションに特化しており、従来のウェブ解析ツールでは提供できない反復改善のための専用ループを提供する。"
-      },
-      "tokyoTake": {
-        "en": "This open-source CLI offers a practical approach for companies with developer-facing products to ensure their documentation is truly effective for AI. While its direct impact on most Tokyo professionals is currently limited, it points to a future where all digital interfaces will need to be optimized for both human and AI users, a challenge Japanese companies will increasingly face.",
-        "ja": "このオープンソースCLIは、開発者向け製品を持つ企業が、そのドキュメントがAIにとって真に効果的であることを保証するための実践的なアプローチを提供する。現状、東京のほとんどのプロフェッショナルへの直接的な影響は限られているが、すべてのデジタルインターフェースが人間とAIユーザーの両方のために最適化される未来を示唆しており、これは日本の企業も今後ますます直面する課題となるだろう。"
-      }
-    },
-    "source": {
-      "name": "Hacker News Top",
-      "url": "https://github.com/gauge-sh/gauge-cli"
-    },
-    "sourceGuid": "https://news.ycombinator.com/item?id=50371090",
-    "status": "published"
-  },
-  {
-    "slug": "ai-lobbying-shapes-us-policy-setting-global-precedents",
-    "category": "workflow",
-    "issue": "Vol. 07",
-    "publishedAt": "2026-11-04T22:45:09.000Z",
-    "readingMinutes": 4,
-    "feature": true,
-    "cover": {
-      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0e10"
-    },
-    "title": {
-      "en": "AI Lobbying Shapes US Policy, Setting Global Precedents",
-      "ja": "米国AI業界のロビー活動が政策を形成、世界的な先例に"
-    },
-    "dek": {
-      "en": "AI industry PACs spent significantly to influence US Congress, impacting future regulatory landscapes.",
-      "ja": "米国のAI業界PACが議会に多額を投じ、将来の規制環境に影響を与えている。"
-    },
-    "author": {
-      "en": "AITECH TOKYO Editors",
-      "ja": "AITECH TOKYO 編集部"
-    },
-    "location": {
-      "en": "November 4, 2026",
-      "ja": "2026年11月4日"
-    },
-    "tags": [
-      {
-        "en": "AI policy",
-        "ja": "AI政策"
-      },
-      {
-        "en": "lobbying",
-        "ja": "ロビー活動"
-      },
-      {
-        "en": "regulation",
-        "ja": "規制"
-      },
-      {
-        "en": "governance",
-        "ja": "ガバナンス"
-      }
-    ],
-    "body": {
-      "en": [
-        "AI Political Action Committees (PACs) in the United States have actively sought to shape federal legislation concerning artificial intelligence. These groups represent a concerted effort by major AI developers and investors to influence the regulatory framework that will govern their industry.",
-        "Their primary goal is to advocate for policies that support innovation and growth, often seeking to balance safety concerns with economic opportunities. This includes positions on data privacy, algorithmic transparency, and the scope of government oversight.",
-        "The TechCrunch report details substantial financial outlays by these PACs during recent election cycles. While specific figures are not the core story, the scale of investment indicates the industry's commitment to proactive engagement with lawmakers.",
-        "These efforts target key legislative bodies and individual representatives, aiming to educate politicians on AI's complexities and advocate for specific policy stances. The outcome of these campaigns directly affects the legislative agenda.",
-        "> AI PACs spent millions trying to shape Congress.",
-        "The success of these lobbying efforts varies, but their sustained presence ensures AI remains a prominent topic in Washington. This proactive engagement distinguishes the AI sector from earlier tech industries that often faced regulation reactively.",
-        "For a Tokyo professional, the contours of US AI policy are not merely domestic news. American regulatory decisions frequently set international standards or influence policy debates in allied nations, including Japan. Understanding these trends provides insight into potential future domestic regulatory shifts.",
-        "Looking ahead, as humanity expands its presence beyond Earth, the governance models established for AI on our planet will likely inform how artificial intelligence is managed in off-world settlements. Early regulatory frameworks, influenced by today's lobbying, could dictate the ethical and operational guidelines for AI systems on the Moon or Mars, impacting everything from autonomous resource extraction to habitat management and even the nascent legal systems of future space-faring societies."
-      ],
-      "ja": [
-        "米国では、AI政治活動委員会（PAC）が連邦議会における人工知能関連法案の形成に積極的に取り組んでいる。これらの団体は、主要なAI開発企業や投資家が、業界を統治する規制枠組みに影響を与えようとする組織的な取り組みを代表している。",
-        "彼らの主な目的は、イノベーションと成長を支援する政策を推進することであり、多くの場合、安全性への懸念と経済的機会とのバランスを取ろうとする。これには、データプライバシー、アルゴリズムの透明性、政府監督の範囲に関する立場が含まれる。",
-        "TechCrunchの報道は、最近の選挙サイクルにおけるこれらのPACによる多額の支出を詳述している。具体的な金額自体が物語の中心ではないものの、投資規模は業界が法整備に積極的に関与しようとする姿勢を示している。",
-        "これらの活動は、主要な立法機関や個々の議員を対象とし、AIの複雑さを政治家に教育し、特定の政策スタンスを提唱することを目指す。これらのキャンペーンの結果は、直接的に立法アジェンダに影響を与える。",
-        "> AI PACs spent millions trying to shape Congress — here’s how they fared.",
-        "ロビー活動の成功は様々だが、その継続的な存在はAIがワシントンで重要な議題であり続けることを保証する。この積極的な関与は、しばしば受動的に規制に直面した初期のテクノロジー産業とは一線を画している。",
-        "東京の専門家にとって、米国のAI政策の動向は単なる国内ニュースではない。米国の規制決定はしばしば国際的な基準を設定したり、日本を含む同盟国の政策議論に影響を与えたりする。これらの傾向を理解することは、将来の国内規制変更の可能性を洞察する手がかりとなる。",
-        "将来、人類が地球外へと活動範囲を広げるにつれて、地球上で確立されたAIのガバナンスモデルは、地球外居住地での人工知能の管理方法に影響を与える可能性が高い。今日のロビー活動によって形成される初期の規制枠組みは、月面や火星でのAIシステムの倫理的・運用上のガイドラインを規定し、自律的な資源採掘から居住地の管理、さらには将来の宇宙航行社会における初期の法制度にまで影響を及ぼすだろう。"
-      ]
-    },
-    "tokyoView": {
-      "en": [
-        "In simple terms, major technology companies involved in artificial intelligence in the United States have formed groups, similar to industry associations, to talk directly with politicians. These groups spend money to explain their views on how AI should be regulated, trying to ensure that new laws support their business goals while also addressing public concerns. Think of it like a translator who never sleeps, constantly explaining the complex world of AI to lawmakers.",
-        "For Tokyo readers, this means that the rules for AI that emerge from the US will likely set a global precedent. This could impact everything from how your banking app uses AI to detect fraud, to the ethical guidelines for AI in medical diagnostics, or even the standards for content recommendation algorithms on streaming services. We might see faster adoption of certain AI safety standards or specific data privacy requirements become global norms, influencing product development here.",
-        "This influence is already happening today, though its full impact will unfold over the next 12-24 months. As new US federal laws or guidelines are finalized, Japanese companies using or developing AI will need to assess their compliance. The gating factor is the speed of legislative processes in the US and how quickly international bodies or Japanese regulators choose to adopt or adapt these frameworks.",
-        "While Japan does not have an identical PAC system, organizations like METI's GENIAC programme and industry associations such as the Japan Deep Learning Association (JDLA) are actively engaged in discussions with the government to shape national AI strategy and regulation. These efforts, though different in structure, aim for a similar outcome: ensuring Japan's AI policy fosters innovation while managing risks effectively."
-      ],
-      "ja": [
-        "簡単に言えば、米国の主要なAI関連テクノロジー企業が、業界団体のようなグループを結成し、政治家と直接対話しています。これらのグループは資金を使い、AIの規制方法について彼らの見解を説明し、新しい法律が公共の懸念に対処しつつ、ビジネス目標を支援するように働きかけています。これは、AIの複雑な世界を立法者に常に説明し続ける「眠らない翻訳者」のようなものです。",
-        "東京の読者にとって、これは米国で生まれるAIのルールが、世界的な先例となる可能性が高いことを意味します。銀行アプリがAIで不正を検知する方法から、医療診断におけるAIの倫理ガイドライン、あるいはストリーミングサービスのコンテンツ推薦アルゴリズムの基準に至るまで、あらゆる側面に影響を与える可能性があります。特定のAI安全基準やデータプライバシー要件が、より早く世界の標準となり、日本の製品開発にも影響を及ぼすかもしれません。",
-        "この影響は既に今日から始まっていますが、その全体像が明らかになるのは今後12〜24ヶ月でしょう。新しい米国の連邦法やガイドラインが最終決定されるにつれて、AIを利用または開発する日本企業は、その順守状況を評価する必要が出てきます。決定要因は、米国の立法プロセスの速度と、国際機関や日本の規制当局がこれらの枠組みをどの程度迅速に採用または適応させるかです。",
-        "日本には米国のようなPAC制度はありませんが、経済産業省のGENIACプログラムや、日本ディープラーニング協会（JDLA）のような業界団体が、国のAI戦略や規制を形成するために政府と積極的に議論しています。これらの取り組みは構造は異なりますが、同様の結果を目指しています。すなわち、日本のAI政策がリスクを効果的に管理しつつ、イノベーションを促進することです。"
-      ]
-    },
-    "structured": {
-      "tagline": {
-        "en": "US AI PACs influence policy, setting global regulatory tone.",
-        "ja": "米国AI業界、政策形成で世界的な規制の方向性示す。"
-      },
-      "useCase": {
-        "en": "For a Tokyo-based business strategist or policy analyst, this story provides insight into the proactive shaping of global AI regulation, informing strategic planning for market entry or compliance.",
-        "ja": "東京のビジネス戦略家や政策アナリストが、世界のAI規制形成の動向を理解し、市場参入やコンプライアンス戦略を練る上で役立つ。"
-      },
-      "vsCompetitor": {
-        "en": "This is not a direct product, but rather a mechanism of influence that competes with other industry lobbying groups or grassroots movements for legislative attention and policy outcomes.",
-        "ja": "特定の製品ではなく、他の業界ロビー団体や草の根運動と立法上の注目度や政策結果を競い合う影響力行使の仕組み。"
-      },
-      "tokyoTake": {
-        "en": "While US AI lobbying directly impacts American legislation, its ripple effects on international standards and data governance frameworks are crucial for Tokyo professionals. Understanding these nascent global norms allows Japanese businesses to anticipate future domestic regulatory shifts and adapt their AI strategies proactively, rather than reactively.",
-        "ja": "米国のAIロビー活動は直接的には米国法に影響するが、その波及効果は国際標準やデータガバナンスの枠組みを通じて東京のプロフェッショナルにとって重要だ。これらの初期段階にある国際規範を理解することで、日本企業は将来の国内規制変更を予測し、受動的ではなく能動的にAI戦略を適応させることができる。"
-      }
-    },
-    "source": {
-      "name": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/11/04/ai-pacs-spent-millions-trying-to-shape-congress-heres-how-they-fared/"
-    },
-    "sourceGuid": "https://techcrunch.com/?p=3185268",
-    "status": "published"
-  },
-  {
-    "slug": "qualcomm-challenges-nvidia-with-new-cloud-ai-accelerator",
-    "category": "dev-tools",
-    "issue": "Vol. 07",
-    "publishedAt": "2026-11-04T19:55:14.000Z",
-    "readingMinutes": 4,
-    "feature": true,
-    "cover": {
-      "src": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0c0c0e"
-    },
-    "title": {
-      "en": "Qualcomm Challenges NVIDIA with New Cloud AI Accelerator",
-      "ja": "Qualcommがデータセンター向けAIアクセラレーターでNVIDIAに挑む"
-    },
-    "dek": {
-      "en": "Qualcomm launches the Cloud AI 100 Ultra, aiming to capture a share of the burgeoning data center AI inference market with a focus on power efficiency and cost reduction.",
-      "ja": "QualcommがCloud AI 100 Ultraを発表、電力効率とコスト削減を重視し、成長するデータセンターAI推論市場でのシェア獲得を目指す。"
-    },
-    "author": {
-      "en": "AITECH TOKYO Editors",
-      "ja": "AITECH TOKYO 編集部"
-    },
-    "location": {
-      "en": "TOKYO – November 4, 2026",
-      "ja": "東京 – 2026年11月4日"
-    },
-    "tags": [
-      {
-        "en": "AI hardware",
-        "ja": "AIハードウェア"
-      },
-      {
-        "en": "data center",
-        "ja": "データセンター"
-      },
-      {
-        "en": "inference",
-        "ja": "推論"
-      },
-      {
-        "en": "Qualcomm",
-        "ja": "Qualcomm"
-      }
-    ],
-    "body": {
-      "en": [
-        "Qualcomm has launched the Cloud AI 100 Ultra, an AI accelerator designed for high-performance inference workloads in data centers. This specialized hardware aims to provide an alternative to existing solutions, focusing on efficiency and cost-effectiveness for deploying large language models and other deep learning applications.",
-        "The Cloud AI 100 Ultra represents Qualcomm's strategic expansion beyond its traditional mobile and edge computing stronghold into the competitive data center AI market. The company intends to leverage its expertise in power-efficient silicon design to offer compelling performance-per-watt metrics.",
-        "This entry directly positions Qualcomm against established players like NVIDIA, whose GPUs currently dominate the AI training and inference landscape. While specific performance benchmarks are yet to be widely validated in real-world deployments, the proposition centers on reducing operational expenditures for cloud providers and enterprises.",
-        "The true challenge for any new AI hardware lies not just in raw specifications, but in the maturity of its software stack and developer ecosystem. NVIDIA's CUDA platform provides a significant barrier to entry, requiring substantial investment from Qualcomm to foster adoption and ease of integration for developers.",
-        "> \"The real question is whether it can break into NVIDIA's CUDA-locked ecosystem.\"",
-        "Should the Cloud AI 100 Ultra gain traction, it could introduce more competition, potentially driving down the cost of AI inference across the board. This would make advanced AI capabilities more accessible and economically viable for a wider range of applications, from enterprise analytics to consumer-facing services.",
-        "The silicon battle for the future of cloud intelligence is fought not just in raw FLOPS, but in the subtle calculus of power, price, and pervasive software frameworks. The relentless pursuit of more efficient AI hardware suggests a future where AI computation becomes an invisible, ambient layer, shaping everything from urban planning to resource management on a planetary scale, and potentially beyond."
-      ],
-      "ja": [
-        "Qualcommは、データセンターにおける高性能推論ワークロード向けAIアクセラレーター「Cloud AI 100 Ultra」を発表した。この専用ハードウェアは、既存ソリューションの代替として、大規模言語モデルやその他の深層学習アプリケーションの展開における効率性と費用対効果に焦点を当てている。",
-        "Cloud AI 100 Ultraは、Qualcommが従来のモバイルおよびエッジコンピューティングの強みから、競争の激しいデータセンターAI市場への戦略的拡大を示すものだ。同社は、電力効率の高いシリコン設計における専門知識を活用し、魅力的なワットあたりの性能を提供することを目指している。",
-        "この参入は、AIトレーニングと推論の分野で現在優位に立つNVIDIAのような既存プレイヤーに、Qualcommを直接対抗させるものだ。具体的な性能ベンチマークが実際の展開で広く検証されるのはこれからだが、その提案はクラウドプロバイダーや企業にとっての運用コスト削減に集中している。",
-        "新しいAIハードウェアにとって真の課題は、単なるスペックだけでなく、そのソフトウェアスタックと開発者エコシステムの成熟度にある。NVIDIAのCUDAプラットフォームは参入障壁として大きく、Qualcommには開発者の採用と統合の容易さを促進するための多大な投資が求められる。",
-        "> 「NVIDIAのCUDAエコシステムに食い込めるかが本当の課題だ」",
-        "Cloud AI 100 Ultraが市場で支持を得られれば、さらなる競争が生まれ、AI推論のコスト全体を押し下げる可能性がある。これにより、企業分析から消費者向けサービスまで、より広範なアプリケーションにおいて高度なAI機能がより利用しやすくなり、経済的にも実現可能になるだろう。",
-        "クラウドインテリジェンスの未来をかけたシリコンの戦いは、単なるFLOPSの数値だけでなく、電力、価格、そして普及したソフトウェアフレームワークという微妙な計算の中で繰り広げられる。より効率的なAIハードウェアを絶え間なく追求することは、AI計算が目に見えないアンビエントな層となり、都市計画から地球規模の資源管理、さらにはその先まで、あらゆるものを形作る未来を示唆している。"
-      ]
-    },
-    "tokyoView": {
-      "en": [
-        "Qualcomm, a major chip maker known for smartphone processors, has released a new type of computer chip specifically designed to make artificial intelligence programs run faster and more efficiently in large data centers. Think of it like a specialized engine built just for AI, helping services like ChatGPT respond quicker and at a lower cost. It's not about creating AI models, but about making them perform better once they are built and deployed.",
-        "For Tokyo readers, this means that the AI services you use daily – from language translation apps to customer support chatbots and even internal corporate tools – could become noticeably faster and more affordable. Cloud providers, which host these services, would benefit from the new chips' efficiency, and those savings or performance boosts could eventually trickle down to end-users and businesses in Japan. This could make it easier for Tokyo startups and established firms to integrate advanced AI without incurring prohibitive infrastructure costs.",
-        "This impact is likely 12 to 24 months away. Major cloud providers (like AWS, Google Cloud, Azure) would first need to integrate these new accelerators into their global infrastructure. Once they do, and these chips become available in their Japanese regions, businesses in Tokyo can start seeing the benefits. The adoption rate will depend on how competitive Qualcomm's offering is against NVIDIA's established dominance and how quickly software ecosystems adapt.",
-        "While Japan does not currently have a direct domestic competitor producing data center AI accelerators at this scale, companies like NTT and SoftBank are heavily investing in AI infrastructure and services. NTT, for instance, is developing its own LLM and could be a potential consumer of such efficient hardware for its cloud platforms. Sakana AI, while focused on model architecture, could also benefit from diverse hardware options for deploying its compact, efficient models. The focus in Japan tends to be on optimizing models for existing hardware or building services on top of global cloud infrastructure."
-      ],
-      "ja": [
-        "スマートフォン向けプロセッサで知られる大手チップメーカーのQualcommが、AIプログラムを大規模なデータセンターでより速く、より効率的に動かすための新しい種類のコンピューターチップを発表しました。これはAI専用に作られた特殊なエンジンのようなもので、ChatGPTのようなサービスがより迅速に、そして低コストで応答できるよう手助けします。AIモデルをゼロから作る話ではなく、構築・展開されたモデルの性能を向上させるためのものです。",
-        "東京の読者にとって、これは日頃利用するAIサービス、例えば翻訳アプリやカスタマーサポートのチャットボット、さらには企業内のツールなどが、目に見えて高速になり、より手頃な価格で利用できるようになる可能性を意味します。これらのサービスをホストするクラウドプロバイダーが新しいチップの効率性から恩恵を受け、そのコスト削減や性能向上が最終的に日本のエンドユーザーや企業にも波及するでしょう。これにより、東京のスタートアップや既存企業が、法外なインフラコストをかけることなく、高度なAIを導入しやすくなるかもしれません。",
-        "この影響は、おそらく12〜24ヶ月先になるでしょう。まず、主要なクラウドプロバイダー（AWS、Google Cloud、Azureなど）がこれらの新しいアクセラレーターをグローバルインフラに統合する必要があります。それが完了し、日本のリージョンでこれらのチップが利用可能になれば、東京の企業は恩恵を受け始めることができます。導入のペースは、Qualcommの製品がNVIDIAの確立された優位性に対してどれだけ競争力があるか、そしてソフトウェアエコシステムがどれだけ迅速に適応するかにかかっています。",
-        "現在、日本にはこの規模でデータセンター向けAIアクセラレーターを生産する直接的な国内競合他社はありませんが、NTTやソフトバンクのような企業はAIインフラとサービスに大規模な投資を行っています。例えばNTTは独自のLLMを開発しており、そのクラウドプラットフォーム向けにこのような効率的なハードウェアの潜在的な消費者となる可能性があります。また、モデルアーキテクチャに焦点を当てるSakana AIも、コンパクトで効率的なモデルを展開する上で、多様なハードウェア選択肢から恩恵を受けるでしょう。日本の焦点は、既存のハードウェア向けにモデルを最適化すること、あるいはグローバルなクラウドインフラの上にサービスを構築することに傾いています。"
-      ]
-    },
-    "structured": {
-      "tagline": {
-        "en": "AI inference accelerator for cloud data centers.",
-        "ja": "データセンター向けAI推論アクセラレーター。"
-      },
-      "useCase": {
-        "en": "For cloud infrastructure architects and enterprise IT leaders in Tokyo seeking to optimize the cost and performance of large language model inference for their internal AI applications.",
-        "ja": "東京のクラウドインフラアーキテクトや企業ITリーダーが、社内AIアプリケーション向けLLM推論のコストと性能を最適化する際に。"
-      },
-      "vsCompetitor": {
-        "en": "This directly competes with NVIDIA's data center GPUs (e.g., H100, B200) by offering an alternative inference solution, differing primarily in architecture, power efficiency, and the accompanying software ecosystem, which is less mature than NVIDIA's CUDA.",
-        "ja": "NVIDIAのデータセンターGPU（H100、B200など）と直接競合し、アーキテクチャ、電力効率、そしてNVIDIAのCUDAよりも未熟なソフトウェアエコシステムが主な違いとなる推論ソリューションを提供する。"
-      },
-      "tokyoTake": {
-        "en": "While not directly impacting Tokyo professionals today, this hardware competition could lead to lower costs for cloud AI services in Japan within 12-24 months, making custom LLM deployments more affordable for local businesses.",
-        "ja": "東京のプロフェッショナルに今日直接影響はないが、このハードウェア競争は12〜24ヶ月以内に日本でのクラウドAIサービス費用を下げ、地元の企業にとってカスタムLLMの導入をより手頃にする可能性がある。"
-      }
-    },
-    "source": {
-      "name": "Hacker News Top",
-      "url": "https://www.qualcomm.com/data-center/products/cloud-ai-100-ultra"
-    },
-    "sourceGuid": "https://news.ycombinator.com/item?id=50370654",
-    "status": "published"
-  },
-  {
-    "slug": "nothing-prepares-to-launch-ai-first-device-next-month",
-    "category": "ai-gadgets",
-    "issue": "Vol. 07",
-    "publishedAt": "2026-11-04T22:13:16.000Z",
-    "readingMinutes": 5,
-    "feature": false,
-    "cover": {
-      "src": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#161616"
-    },
-    "title": {
-      "en": "Nothing Prepares to Launch 'AI-First' Device Next Month",
-      "ja": "Nothing、来月「AIファースト」デバイスの投入を予告"
-    },
-    "dek": {
-      "en": "Carl Pei's hardware company, known for its transparent design, confirms an imminent entry into the nascent AI device category, though specific features remain undisclosed.",
-      "ja": "透明デザインで知られるカール・ペイ率いるハードウェア企業Nothingが、AIデバイス市場への参入を間近に控えている。機能の詳細は依然として謎に包まれている。"
-    },
-    "author": {
-      "en": "AITECH TOKYO Editors",
-      "ja": "AITECH TOKYO 編集部"
-    },
-    "location": {
-      "en": "TOKYO",
-      "ja": "東京"
-    },
-    "tags": [
-      {
-        "en": "AI Hardware",
-        "ja": "AIハードウェア"
-      },
-      {
-        "en": "Wearables",
-        "ja": "ウェアラブル"
-      },
-      {
-        "en": "Consumer Tech",
-        "ja": "消費者向けテクノロジー"
-      }
-    ],
-    "body": {
-      "en": [
-        "Nothing, the consumer electronics company led by Carl Pei, has confirmed the imminent launch of an “AI-first device” next month. This announcement signals the company's entry into a burgeoning category of hardware attempting to redefine interaction beyond the smartphone.",
-        "Details regarding the device’s specific functionalities, underlying AI models, or pricing remain undisclosed. The company has maintained a degree of secrecy, typical of its pre-launch marketing, leaving much to speculation about how its \"AI-first\" philosophy will manifest in a physical product.",
-        "Nothing has previously distinguished itself with a minimalist aesthetic and transparent design elements in its smartphones and earbuds. Applying this approach to an AI-centric device suggests a focus on intuitive user experience, potentially prioritizing ambient intelligence and seamless integration over complex interfaces.",
-        "> \"an AI-first device is dropping next month\"",
-        "The phrase “AI-first” implies a design where artificial intelligence is not merely an added feature but central to the device's core purpose and interaction paradigm. This could mean a voice-centric interface, proactive contextual assistance, or novel ways of capturing and processing information without requiring constant attention to a screen.",
-        "This move positions Nothing alongside other recent entrants into the dedicated AI hardware space, such as the Humane AI Pin and the Rabbit R1. Unlike these devices, however, Nothing’s offering benefits from an established brand presence in the consumer electronics market, which could influence its reception.",
-        "The actual impact of this device on daily workflows will depend entirely on its undisclosed capabilities. Without concrete information on its specific use cases, language support, or integration with existing ecosystems, its utility for professionals remains an open question.",
-        "For now, the announcement serves primarily as a statement of intent from Nothing, signaling a shift in its product strategy towards a hardware category that is still largely undefined by mainstream consumer adoption."
-      ],
-      "ja": [
-        "カール・ペイ率いる家電メーカーNothingが、来月「AIファースト」デバイスを発売することを明らかにした。この発表は、スマートフォンを超えた新たなインタラクションを再定義しようとする、新興ハードウェアカテゴリーへの同社の参入を示すものだ。",
-        "デバイスの具体的な機能、基盤となるAIモデル、価格に関する詳細は、現時点では一切公開されていない。同社はこれまで通りの事前マーケティング戦略として、ある程度の秘密主義を貫いており、「AIファースト」の哲学が物理的な製品でどのように具現化されるかについては、多くの憶測が飛び交っている。",
-        "Nothingはこれまで、スマートフォンやイヤホンでミニマリストな美学と透明なデザイン要素で差別化を図ってきた。このアプローチをAI中心のデバイスに適用することは、直感的なユーザーエクスペリエンスに重点を置いていることを示唆しており、複雑なインターフェースよりもアンビエントな知能とシームレスな統合を優先する可能性が高い。",
-        "> 「来月、AIファーストデバイスが投入される」",
-        "「AIファースト」という言葉は、人工知能が単なる追加機能ではなく、デバイスの核となる目的とインタラクションパラダイムの中心に据えられているデザインを意味する。これは、音声中心のインターフェース、プロアクティブな文脈に応じたアシスタンス、あるいは画面に常時注意を払うことなく情報を取得・処理する新しい方法を指すのかもしれない。",
-        "この動きにより、NothingはHumane AI PinやRabbit R1といった、専用AIハードウェア分野への最近の参入企業と並ぶことになる。しかし、これらのデバイスとは異なり、Nothingの製品はすでに確立された家電市場でのブランドプレゼンスから恩恵を受ける可能性があり、その受容に影響を与えるだろう。",
-        "このデバイスが日々のワークフローに与える実際の影響は、未公開の機能に完全に依存する。具体的なユースケース、言語サポート、既存のエコシステムとの統合に関する情報がなければ、プロフェッショナルにとってのその有用性は未解決のままだ。",
-        "今のところ、この発表はNothingからの意図表明として機能しており、製品戦略が、主流の消費者にはまだほとんど定義されていないハードウェアカテゴリーへと移行していることを示唆している。"
-      ]
-    },
-    "tokyoView": {
-      "en": [
-        "Nothing, a company known for its distinct hardware design, has announced it will launch an \"AI-first device\" next month. While details are scarce, this suggests a move towards a new class of personal electronics where artificial intelligence is not just an app, but the primary mode of interaction—think of a personal assistant that anticipates needs rather than merely responding to commands, or a contextual interface that understands your environment.",
-        "For Tokyo professionals, such a device could potentially streamline daily tasks in a highly dynamic urban environment. Imagine an AI companion that offers real-time, context-aware navigation through complex transit systems, provides instant translation during international business meetings, or proactively manages a dense schedule without constant screen interaction. This could extend to hands-free information access during a crowded commute or personalized recommendations for local services.",
-        "The plausible timeframe for this to significantly impact Tokyo users is 12-24 months. This depends heavily on two factors: first, the device's actual capabilities and whether it offers a genuinely novel workflow beyond what smartphones already provide; second, the availability of robust Japanese language support and seamless integration with local services and payment systems, which are often critical for adoption in Japan.",
-        "While a direct \"AI-first device\" counterpart from a Japanese company is not yet prominent, local players are active in related fields. Sony, for instance, has a long history in consumer electronics and AI research, and could leverage its expertise in audio and visual technologies for such a device. Similarly, NTT DoCoMo explores advanced communication and wearable technologies that could eventually converge into similar AI-centric hardware, though currently, their focus remains on network services and augmented smartphone experiences."
-      ],
-      "ja": [
-        "特徴的なハードウェアデザインで知られるNothingが、来月「AIファーストデバイス」を発売すると発表した。詳細はまだ不明だが、これは人工知能が単なるアプリではなく、主要なインタラクションモードとなる新しい種類のパーソナルエレクトロニクスへの移行を示唆している。これは、コマンドに応答するだけでなくニーズを予測するパーソナルアシスタントや、周囲の環境を理解する文脈に応じたインターフェースを想像すると分かりやすい。",
-        "東京で働くプロフェッショナルにとって、このようなデバイスは、非常にダイナミックな都市環境での日常業務を効率化する可能性を秘めている。例えば、複雑な交通システムをリアルタイムで文脈に応じてナビゲートしたり、国際的なビジネス会議で即座に翻訳を提供したり、常に画面を操作することなく多忙なスケジュールを積極的に管理したりするAIコンパニオンを想像してみてほしい。これは、混雑した通勤中にハンズフリーで情報にアクセスしたり、地元のサービスに関するパーソナライズされた推奨事項を得たりすることにも広がるだろう。",
-        "このデバイスが東京のユーザーに大きな影響を与える可能性のある期間は、12〜24ヶ月と見られる。これは主に2つの要因に大きく依存する。第一に、デバイスの実際の機能がスマートフォンがすでに提供しているもの以上の、真に新しいワークフローを提供するかどうか。第二に、堅牢な日本語サポートと、日本での普及に不可欠となることが多いローカルサービスや決済システムとのシームレスな統合の有無である。",
-        "日本企業から直接的な「AIファーストデバイス」の競合製品はまだ目立たないが、関連分野では国内企業も活発に動いている。例えばソニーは、家電製品とAI研究において長い歴史を持ち、オーディオやビジュアル技術の専門知識をこのようなデバイスに応用する可能性がある。同様に、NTTドコモも高度な通信技術やウェアラブル技術を探求しており、将来的には類似のAI中心ハードウェアへと収束する可能性はあるが、現在のところ、彼らの焦点はネットワークサービスとスマートフォン体験の強化に置かれている。"
-      ]
-    },
-    "structured": {
-      "tagline": {
-        "en": "Nothing unveils a mysterious AI-first device for next month.",
-        "ja": "Nothing、来月「AIファースト」デバイスを発表。"
-      },
-      "useCase": {
-        "en": "For any professional seeking a new hardware interface for proactive, context-aware digital assistance, assuming the device delivers on its \"AI-first\" promise.",
-        "ja": "「AIファースト」の約束が実現すれば、プロアクティブで文脈認識型のデジタルアシスタンスを求めるあらゆるプロフェッショナル向けの新ハードウェアインターフェースとなる。"
-      },
-      "vsCompetitor": {
-        "en": "It enters a nascent field alongside devices like the Humane AI Pin and Rabbit R1, differing in its undisclosed design and software philosophy, but sharing the ambition to redefine human-computer interaction beyond the smartphone.",
-        "ja": "Humane AI PinやRabbit R1のような新興デバイスと競合し、未公開のデザインやソフトウェア思想で差別化を図るが、スマートフォンを超えた人間とコンピューターのインタラクション再定義を目指す点は共通している。"
-      },
-      "tokyoTake": {
-        "en": "Tokyo professionals should observe this launch for its potential to introduce new interaction paradigms, but wait for concrete details on Japanese language support and local service integration before considering adoption.",
-        "ja": "東京のプロフェッショナルは、新しいインタラクションの可能性に注目すべきだが、日本語対応やローカルサービス連携の具体的な詳細が明らかになるまで、導入は様子見が賢明だ。"
-      }
-    },
-    "source": {
-      "name": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/11/04/nothing-ceo-says-companys-mysterious-ai-first-device-is-dropping-next-month/"
-    },
-    "sourceGuid": "https://techcrunch.com/?p=3185172",
-    "status": "published"
-  },
-  {
-    "slug": "kino-reimagines-video-editing-with-code-first-ai-agents",
-    "category": "llm-tools",
-    "issue": "Vol. 07",
-    "publishedAt": "2026-11-04T17:31:53.000Z",
-    "readingMinutes": 5,
-    "feature": false,
-    "cover": {
-      "src": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=2200&q=80",
-      "tone": "#0e0f12"
-    },
-    "title": {
-      "en": "Kino Reimagines Video Editing with Code-First AI Agents",
-      "ja": "Kino、コードファーストとAIエージェントで動画編集を再定義"
-    },
-    "dek": {
-      "en": "A new video editor built on Remotion allows human and AI agents to collaborate in real-time, treating video as code.",
-      "ja": "Remotionを基盤とする新動画エディタKinoは、人間とAIエージェントがリアルタイムで共同作業し、動画編集をコードとして扱う。"
-    },
-    "author": {
-      "en": "AITECH TOKYO Editors",
-      "ja": "AITECH TOKYO 編集部"
-    },
-    "location": {
-      "en": "TOKYO, Nov 4, 2026",
-      "ja": "東京, 2026年11月4日"
-    },
-    "tags": [
-      {
-        "en": "video editing",
-        "ja": "動画編集"
-      },
-      {
-        "en": "AI agents",
-        "ja": "AIエージェント"
-      },
-      {
-        "en": "collaboration",
-        "ja": "コラボレーション"
-      },
-      {
-        "en": "creative tools",
-        "ja": "クリエイティブツール"
-      }
-    ],
-    "body": {
-      "en": [
-        "Kino is a video editor that treats all aspects of video production—editing, motion graphics, comments, and 3D scenes—as code, built on the React-based Remotion framework. It enables real-time collaboration between human editors and AI agents on a shared timeline.",
-        "The platform was launched in 2023 and rebuilt in 2025, moving from bespoke on-premise deployments for major studios to a more accessible, code-first approach. This shift aimed to accelerate video editing capabilities beyond the constraints of traditional software and studio environments.",
-        "Kino integrates with large language models such as Codex and Claude Code, allowing agents to perform complex edits or even reskin entire videos based on natural language instructions. The system transcribes, embeds, and describes footage to facilitate AI-driven manipulation.",
-        "A core feature is its collaborative nature, where multiple humans and AI agents can work concurrently on the same timeline. Users can observe teammates' cursors and their current focus, while agents handle tasks like rotoscoping, color grading, or finding b-roll footage.",
-        "> Everything in Kino has a URL: projects, clips, footage, comments and replies, even a single frame and the line of code that draws it.",
-        "Kino supports professional media codecs like ProRes, BRAW, and R3D, enabling users to import large, high-quality clips directly into the timeline. It achieves this performance through custom decoders and modern web technologies like WebCodecs.",
-        "The platform emphasizes a unified source of truth for video projects, where every element—from clips to comments to individual frames—is addressable via a unique URL. This structure allows agents to precisely understand and act upon specific timeline items.",
-        "Kino offers a free tier with unlimited imports, exports, and agent access, while a Pro subscription costs $25 per editor per month. The Pro plan includes unlimited agent tool calls, enhanced storage, and YouTube search integration. The application is currently available as an Electron desktop app."
-      ],
-      "ja": [
-        "Kinoは、動画編集、モーショングラフィックス、コメント、3Dシーンといった動画制作のあらゆる要素をコードとして扱う動画エディタだ。ReactベースのRemotionフレームワーク上に構築されており、人間とAIエージェントが共有のタイムライン上でリアルタイムに協調作業することを可能にする。",
-        "2023年にローンチされ、2025年に再構築されたこのプラットフォームは、当初の大規模スタジオ向けオンプレミス展開から、よりアクセスしやすいコードファーストのアプローチへと転換した。これは、従来のソフトウェアやスタジオ環境の制約を超え、動画編集能力を加速させることを目的としている。",
-        "KinoはCodexやClaude Codeといった大規模言語モデルと連携し、エージェントが自然言語の指示に基づいて複雑な編集や動画全体のリスキンニングを行うことを可能にする。システムはフッテージを文字起こし、埋め込み、記述することで、AIによる操作を容易にする。",
-        "その中核機能はコラボレーションであり、複数の人間とAIエージェントが同じタイムライン上で同時に作業できる。ユーザーはチームメイトのカーソルや現在の作業箇所を視覚的に把握でき、エージェントはロトスコープ、カラーグレーディング、Bロール検索などのタスクを処理する。",
-        "> KinoのあらゆるものにURLがある。プロジェクト、クリップ、フッテージ、コメントと返信、さらには個々のフレーム、それを描画するコード行までが対象だ。",
-        "ProRes、BRAW、R3Dといったプロフェッショナルなメディアコーデックをサポートしており、大容量の高品質クリップを直接タイムラインにインポートできる。これはカスタムデコーダーとWebCodecsのような現代的なウェブ技術によって実現されている。",
-        "プロジェクト内のあらゆる要素、例えばクリップからコメント、個々のフレームに至るまで、すべてがユニークなURLでアドレス指定可能であるため、動画制作における唯一の信頼できる情報源としての役割を果たす。この構造により、エージェントは特定のタイムライン項目を正確に理解し、操作できる。",
-        "Kinoは、無制限のインポート・エクスポート、リアルタイムコラボレーション、エージェント向けのMCPアクセスを含む無料ティアを提供している。Proプランはエディタあたり月額25ドルで、無制限のMCPツールコール、共有リンク、ストレージの追加、YouTube検索などの機能が含まれる。現時点ではElectronデスクトップアプリとして提供されている。"
-      ]
-    },
-    "tokyoView": {
-      "en": [
-        "Kinoは、動画編集を単なる視覚的なクリップの組み合わせではなく、コードの行として扱う新しいタイプのソフトウェアです。例えるなら、あなたと数人のアシスタント（人間もいれば、非常に高性能なAIプログラムもいる）が、映画の脚本を同時に書き、編集できる共有ドキュメントのようなものです。これらのAIアシスタントは、「動画全体を古いmacOSのデスクトップのように見せてほしい」とか「屋外のショットをすべて見つけて色補正してほしい」といった指示を理解し、実行できます。動画のあらゆる要素、例えば特定のフレームやコメント一つ一つに固有のアドレスが割り当てられており、人間もAIも特定の要素を正確に指定して修正できる点が特徴です。",
-        "東京の読者にとって、このアプローチはマーケティング、広告、企業広報におけるワークフローを大きく変える可能性があります。例えば、毎週何十もの短尺でローカライズされた動画を制作する必要があるマーケティング部門を想像してみてください。手作業で一つ一つ編集する代わりに、AIエージェントが特定のキャンペーンに合わせた初稿を自動生成することで、制作時間とコストを劇的に削減できるでしょう。また、クリエイティブエージェンシーでは、手動での実行からプロンプトエンジニアリングや戦略的なクリエイティブディレクションへと業務の焦点が移り、ビジュアルコンテンツのより迅速な反復が可能になるかもしれません。",
-        "その影響は、専門の技術チームを持つ東京の大手メディア企業やマーケティング会社であれば、12〜24ヶ月以内に感じられる可能性があります。ボトルネックとなるのは、動画編集における微妙なクリエイティブ指示を理解できる堅牢な日本語モデルの登場と、Kinoのインターフェースやドキュメントのローカライゼーションでしょう。中小企業や個人のクリエイターにとっては、ツールが非コーダーにも使いやすくなり、価格モデルが日本市場に適応するにつれて、採用曲線はもう少し長く、おそらく2〜3年かかるかもしれません。",
-        "Kinoのような完全なコードファースト、エージェント駆動型動画編集スイートを提供する直接的な日本企業はまだありません。しかし、NTTやソフトバンクといった企業は大規模言語モデルやAI開発に多額の投資を行っており、将来的には同様のクリエイティブエージェントを動かす可能性を秘めています。自動コンテンツ生成の分野では、メルカリやクックパッドのようなサービスがAIをパーソナライズされたコンテンツレコメンデーションに活用しており、AIが強化されたメディア体験への国内の需要を示していますが、コードベースの動画制作には至っていません。最も近い隣接プレイヤーは、AIを活用したマーケティング動画生成に焦点を当てる日本のスタートアップかもしれませんが、Kinoが提供するような深いコードレベルの制御は通常提供していません。"
-      ],
-      "ja": [
-        "Kinoは、動画編集を単なる視覚的なクリップの組み合わせではなく、コードの行として扱う新しいタイプのソフトウェアです。例えるなら、あなたと数人のアシスタント（人間もいれば、非常に高性能なAIプログラムもいる）が、映画の脚本を同時に書き、編集できる共有ドキュメントのようなものです。これらのAIアシスタントは、「動画全体を古いmacOSのデスクトップのように見せてほしい」とか「屋外のショットをすべて見つけて色補正してほしい」といった指示を理解し、実行できます。動画のあらゆる要素、例えば特定のフレームやコメント一つ一つに固有のアドレスが割り当てられており、人間もAIも特定の要素を正確に指定して修正できる点が特徴です。",
-        "東京の読者にとって、このアプローチはマーケティング、広告、企業広報におけるワークフローを大きく変える可能性があります。例えば、毎週何十もの短尺でローカライズされた動画を制作する必要があるマーケティング部門を想像してみてください。手作業で一つ一つ編集する代わりに、AIエージェントが特定のキャンペーンに合わせた初稿を自動生成することで、制作時間とコストを劇的に削減できるでしょう。また、クリエイティブエージェンシーでは、手動での実行からプロンプトエンジニアリングや戦略的なクリエイティブディレクションへと業務の焦点が移り、ビジュアルコンテンツのより迅速な反復が可能になるかもしれません。",
-        "その影響は、専門の技術チームを持つ東京の大手メディア企業やマーケティング会社であれば、12〜24ヶ月以内に感じられる可能性があります。ボトルネックとなるのは、動画編集における微妙なクリエイティブ指示を理解できる堅牢な日本語モデルの登場と、Kinoのインターフェースやドキュメントのローカライゼーションでしょう。中小企業や個人のクリエイターにとっては、ツールが非コーダーにも使いやすくなり、価格モデルが日本市場に適応するにつれて、採用曲線はもう少し長く、おそらく2〜3年かかるかもしれません。",
-        "Kinoのような完全なコードファースト、エージェント駆動型動画編集スイートを提供する直接的な日本企業はまだありません。しかし、NTTやソフトバンクといった企業は大規模言語モデルやAI開発に多額の投資を行っており、将来的には同様のクリエイティブエージェントを動かす可能性を秘めています。自動コンテンツ生成の分野では、メルカリやクックパッドのようなサービスがAIをパーソナライズされたコンテンツレコメンデーションに活用しており、AIが強化されたメディア体験への国内の需要を示していますが、コードベースの動画制作には至っていません。最も近い隣接プレイヤーは、AIを活用したマーケティング動画生成に焦点を当てる日本のスタートアップかもしれませんが、Kinoが提供するような深いコードレベルの制御は通常提供していません。"
-      ]
-    },
-    "structured": {
-      "tagline": {
-        "en": "Video editing as code, with AI agents and human teams.",
-        "ja": "動画編集をコードで。AIと人間チームで共同制作。"
-      },
-      "useCase": {
-        "en": "For a Tokyo-based marketing team producing daily short-form video ads, this tool could enable AI agents to generate initial drafts from b-roll footage, freeing human editors for refinement and strategic oversight.",
-        "ja": "日常的に短尺動画広告を制作する東京のマーケティングチームにとって、AIエージェントがBロール素材から初稿を自動生成し、人間は最終調整と戦略的監修に集中できる。"
-      },
-      "vsCompetitor": {
-        "en": "Unlike traditional NLEs like Adobe Premiere Pro or DaVinci Resolve, Kino's core differentiator is its code-first approach and deep integration with AI agents for concurrent, programmatic video editing and collaboration, rather than relying solely on graphical interfaces.",
-        "ja": "Adobe Premiere ProやDaVinci Resolveといった従来のNLEとは異なり、KinoはコードファーストのアプローチとAIエージェントとの深い統合が核となる。グラフィカルインターフェースのみに依存せず、プログラマティックな動画編集と共同作業を可能にする点が異なる。"
-      },
-      "tokyoTake": {
-        "en": "While the code-first paradigm is intriguing for technical users, its immediate relevance for many Tokyo professionals outside of highly specialized media production houses is limited. Japanese language support for AI agent instructions and UI localization will be critical for broader adoption.",
-        "ja": "コードファーストというパラダイムは技術者にとって興味深いが、高度に専門化されたメディア制作会社以外の東京の多くのプロフェッショナルにとって、その即時的な関連性は限定的だ。AIエージェントへの指示における日本語対応とUIのローカライゼーションが、広範な普及には不可欠となるだろう。"
-      }
-    },
-    "source": {
-      "name": "Hacker News Top",
-      "url": "https://news.ycombinator.com/item?id=50368804"
-    },
-    "sourceGuid": "https://news.ycombinator.com/item?id=50368804",
     "status": "published"
   }
 ]
